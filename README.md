@@ -4,7 +4,8 @@
 
 Radar is a React dashboard for exploring DeFi protocols, comparing modelled valuations, and building a research shortlist from a fixed DefiLlama snapshot. It pairs a sortable protocol board with detailed valuation explanations and practical research plans.
 
-![Radar landscape](src/assets/images/landscape.webp)
+<img width="1672" height="941" alt="Group 4" src="https://github.com/user-attachments/assets/17de8dff-afa0-4356-862e-880ffaf36e85" />
+
 
 ## Explore
 
