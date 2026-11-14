@@ -1,0 +1,1554 @@
+﻿[
+    {
+        "id":  "6807",
+        "name":  "Sentora Curator",
+        "slug":  "sentora-curator",
+        "logo":  "https://icons.llamao.fi/icons/protocols/sentora",
+        "url":  "https://sentora.com/",
+        "parentProtocol":  "parent#sentora"
+    },
+    {
+        "id":  "6212",
+        "name":  "Steakhouse Financial",
+        "slug":  "steakhouse-financial",
+        "logo":  "https://icons.llamao.fi/icons/protocols/steakhouse-financial",
+        "url":  "https://www.steakhouse.financial/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6202",
+        "name":  "Gauntlet",
+        "slug":  "gauntlet",
+        "logo":  "https://icons.llamao.fi/icons/protocols/gauntlet",
+        "url":  "https://www.gauntlet.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5825",
+        "name":  "Veda",
+        "slug":  "veda",
+        "logo":  "https://icons.llamao.fi/icons/protocols/veda",
+        "url":  "https://veda.tech",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5898",
+        "name":  "USDD",
+        "slug":  "usdd",
+        "logo":  "https://icons.llamao.fi/icons/protocols/usdd",
+        "url":  "https://usdd.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8826",
+        "name":  "Nonce Capital",
+        "slug":  "nonce-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/nonce-capital",
+        "url":  "https://nonce-capital.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5460",
+        "name":  "Upshift",
+        "slug":  "upshift",
+        "logo":  "https://icons.llamao.fi/icons/protocols/upshift",
+        "url":  "https://app.upshift.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8693",
+        "name":  "Bittensor dTAO",
+        "slug":  "bittensor-dtao",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bittensor-dtao",
+        "url":  "https://bittensor.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "711",
+        "name":  "Polymarket International",
+        "slug":  "polymarket-international",
+        "logo":  "https://icons.llamao.fi/icons/protocols/polymarket-international",
+        "url":  "https://polymarket.com",
+        "parentProtocol":  "parent#polymarket"
+    },
+    {
+        "id":  "6432",
+        "name":  "OnRe",
+        "slug":  "onre",
+        "logo":  "https://icons.llamao.fi/icons/protocols/onre",
+        "url":  "https://app.onre.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "177",
+        "name":  "Defi Saver Asset Management",
+        "slug":  "defi-saver-asset-management",
+        "logo":  "https://icons.llamao.fi/icons/protocols/defi-saver-asset-management",
+        "url":  "https://defisaver.com/",
+        "parentProtocol":  "parent#defi-saver"
+    },
+    {
+        "id":  "5376",
+        "name":  "CIAN Yield Layer",
+        "slug":  "cian-yield-layer",
+        "logo":  "https://icons.llamao.fi/icons/protocols/cian-yield-layer",
+        "url":  "https://yieldlayer.cian.app/vaults/0xB13aa2d0345b0439b064f26B82D8dCf3f508775d?chainId=1\u0026utm_source=TPFDZE",
+        "parentProtocol":  "parent#cian-protocol"
+    },
+    {
+        "id":  "7588",
+        "name":  "RockawayX",
+        "slug":  "rockawayx",
+        "logo":  "https://icons.llamao.fi/icons/protocols/rockawayx",
+        "url":  "https://rockawayx.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4757",
+        "name":  "Symbiotic",
+        "slug":  "symbiotic",
+        "logo":  "https://icons.llamao.fi/icons/protocols/symbiotic",
+        "url":  "https://symbiotic.fi",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "\u003c5471\u003e",
+        "name":  "OpenTrade",
+        "slug":  "opentrade",
+        "logo":  "https://icons.llamao.fi/icons/protocols/opentrade",
+        "url":  "https://www.opentrade.io",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7330",
+        "name":  "Mellow Core",
+        "slug":  "mellow-core",
+        "logo":  "https://icons.llamao.fi/icons/protocols/mellow-core",
+        "url":  "https://app.mellow.finance/vaults",
+        "parentProtocol":  "parent#mellow-protocol"
+    },
+    {
+        "id":  "6204",
+        "name":  "Hyperithm",
+        "slug":  "hyperithm",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hyperithm",
+        "url":  "https://www.hyperithm.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "231",
+        "name":  "Lightning Network",
+        "slug":  "lightning-network",
+        "logo":  "https://icons.llamao.fi/icons/protocols/lightning-network",
+        "url":  "https://lightning.network/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5284",
+        "name":  "Plume Vaults",
+        "slug":  "plume-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/plume-vaults",
+        "url":  "https://app.plume.org/vaults",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5785",
+        "name":  "BitFi Basis",
+        "slug":  "bitfi-basis",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bitfi-basis",
+        "url":  "https://www.bitfi.one",
+        "parentProtocol":  "parent#bitfi"
+    },
+    {
+        "id":  "6205",
+        "name":  "K3 Capital",
+        "slug":  "k3-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/k3-capital",
+        "url":  "https://k3.capital",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7766",
+        "name":  "R25",
+        "slug":  "r25",
+        "logo":  "https://icons.llamao.fi/icons/protocols/r25",
+        "url":  "https://www.r25.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4559",
+        "name":  "Hive Protocol",
+        "slug":  "hive-protocol",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hive-protocol",
+        "url":  "https://hive.bsquared.network/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6492",
+        "name":  "Figure Markets Prime",
+        "slug":  "figure-markets-prime",
+        "logo":  "https://icons.llamao.fi/icons/protocols/figure-markets-prime",
+        "url":  "https://www.figure.com/crypto-backed-loan/",
+        "parentProtocol":  "parent#figure-markets"
+    },
+    {
+        "id":  "5541",
+        "name":  "b14g",
+        "slug":  "b14g",
+        "logo":  "https://icons.llamao.fi/icons/protocols/b14g",
+        "url":  "https://www.b14g.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6199",
+        "name":  "Clearstar",
+        "slug":  "clearstar",
+        "logo":  "https://icons.llamao.fi/icons/protocols/clearstar",
+        "url":  "https://clearstar.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7646",
+        "name":  "Saturn",
+        "slug":  "saturn",
+        "logo":  "https://icons.llamao.fi/icons/protocols/saturn",
+        "url":  "https://app.saturn.credit/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5547",
+        "name":  "Lagoon",
+        "slug":  "lagoon",
+        "logo":  "https://icons.llamao.fi/icons/protocols/lagoon",
+        "url":  "https://lagoon.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8604",
+        "name":  "Theo Network thUSD",
+        "slug":  "theo-network-thusd",
+        "logo":  "https://icons.llamao.fi/icons/protocols/theo-network-thusd",
+        "url":  "https://app.theo.xyz/",
+        "parentProtocol":  "parent#theo"
+    },
+    {
+        "id":  "7053",
+        "name":  "Curvance",
+        "slug":  "curvance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/curvance",
+        "url":  "https://app.curvance.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7904",
+        "name":  "Galaxy Curation",
+        "slug":  "galaxy-curation",
+        "logo":  "https://icons.llamao.fi/icons/protocols/galaxy-curation",
+        "url":  "https://www.galaxy.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6491",
+        "name":  "Figure Markets Exchange",
+        "slug":  "figure-markets-exchange",
+        "logo":  "https://icons.llamao.fi/icons/protocols/figure-markets-exchange",
+        "url":  "https://www.figuremarkets.com/crypto-exchange/",
+        "parentProtocol":  "parent#figure-markets"
+    },
+    {
+        "id":  "6875",
+        "name":  "Tydro",
+        "slug":  "tydro",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tydro",
+        "url":  "https://tydro.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8283",
+        "name":  "Valos",
+        "slug":  "valos",
+        "logo":  "https://icons.llamao.fi/icons/protocols/valos",
+        "url":  "https://valos.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7895",
+        "name":  "Armitage by Wintermute",
+        "slug":  "armitage-by-wintermute",
+        "logo":  "https://icons.llamao.fi/icons/protocols/armitage-by-wintermute",
+        "url":  "https://armitage.wintermute.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "1952",
+        "name":  "Lofty",
+        "slug":  "lofty",
+        "logo":  "https://icons.llamao.fi/icons/protocols/lofty",
+        "url":  "https://www.lofty.ai",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5887",
+        "name":  "Extended Perps",
+        "slug":  "extended-perps",
+        "logo":  "https://icons.llamao.fi/icons/protocols/extended-perps",
+        "url":  "https://app.extended.exchange",
+        "parentProtocol":  "parent#extended"
+    },
+    {
+        "id":  "6223",
+        "name":  "Avant avUSD",
+        "slug":  "avant-avusd",
+        "logo":  "https://icons.llamao.fi/icons/protocols/avant-avusd",
+        "url":  "https://app.avantprotocol.com/products",
+        "parentProtocol":  "parent#avant-protocol"
+    },
+    {
+        "id":  "5786",
+        "name":  "Doppler Finance",
+        "slug":  "doppler-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/doppler-finance",
+        "url":  "https://app.doppler.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6741",
+        "name":  "Ember",
+        "slug":  "ember",
+        "logo":  "https://icons.llamao.fi/icons/protocols/ember",
+        "url":  "https://ember.so/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8425",
+        "name":  "Stellar DeFi Hub",
+        "slug":  "stellar-defi-hub",
+        "logo":  "https://icons.llamao.fi/icons/protocols/stellar-defi-hub",
+        "url":  "https://stellardefihub.com/",
+        "parentProtocol":  "parent#sentora"
+    },
+    {
+        "id":  "8546",
+        "name":  "Keyrock",
+        "slug":  "keyrock",
+        "logo":  "https://icons.llamao.fi/icons/protocols/keyrock",
+        "url":  "https://keyrock.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5026",
+        "name":  "Noble",
+        "slug":  "noble",
+        "logo":  "https://icons.llamao.fi/icons/protocols/noble",
+        "url":  "https://www.noble.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8063",
+        "name":  "Tori Finance",
+        "slug":  "tori-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tori-finance",
+        "url":  "https://tori.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6245",
+        "name":  "infiniFi",
+        "slug":  "infinifi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/infinifi",
+        "url":  "https://infinifi.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6461",
+        "name":  "Loopscale Lending",
+        "slug":  "loopscale-lending",
+        "logo":  "https://icons.llamao.fi/icons/protocols/loopscale-lending",
+        "url":  "https://loop.sl",
+        "parentProtocol":  "parent#loopscale"
+    },
+    {
+        "id":  "8466",
+        "name":  "Axis",
+        "slug":  "axis",
+        "logo":  "https://icons.llamao.fi/icons/protocols/axis",
+        "url":  "https://axis.to",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5145",
+        "name":  "IPOR Fusion",
+        "slug":  "ipor-fusion",
+        "logo":  "https://icons.llamao.fi/icons/protocols/ipor-fusion.svg",
+        "url":  "https://app.ipor.io/fusion",
+        "parentProtocol":  "parent#ipor"
+    },
+    {
+        "id":  "7954",
+        "name":  "Gami Labs",
+        "slug":  "gami-labs",
+        "logo":  "https://icons.llamao.fi/icons/protocols/gami-labs",
+        "url":  "https://gamilabs.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5664",
+        "name":  "Reti Pooling",
+        "slug":  "reti-pooling",
+        "logo":  "https://icons.llamao.fi/icons/protocols/reti-pooling",
+        "url":  "https://reti.nodely.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8141",
+        "name":  "Arcus Perps",
+        "slug":  "arcus-perps",
+        "logo":  "https://icons.llamao.fi/icons/protocols/arcus-perps",
+        "url":  "https://arcus.xyz/",
+        "parentProtocol":  "parent#arcus"
+    },
+    {
+        "id":  "8078",
+        "name":  "USDCx",
+        "slug":  "usdcx",
+        "logo":  "https://icons.llamao.fi/icons/protocols/usdcx",
+        "url":  "https://www.circle.com/xreserve",
+        "parentProtocol":  "parent#circle"
+    },
+    {
+        "id":  "6997",
+        "name":  "Yuzu Money",
+        "slug":  "yuzu-money",
+        "logo":  "https://icons.llamao.fi/icons/protocols/yuzu-money",
+        "url":  "https://app.yuzu.money",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6136",
+        "name":  "Solv Strategies",
+        "slug":  "solv-strategies",
+        "logo":  "https://icons.llamao.fi/icons/protocols/solv-strategies",
+        "url":  "https://solv.finance",
+        "parentProtocol":  "parent#solv-protocol"
+    },
+    {
+        "id":  "7828",
+        "name":  "Mezo Earn",
+        "slug":  "mezo-earn",
+        "logo":  "https://icons.llamao.fi/icons/protocols/mezo-earn",
+        "url":  "https://mezo.org/earn/lock",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8342",
+        "name":  "AZverse Perps",
+        "slug":  "azverse-perps",
+        "logo":  "https://icons.llamao.fi/icons/protocols/azverse-perps",
+        "url":  "",
+        "parentProtocol":  "parent#azverse"
+    },
+    {
+        "id":  "6213",
+        "name":  "Tulipa Capital",
+        "slug":  "tulipa-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tulipa-capital",
+        "url":  "https://www.tulipa.capital",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7105",
+        "name":  "Firelight",
+        "slug":  "firelight",
+        "logo":  "https://icons.llamao.fi/icons/protocols/firelight",
+        "url":  "https://firelight.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7087",
+        "name":  "Nado Spot",
+        "slug":  "nado-spot",
+        "logo":  "https://icons.llamao.fi/icons/protocols/nado-spot",
+        "url":  "https://app.nado.xyz?join=sP6or8A",
+        "parentProtocol":  "parent#nado"
+    },
+    {
+        "id":  "7603",
+        "name":  "Current",
+        "slug":  "current",
+        "logo":  "https://icons.llamao.fi/icons/protocols/current",
+        "url":  "https://www.current.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5266",
+        "name":  "Arrakis Modular",
+        "slug":  "arrakis-modular",
+        "logo":  "https://icons.llamao.fi/icons/protocols/arrakis-modular",
+        "url":  "https://arrakis.finance/",
+        "parentProtocol":  "parent#arrakis-finance"
+    },
+    {
+        "id":  "8828",
+        "name":  "Shift DeFi",
+        "slug":  "shift-defi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/shift-defi",
+        "url":  "https://shiftdefi.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7184",
+        "name":  "Project 0",
+        "slug":  "project-0",
+        "logo":  "https://icons.llamao.fi/icons/protocols/project-0",
+        "url":  "https://app.0.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6210",
+        "name":  "Re7 Labs",
+        "slug":  "re7-labs",
+        "logo":  "https://icons.llamao.fi/icons/protocols/re7-labs",
+        "url":  "https://www.re7labs.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5722",
+        "name":  "Exponent Yield Exchange",
+        "slug":  "exponent-yield-exchange",
+        "logo":  "https://icons.llamao.fi/icons/protocols/exponent-yield-exchange",
+        "url":  "https://www.exponent.finance/",
+        "parentProtocol":  "parent#exponent"
+    },
+    {
+        "id":  "6755",
+        "name":  "Vishwa",
+        "slug":  "vishwa",
+        "logo":  "https://icons.llamao.fi/icons/protocols/vishwa",
+        "url":  "https://www.vishwalab.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "2537",
+        "name":  "Flux Finance",
+        "slug":  "flux-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/flux-finance",
+        "url":  "https://fluxfinance.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7923",
+        "name":  "3F",
+        "slug":  "3f",
+        "logo":  "https://icons.llamao.fi/icons/protocols/3f",
+        "url":  "https://www.3f.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6914",
+        "name":  "UltraYield Curator",
+        "slug":  "ultrayield-curator",
+        "logo":  "https://icons.llamao.fi/icons/protocols/ultrayield-curator",
+        "url":  "https://ultrayield.app/",
+        "parentProtocol":  "parent#ultrayield"
+    },
+    {
+        "id":  "6964",
+        "name":  "Makina",
+        "slug":  "makina",
+        "logo":  "https://icons.llamao.fi/icons/protocols/makina-finance",
+        "url":  "https://app.makina.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5721",
+        "name":  "Noon",
+        "slug":  "noon",
+        "logo":  "https://icons.llamao.fi/icons/protocols/noon",
+        "url":  "https://app.noon.capital",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7789",
+        "name":  "Plasma One",
+        "slug":  "plasma-one",
+        "logo":  "https://icons.llamao.fi/icons/protocols/plasma-one",
+        "url":  "https://www.plasma.to/one",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6024",
+        "name":  "Aegis YUSD",
+        "slug":  "aegis-yusd",
+        "logo":  "https://icons.llamao.fi/icons/protocols/aegis-yusd",
+        "url":  "https://app.aegis.im",
+        "parentProtocol":  "parent#aegis"
+    },
+    {
+        "id":  "6240",
+        "name":  "Felix Vaults",
+        "slug":  "felix-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/felix-vaults",
+        "url":  "https://www.usefelix.xyz?ref=4BF702FF",
+        "parentProtocol":  "parent#felix"
+    },
+    {
+        "id":  "6444",
+        "name":  "Project X",
+        "slug":  "project-x",
+        "logo":  "https://icons.llamao.fi/icons/protocols/project-x",
+        "url":  "https://www.prjx.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6773",
+        "name":  "Plasma Saving Vaults",
+        "slug":  "plasma-saving-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/plasma-saving-vaults",
+        "url":  "https://app.plasma.to/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6019",
+        "name":  "Mystic Finance Lending",
+        "slug":  "mystic-finance-lending",
+        "logo":  "https://icons.llamao.fi/icons/protocols/mystic-finance-lending",
+        "url":  "https://www.mysticfinance.xyz/",
+        "parentProtocol":  "parent#mystic-finance"
+    },
+    {
+        "id":  "7467",
+        "name":  "Decibel",
+        "slug":  "decibel",
+        "logo":  "https://icons.llamao.fi/icons/protocols/decibel",
+        "url":  "https://app.decibel.trade/trade",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4592",
+        "name":  "Origami Finance",
+        "slug":  "origami-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/origami-finance",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8222",
+        "name":  "Y10K Capital",
+        "slug":  "y10k-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/y10k-capital",
+        "url":  "https://www.y10k.capital/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6493",
+        "name":  "Hylo Protocol",
+        "slug":  "hylo-protocol",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hylo-protocol",
+        "url":  "https://hylo.so",
+        "parentProtocol":  "parent#hylo"
+    },
+    {
+        "id":  "5481",
+        "name":  "Anemoy Capital",
+        "slug":  "anemoy-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/anemoy-capital",
+        "url":  "https://www.anemoy.io",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4602",
+        "name":  "vfat.io",
+        "slug":  "vfat.io",
+        "logo":  "https://icons.llamao.fi/icons/protocols/vfat",
+        "url":  "https://vfat.io/yield",
+        "parentProtocol":  "parent#vfat"
+    },
+    {
+        "id":  "8542",
+        "name":  "Flowdesk",
+        "slug":  "flowdesk",
+        "logo":  "https://icons.llamao.fi/icons/protocols/flowdesk",
+        "url":  "https://www.flowdesk.co/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4924",
+        "name":  "XRPL DEX",
+        "slug":  "xrpl-dex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/xrpl-dex",
+        "url":  "https://xrpl.org/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "2570",
+        "name":  "marginfi Lending",
+        "slug":  "marginfi-lending",
+        "logo":  "https://icons.llamao.fi/icons/protocols/marginfi",
+        "url":  "",
+        "parentProtocol":  "parent#marginfi"
+    },
+    {
+        "id":  "4822",
+        "name":  "Apex Omni",
+        "slug":  "apex-omni",
+        "logo":  "https://icons.llamao.fi/icons/protocols/apex-omni",
+        "url":  "https://omni.apex.exchange",
+        "parentProtocol":  "parent#apex-protocol"
+    },
+    {
+        "id":  "6570",
+        "name":  "Templar Lending",
+        "slug":  "templar-lending",
+        "logo":  "https://icons.llamao.fi/icons/protocols/templar-lending",
+        "url":  "https://www.templarfi.org/",
+        "parentProtocol":  "parent#templar-protocol"
+    },
+    {
+        "id":  "5397",
+        "name":  "Bitlayer YBTC Family",
+        "slug":  "bitlayer-ybtc-family",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bitlayer-ybtc-family",
+        "url":  "https://www.bitlayer.org/bridge",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4662",
+        "name":  "Manta CeDeFi",
+        "slug":  "manta-cedefi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/manta-cedefi",
+        "url":  "https://cedefi.manta.network",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6482",
+        "name":  "Liminal Basis",
+        "slug":  "liminal-basis",
+        "logo":  "https://icons.llamao.fi/icons/protocols/liminal-basis",
+        "url":  "https://liminal.money",
+        "parentProtocol":  "parent#liminal"
+    },
+    {
+        "id":  "5002",
+        "name":  "Lulo",
+        "slug":  "lulo",
+        "logo":  "https://icons.llamao.fi/icons/protocols/lulo",
+        "url":  "https://lulo.fi/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5762",
+        "name":  "Zoo Finance",
+        "slug":  "zoo-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/zoo-finance",
+        "url":  "https://zoofi.io",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6905",
+        "name":  "Avant avETH",
+        "slug":  "avant-aveth",
+        "logo":  "https://icons.llamao.fi/icons/protocols/avant-aveth",
+        "url":  "https://app.avantprotocol.com/?ref=defillama",
+        "parentProtocol":  "parent#avant-protocol"
+    },
+    {
+        "id":  "8562",
+        "name":  "Waterline",
+        "slug":  "waterline",
+        "logo":  "https://icons.llamao.fi/icons/protocols/waterline",
+        "url":  "https://www.waterline.build",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7297",
+        "name":  "GMX Solana",
+        "slug":  "gmx-solana",
+        "logo":  "https://icons.llamao.fi/icons/protocols/gmtrade",
+        "url":  "https://gmtrade.xyz",
+        "parentProtocol":  "parent#gmx"
+    },
+    {
+        "id":  "7592",
+        "name":  "Phoenix Perp",
+        "slug":  "phoenix-perp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/phoenix-perp",
+        "url":  "https://phoenix.trade",
+        "parentProtocol":  "parent#phoenix"
+    },
+    {
+        "id":  "8548",
+        "name":  "August Digital",
+        "slug":  "august-digital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/august-digital",
+        "url":  "https://augustdigital.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4846",
+        "name":  "D2 Finance",
+        "slug":  "d2-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/d2-finance",
+        "url":  "https://d2.finance/strategies",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8558",
+        "name":  "Gamma Research",
+        "slug":  "gamma-research",
+        "logo":  "https://icons.llamao.fi/icons/protocols/gamma-research",
+        "url":  "https://gammaresearch.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7806",
+        "name":  "RISEx",
+        "slug":  "risex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/risex",
+        "url":  "https://www.rise.trade/en",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6414",
+        "name":  "XION Finance",
+        "slug":  "xion-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/xion-finance",
+        "url":  "https://xion.burnt.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5548",
+        "name":  "Neutral Trade",
+        "slug":  "neutral-trade",
+        "logo":  "https://icons.llamao.fi/icons/protocols/neutral-trade",
+        "url":  "https://www.neutral.trade/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8351",
+        "name":  "Agua",
+        "slug":  "agua",
+        "logo":  "https://icons.llamao.fi/icons/protocols/agua",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7329",
+        "name":  "Fira",
+        "slug":  "fira",
+        "logo":  "https://icons.llamao.fi/icons/protocols/fira",
+        "url":  "https://www.fira.money/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8694",
+        "name":  "NEMO Trading",
+        "slug":  "nemo-trading",
+        "logo":  "https://icons.llamao.fi/icons/protocols/nemo-trading",
+        "url":  "https://nemo.trading/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "3948",
+        "name":  "Chain Fusion",
+        "slug":  "chain-fusion",
+        "logo":  "https://icons.llamao.fi/icons/protocols/chain-fusion",
+        "url":  "https://dashboard.internetcomputer.org/chain-fusion",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7215",
+        "name":  "BisonFi",
+        "slug":  "bisonfi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bisonfi",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4663",
+        "name":  "Native Credit Pool",
+        "slug":  "native-credit-pool",
+        "logo":  "https://icons.llamao.fi/icons/protocols/native-credit-pool",
+        "url":  "https://native.org",
+        "parentProtocol":  "parent#native"
+    },
+    {
+        "id":  "7384",
+        "name":  "DeFindex",
+        "slug":  "defindex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/defindex",
+        "url":  "https://www.defindex.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6890",
+        "name":  "UltraYield Vaults",
+        "slug":  "ultrayield-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/ultrayield-vaults",
+        "url":  "https://ultrayield.app/",
+        "parentProtocol":  "parent#ultrayield"
+    },
+    {
+        "id":  "6015",
+        "name":  "Felix CDP",
+        "slug":  "felix-cdp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/felix-cdp",
+        "url":  "https://www.usefelix.xyz?ref=4BF702FF",
+        "parentProtocol":  "parent#felix"
+    },
+    {
+        "id":  "6963",
+        "name":  "RockSolid Network",
+        "slug":  "rocksolid-network",
+        "logo":  "https://icons.llamao.fi/icons/protocols/rocksolid-network",
+        "url":  "https://rocksolid.network/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6341",
+        "name":  "Katana Pre-Launch",
+        "slug":  "katana-pre-launch",
+        "logo":  "https://icons.llamao.fi/icons/protocols/katana-pre-launch",
+        "url":  "https://app.katana.network/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "9157",
+        "name":  "CommunityV3",
+        "slug":  "communityv3",
+        "logo":  "https://icons.llamao.fi/icons/protocols/communityv3",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7204",
+        "name":  "Perena Vaults",
+        "slug":  "perena-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/perena-vaults",
+        "url":  "https://app.perena.org/?ref=ILPYAL",
+        "parentProtocol":  "parent#perena"
+    },
+    {
+        "id":  "6107",
+        "name":  "Hyperbeat Earn",
+        "slug":  "hyperbeat-earn",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hyperbeat-earn",
+        "url":  "https://app.hyperbeat.org",
+        "parentProtocol":  "parent#hyperbeat"
+    },
+    {
+        "id":  "7620",
+        "name":  "Tempo Stablecoin Dex",
+        "slug":  "tempo-stablecoin-dex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tempo-stablecoin-dex",
+        "url":  "https://tempo.xyz/",
+        "parentProtocol":  "parent#tempo-dex"
+    },
+    {
+        "id":  "6203",
+        "name":  "Hakutora",
+        "slug":  "hakutora",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hakutora",
+        "url":  "https://hakutora.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8030",
+        "name":  "Exponent Strategy Vaults",
+        "slug":  "exponent-strategy-vaults",
+        "logo":  "https://icons.llamao.fi/icons/protocols/exponent-strategy-vaults",
+        "url":  "https://www.exponent.finance/",
+        "parentProtocol":  "parent#exponent"
+    },
+    {
+        "id":  "8148",
+        "name":  "NUVA",
+        "slug":  "nuva",
+        "logo":  "https://icons.llamao.fi/icons/protocols/nuva",
+        "url":  "https://nuva.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6194",
+        "name":  "9Summits",
+        "slug":  "9summits",
+        "logo":  "https://icons.llamao.fi/icons/protocols/9summits",
+        "url":  "https://9summits.io",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4020",
+        "name":  "RIF ON CHAIN",
+        "slug":  "rif-on-chain",
+        "logo":  "https://icons.llamao.fi/icons/protocols/rif-on-chain",
+        "url":  "https://rifonchain.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "3265",
+        "name":  "Agni Finance",
+        "slug":  "agni-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/agni-finance",
+        "url":  "https://agni.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6873",
+        "name":  "Strata Markets",
+        "slug":  "strata-markets",
+        "logo":  "https://icons.llamao.fi/icons/protocols/strata-markets",
+        "url":  "https://strata.markets",
+        "parentProtocol":  "parent#strata"
+    },
+    {
+        "id":  "8457",
+        "name":  "Syntetika",
+        "slug":  "syntetika",
+        "logo":  "https://icons.llamao.fi/icons/protocols/syntetika",
+        "url":  "https://syntetika.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5182",
+        "name":  "Sygnum FIUSD Liquidity Fund",
+        "slug":  "sygnum-fiusd-liquidity-fund",
+        "logo":  "https://icons.llamao.fi/icons/protocols/sygnum-fiusd-liquidity-fund",
+        "url":  "https://www.sygnum.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7418",
+        "name":  "Paimon",
+        "slug":  "paimon",
+        "logo":  "https://icons.llamao.fi/icons/protocols/paimon",
+        "url":  "https://paimon.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6659",
+        "name":  "3Jane Lending",
+        "slug":  "3jane-lending",
+        "logo":  "https://icons.llamao.fi/icons/protocols/3jane-lending",
+        "url":  "https://www.3jane.xyz/",
+        "parentProtocol":  "parent#3jane"
+    },
+    {
+        "id":  "5226",
+        "name":  "Estate Protocol",
+        "slug":  "estate-protocol",
+        "logo":  "https://icons.llamao.fi/icons/protocols/estate-protocol",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8068",
+        "name":  "T3tris Finance",
+        "slug":  "t3tris-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/t3tris-finance",
+        "url":  "https://t3tris.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6862",
+        "name":  "Syntropia",
+        "slug":  "syntropia",
+        "logo":  "https://icons.llamao.fi/icons/protocols/syntropia",
+        "url":  "https://syntropia.ai/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "3043",
+        "name":  "Steer Protocol",
+        "slug":  "steer-protocol",
+        "logo":  "https://icons.llamao.fi/icons/protocols/steer-protocol",
+        "url":  "https://app.steer.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8215",
+        "name":  "Exponent Risk Tranching",
+        "slug":  "exponent-risk-tranching",
+        "logo":  "https://icons.llamao.fi/icons/protocols/exponent-risk-tranching",
+        "url":  "https://www.exponent.finance/",
+        "parentProtocol":  "parent#exponent"
+    },
+    {
+        "id":  "5358",
+        "name":  "Goose",
+        "slug":  "goose",
+        "logo":  "https://icons.llamao.fi/icons/protocols/goose",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6267",
+        "name":  "Stellar DEX",
+        "slug":  "stellar-dex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/stellar-dex",
+        "url":  "https://developers.stellar.org/docs/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7862",
+        "name":  "STRATO CDP",
+        "slug":  "strato-cdp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/strato-cdp",
+        "url":  "https://app.strato.nexus/",
+        "parentProtocol":  "parent#strato"
+    },
+    {
+        "id":  "5883",
+        "name":  "GrowiHF",
+        "slug":  "growihf",
+        "logo":  "https://icons.llamao.fi/icons/protocols/growihf",
+        "url":  "https://hf.growi.fi/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "3206",
+        "name":  "Bucket CDP",
+        "slug":  "bucket-cdp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bucket-cdp",
+        "url":  "https://bucketprotocol.io",
+        "parentProtocol":  "parent#bucket-protocol"
+    },
+    {
+        "id":  "5129",
+        "name":  "Predict Fun",
+        "slug":  "predict-fun",
+        "logo":  "https://icons.llamao.fi/icons/protocols/predict-fun",
+        "url":  "https://predict.fun",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6702",
+        "name":  "Theo Network thBill",
+        "slug":  "theo-network-thbill",
+        "logo":  "https://icons.llamao.fi/icons/protocols/theo-network-thbill",
+        "url":  "https://app.theo.xyz/",
+        "parentProtocol":  "parent#theo"
+    },
+    {
+        "id":  "2101",
+        "name":  "FstSwap",
+        "slug":  "fstswap",
+        "logo":  "https://icons.llamao.fi/icons/protocols/fstswap",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6978",
+        "name":  "BounceBit Prime",
+        "slug":  "bouncebit-prime",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bouncebit-prime",
+        "url":  "https://prime.bouncebit.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6557",
+        "name":  "Tessera V",
+        "slug":  "tessera-v",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tessera-v",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5588",
+        "name":  "YieldFi",
+        "slug":  "yieldfi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/yieldfi",
+        "url":  "https://yield.fi/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8556",
+        "name":  "SharpByte Capital",
+        "slug":  "sharpbyte-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/sharpbyte-capital",
+        "url":  "https://www.sharpbyte.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7392",
+        "name":  "Snuggle",
+        "slug":  "snuggle",
+        "logo":  "https://icons.llamao.fi/icons/protocols/snuggle",
+        "url":  "https://snuggle.fi/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7149",
+        "name":  "TAU Labs",
+        "slug":  "tau-labs",
+        "logo":  "https://icons.llamao.fi/icons/protocols/tau-labs",
+        "url":  "https://www.628labs.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "266",
+        "name":  "Set Protocol",
+        "slug":  "set-protocol",
+        "logo":  "https://icons.llamao.fi/icons/protocols/set-protocol",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4978",
+        "name":  "Reya Perps",
+        "slug":  "reya-perps",
+        "logo":  "https://icons.llamao.fi/icons/protocols/reya-perps",
+        "url":  "https://app.reya.xyz",
+        "parentProtocol":  "parent#reya"
+    },
+    {
+        "id":  "7201",
+        "name":  "SuperEarn",
+        "slug":  "superearn",
+        "logo":  "https://icons.llamao.fi/icons/protocols/superearn",
+        "url":  "https://superearn.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6244",
+        "name":  "BIMA CDP",
+        "slug":  "bima-cdp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bima-cdp",
+        "url":  "https://bima.money/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7844",
+        "name":  "Vena Finance",
+        "slug":  "vena-finance",
+        "logo":  "https://icons.llamao.fi/icons/protocols/vena-finance",
+        "url":  "https://vena.finance",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5691",
+        "name":  "Abstract",
+        "slug":  "abstract",
+        "logo":  "https://icons.llamao.fi/icons/protocols/abstract",
+        "url":  "https://www.abs.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4091",
+        "name":  "Binaryx Platform",
+        "slug":  "binaryx-platform",
+        "logo":  "https://icons.llamao.fi/icons/protocols/binaryx-platform",
+        "url":  "https://www.binaryx.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6897",
+        "name":  "BEND",
+        "slug":  "bend",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bend",
+        "url":  "https://bend.berachain.com",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5349",
+        "name":  "Manifest Trade",
+        "slug":  "manifest-trade",
+        "logo":  "https://icons.llamao.fi/icons/protocols/manifest-trade",
+        "url":  "https://manifest.trade/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4877",
+        "name":  "Vesu",
+        "slug":  "vesu",
+        "logo":  "https://icons.llamao.fi/icons/protocols/vesu",
+        "url":  "https://www.vesu.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "135",
+        "name":  "Kava Mint",
+        "slug":  "kava-mint",
+        "logo":  "https://icons.llamao.fi/icons/protocols/kava-mint",
+        "url":  "https://www.kava.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6368",
+        "name":  "Byreal",
+        "slug":  "byreal",
+        "logo":  "https://icons.llamao.fi/icons/protocols/byreal",
+        "url":  "https://www.byreal.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7016",
+        "name":  "Antarctic",
+        "slug":  "antarctic",
+        "logo":  "https://icons.llamao.fi/icons/protocols/antarctic-exchange",
+        "url":  "https://www.antarctic.exchange/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8566",
+        "name":  "Pangolins",
+        "slug":  "pangolins",
+        "logo":  "https://icons.llamao.fi/icons/protocols/pangolins",
+        "url":  "https://pangolins.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6208",
+        "name":  "MEV Capital",
+        "slug":  "mev-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/mev-capital",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8471",
+        "name":  "Icarus CL",
+        "slug":  "icarus-cl",
+        "logo":  "https://icons.llamao.fi/icons/protocols/icarus-cl",
+        "url":  "https://icarus.finance",
+        "parentProtocol":  "parent#icarus"
+    },
+    {
+        "id":  "9281",
+        "name":  "Valantis stHYPE Restaking",
+        "slug":  "valantis-sthype-restaking",
+        "logo":  "https://icons.llamao.fi/icons/protocols/valantis-sthype-restaking",
+        "url":  "https://app.valantis.xyz",
+        "parentProtocol":  "parent#valantis"
+    },
+    {
+        "id":  "6198",
+        "name":  "Block Analitica",
+        "slug":  "block-analitica",
+        "logo":  "https://icons.llamao.fi/icons/protocols/block-analitica",
+        "url":  "https://blockanalitica.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8317",
+        "name":  "SUBFROST",
+        "slug":  "subfrost",
+        "logo":  "https://icons.llamao.fi/icons/protocols/subfrost",
+        "url":  "https://app.subfrost.io/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7875",
+        "name":  "Stellar AMM",
+        "slug":  "stellar-amm",
+        "logo":  "https://icons.llamao.fi/icons/protocols/stellar-amm",
+        "url":  "https://developers.stellar.org/docs/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools#automated-market-makers-amms",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7987",
+        "name":  "BULK",
+        "slug":  "bulk",
+        "logo":  "https://icons.llamao.fi/icons/protocols/bulk",
+        "url":  "https://www.bulk.trade/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "797",
+        "name":  "Katana DEX",
+        "slug":  "katana-dex",
+        "logo":  "https://icons.llamao.fi/icons/protocols/katana-dex",
+        "url":  "https://app.roninchain.com/swap#/swap",
+        "parentProtocol":  "parent#katana-ronin-dex"
+    },
+    {
+        "id":  "7800",
+        "name":  "Anthias Labs",
+        "slug":  "anthias-labs",
+        "logo":  "https://icons.llamao.fi/icons/protocols/anthias-labs",
+        "url":  "https://anthias.xyz",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7808",
+        "name":  "Monolith Market",
+        "slug":  "monolith-market",
+        "logo":  "https://icons.llamao.fi/icons/protocols/monolith-market",
+        "url":  "https://monolith.market",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "2728",
+        "name":  "SyncSwap",
+        "slug":  "syncswap",
+        "logo":  "https://icons.llamao.fi/icons/protocols/syncswap",
+        "url":  "https://syncswap.xyz/",
+        "parentProtocol":  "parent#syncswap-protocol"
+    },
+    {
+        "id":  "7462",
+        "name":  "Defa By InvoiceMate",
+        "slug":  "defa-by-invoicemate",
+        "logo":  "https://icons.llamao.fi/icons/protocols/defa-by-invoicemate",
+        "url":  "https://imdefa.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7212",
+        "name":  "Fluxion Network",
+        "slug":  "fluxion-network",
+        "logo":  "https://icons.llamao.fi/icons/protocols/fluxion-network",
+        "url":  "https://app.fluxion.network/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8176",
+        "name":  "Vault Street",
+        "slug":  "vault-street",
+        "logo":  "https://icons.llamao.fi/icons/protocols/vault-street",
+        "url":  "https://www.vaultstreet.com/",
+        "parentProtocol":  "parent#resolv"
+    },
+    {
+        "id":  "1609",
+        "name":  "MetalX Swap",
+        "slug":  "metalx-swap",
+        "logo":  "https://icons.llamao.fi/icons/protocols/metalx-swap",
+        "url":  "https://app.metalx.com/swap",
+        "parentProtocol":  "parent#metalx"
+    },
+    {
+        "id":  "8534",
+        "name":  "HertzFlow",
+        "slug":  "hertzflow",
+        "logo":  "https://icons.llamao.fi/icons/protocols/hertzflow",
+        "url":  "https://www.hertzflow.xyz/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6536",
+        "name":  "Boros",
+        "slug":  "boros",
+        "logo":  "https://icons.llamao.fi/icons/protocols/boros",
+        "url":  "https://boros.pendle.finance/markets",
+        "parentProtocol":  "parent#pendle"
+    },
+    {
+        "id":  "6966",
+        "name":  "TurboFlow Perps",
+        "slug":  "turboflow-perps",
+        "logo":  "https://icons.llamao.fi/icons/protocols/turboflow-perps",
+        "url":  "https://www.tf.xyz/",
+        "parentProtocol":  "parent#turboflow"
+    },
+    {
+        "id":  "7589",
+        "name":  "Aftermath afLP",
+        "slug":  "aftermath-aflp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/aftermath-aflp",
+        "url":  "https://aftermath.finance",
+        "parentProtocol":  "parent#aftermath-finance"
+    },
+    {
+        "id":  "6343",
+        "name":  "StableHodl",
+        "slug":  "stablehodl",
+        "logo":  "https://icons.llamao.fi/icons/protocols/stablehodl",
+        "url":  "https://stablehodl.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8042",
+        "name":  "Temple",
+        "slug":  "temple",
+        "logo":  "https://icons.llamao.fi/icons/protocols/temple",
+        "url":  "https://templedigitalgroup.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "9415",
+        "name":  "Swan DAO",
+        "slug":  "swan-dao",
+        "logo":  "https://icons.llamao.fi/icons/protocols/swan-dao",
+        "url":  "https://www.swanusd.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6268",
+        "name":  "Granite",
+        "slug":  "granite",
+        "logo":  "https://icons.llamao.fi/icons/protocols/granite",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "9245",
+        "name":  "Mezzanine",
+        "slug":  "mezzanine",
+        "logo":  "https://icons.llamao.fi/icons/protocols/mezzanine",
+        "url":  "https://mezz.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "4501",
+        "name":  "BTCFi CDP",
+        "slug":  "btcfi-cdp",
+        "logo":  "https://icons.llamao.fi/icons/protocols/btcfi-cdp",
+        "url":  "https://btcfi.one",
+        "parentProtocol":  "parent#btcfi"
+    },
+    {
+        "id":  "8820",
+        "name":  "Loopscale Curation",
+        "slug":  "loopscale-curation",
+        "logo":  "https://icons.llamao.fi/icons/protocols/loopscale-curation",
+        "url":  "https://loop.sl",
+        "parentProtocol":  "parent#loopscale"
+    },
+    {
+        "id":  "8615",
+        "name":  "DAMM Capital",
+        "slug":  "damm-capital",
+        "logo":  "https://icons.llamao.fi/icons/protocols/damm-capital",
+        "url":  "https://dammcap.finance/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "6804",
+        "name":  "alphagrowth",
+        "slug":  "alphagrowth",
+        "logo":  "https://icons.llamao.fi/icons/protocols/alphagrowth",
+        "url":  "https://app.euler.finance/governor/alphagrowth?network=unichain",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "7759",
+        "name":  "Flying Tulip ftUSD",
+        "slug":  "flying-tulip-ftusd",
+        "logo":  "https://icons.llamao.fi/icons/protocols/flying-tulip-ftusd",
+        "url":  "https://flyingtulip.com/",
+        "parentProtocol":  "parent#flying-tulip"
+    },
+    {
+        "id":  "6556",
+        "name":  "GoonFi",
+        "slug":  "goonfi",
+        "logo":  "https://icons.llamao.fi/icons/protocols/goonfi",
+        "url":  "",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "8591",
+        "name":  "Monarq",
+        "slug":  "monarq",
+        "logo":  "https://icons.llamao.fi/icons/protocols/monarq",
+        "url":  "https://www.monarq-am.com/",
+        "parentProtocol":  null
+    },
+    {
+        "id":  "5487",
+        "name":  "Nucleus",
+        "slug":  "nucleus",
+        "logo":  "https://icons.llamao.fi/icons/protocols/nucleus",
+        "url":  "",
+        "parentProtocol":  null
+    }
+]

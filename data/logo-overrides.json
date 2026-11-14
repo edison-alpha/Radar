@@ -1,0 +1,20 @@
+{
+  "drakewell": {
+    "name": "Drakewell",
+    "logo": "https://drakewell.fi/brand/drakewell/drakewell-app-icon-dark-1024.png",
+    "url": "https://drakewell.fi",
+    "source": "https://drakewell.fi/press"
+  },
+  "makina": {
+    "name": "Makina",
+    "logo": "https://app.makina.finance/icon.png?icon.2xucpy-f_u7qx.png",
+    "url": "https://app.makina.finance/",
+    "source": "https://app.makina.finance/"
+  },
+  "antarctic": {
+    "name": "Antarctic",
+    "logo": "https://d3o4n3yn4cjsqa.cloudfront.net/brand/v2/favicon.png",
+    "url": "https://www.antarctic.exchange/",
+    "source": "https://www.antarctic.exchange/"
+  }
+}

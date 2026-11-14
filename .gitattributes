@@ -1,0 +1,6 @@
+* text=auto eol=lf
+vendor/makefun-board.ts -text
+data/snapshot.json -text
+*.png binary
+*.webp binary
+*.woff2 binary
