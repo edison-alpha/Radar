@@ -1389,6 +1389,7 @@ body::-webkit-scrollbar {
 /* Saved: green icon only, a little larger, with a count badge. Search sits dead centre. */
 .header-saved {
   position: relative;
+  flex: 0 0 44px;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -1411,6 +1412,10 @@ body::-webkit-scrollbar {
   background: var(--accent);
   color: #04140a;
   box-shadow: 0 0 0 2px #131313;
+}
+.header-saved svg {
+  display: block;
+  flex: none;
 }
 .header-saved.is-active {
   background: #00b05026;
