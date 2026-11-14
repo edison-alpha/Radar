@@ -4,6 +4,7 @@ import { getIconData } from '@iconify/utils';
 
 export const iconMap = {
   search: 'magnifying-glass-fill',
+  searchFill: 'magnifying-glass-fill',
   arrow: 'arrow-right-bold',
   arrowUp: 'arrow-up-right-bold',
   chevron: 'caret-right-bold',
@@ -16,6 +17,7 @@ export const iconMap = {
   check: 'check-circle-fill',
   clock: 'clock-fill',
   info: 'info-fill',
+  book: 'book-open-text-fill',
   sort: 'arrows-down-up-bold',
   menu: 'list-bold',
   share: 'share-fat-fill',

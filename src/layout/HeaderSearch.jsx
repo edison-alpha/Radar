@@ -123,7 +123,7 @@ export function HeaderSearch({
         initial={false}
         animate={{ width: open ? openWidth : closedWidth, borderRadius: open ? 24 : 20 }}
         transition={spring}
-        style={{ x: '-50%' }}
+        style={{ x: narrow && open ? '0%' : '-50%' }}
         onKeyDown={onKeyDown}
       >
         <div className="hs-bar">

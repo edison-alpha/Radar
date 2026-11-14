@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
 import { StatusBar } from '../layout/StatusBar';
+import { MobileNav } from '../layout/MobileNav';
 import { Hero } from '../features/radar/Hero';
 import { RadarSection } from '../features/radar/RadarSection';
 import { useRadarFilters } from '../features/radar/useRadarFilters';
@@ -220,6 +221,14 @@ export function App({ data }) {
         />
       </main>
       <StatusBar data={data} />
+      {!searchOpen && (
+        <MobileNav
+          route={route.name}
+          onExplore={() => navigate('all')}
+          onRadar={() => navigate('monitor')}
+          onMethodology={openMethodology}
+        />
+      )}
     </>
   );
 }

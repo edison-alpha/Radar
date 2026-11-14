@@ -49,6 +49,13 @@ async function exerciseDashboard(label, scripts) {
     );
     assert.doesNotMatch(document.getElementById('root').textContent, /Loading the protocol radar/);
 
+    const mobileNav = document.querySelector('[aria-label="Mobile navigation"]');
+    assert.ok(mobileNav, 'Mobile navigation missing');
+    mobileNav.querySelector('[aria-label="Radar"]').click();
+    await waitFor(() => document.querySelector('.monitor'), 'Mobile Radar navigation did not open');
+    document.querySelector('.mobile-dock-links [aria-label="Explore"]').click();
+    await waitFor(() => document.querySelector('#protocols'), 'Mobile Explore navigation did not open');
+
     // Header search: opens in place, lists categories, folds back on Escape.
     assert.equal(document.querySelector('.hs-panel').getAttribute('aria-hidden'), 'true');
     document.querySelector('.hs-label').click();
