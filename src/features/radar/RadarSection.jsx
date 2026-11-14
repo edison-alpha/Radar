@@ -9,7 +9,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
     <section id="protocols" className="radar-section">
       <SectionHeading
         title={'The launch radar'}
-        description="Good research starts with the right questions."
+        description="Compare estimated launch values, uncertainty, and farming costs."
       >
         <span className="section-meta">{data.rows.length} protocols. One clearer picture.</span>
       </SectionHeading>
@@ -40,7 +40,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
             }}
           />
           <div className="board-footnote">
-            <span>Implied values are model estimates, not market prices.</span>
+            <span>P25–P75 reflects the middle half of comparable-token residuals. Fees and per-$1k allocations are illustrative estimates.</span>
             <button onClick={onMethodology}>Methodology & assumptions</button>
           </div>
         </div>

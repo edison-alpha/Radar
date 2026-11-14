@@ -47,8 +47,8 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
       },
       {
         accessorKey: 'implied_value_usd',
-        header: 'Implied value',
-        meta: { hint: 'Model estimate of launch value, not a token price' },
+        header: 'Implied value · P25–P75',
+        meta: { hint: 'Model estimate and middle-half comparable range; not a token price' },
         cell: ({ row }) => (
           <span className="implied-cell">
             <strong>{money(row.original.implied_value_usd, 2)}</strong>
@@ -61,7 +61,7 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
       {
         accessorKey: 'slice_per_1k_usd',
         header: 'Per $1k',
-        meta: { hint: 'What $1,000 of TVL would hold if depositors shared 10% of the launch' },
+        meta: { hint: 'Illustrative allocation if depositors shared 10% of the launch pro rata; not an expected airdrop' },
         cell: ({ getValue }) => '$' + getValue().toFixed(2),
       },
       {

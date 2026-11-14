@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { Icon } from '../shared/Icon';
 import { ProtocolMark } from '../components/ui/ProtocolMark';
@@ -69,7 +69,7 @@ export function HeaderSearch({
   );
   const cards = viewed.length ? viewed : rows.slice(0, 6);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (open) {
       input.current?.focus();
       return undefined;
@@ -148,7 +148,7 @@ export function HeaderSearch({
               aria-hidden={open}
             >
               <span>Search</span>
-              <kbd>Ctrl K</kbd>
+              <kbd>/</kbd>
             </motion.button>
             <motion.input
               ref={input}

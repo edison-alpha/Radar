@@ -6,3 +6,4 @@ out-check/
 *.log
 .env*
 !.env.example
+bounty-work/

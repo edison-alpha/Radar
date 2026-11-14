@@ -3,6 +3,7 @@ import { Icon } from '../../shared/Icon';
 import { number, snapshotDate } from '../../shared/format';
 
 export function Hero({ data, onMethodology }) {
+  const covered = data.rows.filter((row) => row.watchlist).length;
   return (
     <section className="landing" aria-labelledby="hero-title">
       <div className="landing-inner">
@@ -35,16 +36,16 @@ export function Hero({ data, onMethodology }) {
           <div>
             <dt>Ranked by implied value</dt>
             <dd>{data.rows.length}</dd>
-            <small>No token recorded in the snapshot</small>
+            <small>From {number(data.universe_count)} snapshot protocols</small>
           </div>
           <div>
             <dt>Watchlist covered</dt>
             <dd>
-              {data.watchlist_count}
+              {covered}
               <em>/{data.watchlist_count}</em>
             </dd>
             <small>
-              Every required protocol, plus {data.rows.length - data.watchlist_count} more
+              {data.rows.length - covered} additional candidates outside the watchlist
             </small>
           </div>
           <div>

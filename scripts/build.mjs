@@ -46,7 +46,7 @@ await build({
   jsx: 'automatic',
   minify: true,
   outfile: 'dist/app.js',
-  loader: { '.woff2': 'file', '.webp': 'file' },
+  loader: { '.woff2': 'file', '.webp': 'file', '.png': 'file' },
   assetNames: 'assets/[name]-[hash]',
   define: { 'process.env.NODE_ENV': '"production"' },
   plugins: [
