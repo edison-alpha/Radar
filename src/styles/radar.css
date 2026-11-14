@@ -6,6 +6,23 @@
 .board-main {
   min-width: 0;
 }
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid #454545;
+  border-radius: 6px;
+  color: #dedede;
+  background: #242424;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.tier-badge--watchlist { color: #9fe7bc; background: #183428; border-color: #315943; }
+.tier-badge--above { color: #d6e2ed; background: #27333c; border-color: #41515c; }
+.tier-badge--below { color: #ead9b7; background: #393126; border-color: #5a4c38; }
 .board-tabs {
   display: flex;
   gap: 25px;
@@ -43,9 +60,21 @@
 }
 .filter-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   margin: 19px 0 17px;
+}
+.filter-bar .filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  min-width: 0;
+}
+.filter-group-primary .export-button {
+  margin-left: auto;
 }
 .search-field {
   display: flex;
@@ -56,7 +85,7 @@
   border: 1px solid #3f3f3f;
   border-radius: 9px;
   background: #141414;
-  flex: 1;
+  flex: 0 1 320px;
   min-width: 140px;
   color: var(--quiet);
 }

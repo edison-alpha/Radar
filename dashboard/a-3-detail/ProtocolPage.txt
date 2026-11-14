@@ -3,6 +3,7 @@ import { ProtocolMark, Button, Growth, ShareModal } from '../../shared/ui';
 import { Icon } from '../../shared/Icon';
 import { AnimatedBookmark, SaveButton } from '../../components/ui/SaveButton';
 import { OffRadar } from '../../components/ui/OffRadar';
+import { ChainMark } from '../../components/ui/ChainMark';
 import { ageLabel, money, snapshotDate } from '../../shared/format';
 import { ValuationBreakdown } from './components/ValuationBreakdown';
 import { FarmPlan } from './components/FarmPlan';
@@ -116,12 +117,25 @@ export function ProtocolPage({
               </div>
             </dl>
           </section>
+          <section className="detail-block" aria-labelledby="chains-title">
+            <h2 id="chains-title">Chains on record</h2>
+            {chains.length ? (
+              <ul className="detail-chains" aria-label="Chains recorded in the snapshot">
+                {chains.map((chain) => (
+                  <li key={chain}>
+                    <ChainMark chain={chain} size={20} />
+                    <span>{chain}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="detail-about">No chains are recorded in this snapshot.</p>
+            )}
+          </section>
           <section className="detail-block" aria-labelledby="about-title">
             <h2 id="about-title">About</h2>
             <p className="detail-about">
-              {protocol.name} is a {protocol.category ?? 'DeFi'} protocol
-              {chains.length ? ` available on ${chains.slice(0, 6).join(', ')}` : ''}
-              {chains.length > 6 ? ` and ${chains.length - 6} more chains` : ''}. The snapshot
+              {protocol.name} is a {protocol.category ?? 'DeFi'} protocol. The snapshot
               records no token for it, so the figures here are model estimates, not market prices.
             </p>
             <div className="link-pills">

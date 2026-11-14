@@ -25,8 +25,14 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
             onCategory={filters.setCategory}
             chain={filters.chain}
             onChain={filters.setChain}
+            minTvl={filters.minTvl}
+            onMinTvl={filters.setMinTvl}
+            maxFee={filters.maxFee}
+            onMaxFee={filters.setMaxFee}
+            tier={filters.tier}
+            onTier={filters.setTier}
             data={data}
-            onExport={() => downloadCsv(filters.rows)}
+            onExport={() => downloadCsv(filters.rows, data.as_of)}
             reset={filters.reset}
             filtered={filters.filtered}
           />
@@ -40,7 +46,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
             }}
           />
           <div className="board-footnote">
-            <span>P25–P75 reflects the middle half of comparable-token residuals. Fees and per-$1k allocations are illustrative estimates.</span>
+            <span>Value ranges reflect the middle half of comparable tokens' differences from the model. Fees and per-$1k allocations are illustrative estimates.</span>
             <button onClick={onMethodology}>Methodology & assumptions</button>
           </div>
         </div>

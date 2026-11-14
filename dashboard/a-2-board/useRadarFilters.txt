@@ -15,6 +15,9 @@ export function useRadarFilters(data, saved) {
   const [search, setSearch] = useState(initial.search);
   const [category, setCategory] = useState(initial.category);
   const [chain, setChain] = useState(initial.chain);
+  const [minTvl, setMinTvl] = useState('');
+  const [maxFee, setMaxFee] = useState('');
+  const [tier, setTier] = useState('');
   const rows = useMemo(
     () =>
       data.rows.filter((p) => {
@@ -23,18 +26,24 @@ export function useRadarFilters(data, saved) {
         return (
           (!category || p.category === category) &&
           (!chain || p.chains.includes(chain)) &&
+          (!tier || p.tier === tier) &&
+          (!minTvl || p.tvl_usd >= Number(minTvl)) &&
+          (!maxFee || (Number.isFinite(p.farm?.fees_usd) && p.farm.fees_usd <= Number(maxFee))) &&
           (!search.trim() ||
             `${p.name} ${p.slug} ${p.category ?? ''} ${p.chains.join(' ')}`
               .toLowerCase()
               .includes(search.trim().toLowerCase()))
         );
       }),
-    [data, view, search, category, chain],
+    [data, view, search, category, chain, minTvl, maxFee, tier],
   );
   function reset() {
     setSearch('');
     setCategory('');
     setChain('');
+    setMinTvl('');
+    setMaxFee('');
+    setTier('');
   }
   function changeView(value) {
     setView(value);
@@ -45,13 +54,19 @@ export function useRadarFilters(data, saved) {
     search,
     category,
     chain,
+    minTvl,
+    maxFee,
+    tier,
     rows,
     reset,
     changeView,
     setSearch,
     setCategory,
     setChain,
-    filtered: Boolean(search || category || chain),
+    setMinTvl,
+    setMaxFee,
+    setTier,
+    filtered: Boolean(search || category || chain || minTvl || maxFee || tier),
     counts: {
       all: data.rows.length,
       watchlist: data.watchlist_count,

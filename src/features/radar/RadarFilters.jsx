@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Icon } from '../../shared/Icon';
 import { Button } from '../../shared/ui';
 import { Dropdown } from '../../components/ui/Dropdown';
+import { ExpandSearch } from '../../components/ui/ExpandSearch';
 export function RadarFilters({
   view,
   onView,
@@ -13,6 +14,12 @@ export function RadarFilters({
   onCategory,
   chain,
   onChain,
+  minTvl,
+  onMinTvl,
+  maxFee,
+  onMaxFee,
+  tier,
+  onTier,
   data,
   onExport,
   reset,
@@ -47,20 +54,8 @@ export function RadarFilters({
         ))}
       </div>
       <div className="filter-bar">
-        <label className="search-field">
-          <Icon name="search" />
-          <input
-            aria-label="Search protocols"
-            placeholder="Search protocols…"
-            value={search}
-            onChange={(e) => onSearch(e.target.value)}
-          />
-          {search && (
-            <button className="clear-search" onClick={() => onSearch('')} aria-label="Clear search">
-              <Icon name="close" size={14} />
-            </button>
-          )}
-        </label>
+        <div className="filter-group filter-group-primary">
+        <ExpandSearch label="Search protocols" placeholder="Search protocols…" value={search} onChange={onSearch} width={260} />
         <Dropdown
           label="Filter by category"
           value={category}
@@ -79,9 +74,30 @@ export function RadarFilters({
             ...data.chains.map((c) => ({ value: c, label: c, chain: c })),
           ]}
         />
+        <Dropdown label="Filter by tier" value={tier} onChange={onTier} options={[
+          { value: '', label: 'All tiers' },
+          { value: 'Watchlist', label: 'Watchlist' },
+          { value: 'Above floor', label: 'Above floor' },
+          { value: 'Below floor', label: 'Below floor' },
+        ]} />
+        <Dropdown label="Minimum TVL" value={minTvl} onChange={onMinTvl} options={[
+          { value: '', label: 'Any TVL' },
+          { value: '10000000', label: 'TVL ≥ $10M' },
+          { value: '50000000', label: 'TVL ≥ $50M' },
+          { value: '100000000', label: 'TVL ≥ $100M' },
+          { value: '1000000000', label: 'TVL ≥ $1B' },
+        ]} />
+        <Dropdown label="Maximum estimated farming fees" value={maxFee} onChange={onMaxFee} options={[
+          { value: '', label: 'Any estimated fees' },
+          { value: '1', label: 'Fees ≤ $1' },
+          { value: '5', label: 'Fees ≤ $5' },
+          { value: '10', label: 'Fees ≤ $10' },
+          { value: '50', label: 'Fees ≤ $50' },
+        ]} />
         <Button className="export-button" icon="download" onClick={onExport}>
           Export
         </Button>
+        </div>
       </div>
       {filtered && (
         <div className="active-filters">

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Dropdown } from '../../components/ui/Dropdown';
 import { SaveButton } from '../../components/ui/SaveButton';
 import { ChainMark } from '../../components/ui/ChainMark';
+import { TierBadge } from '../../components/ui/TierBadge';
 import { flexRender } from '@tanstack/react-table';
 import { useProtocolTable } from './useProtocolTable';
 import { Icon } from '../../shared/Icon';
@@ -33,6 +34,12 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
         ),
       },
       {
+        accessorKey: 'tier',
+        header: 'Tier',
+        meta: { hint: 'Watchlist, or outside the watchlist above or below the snapshot TVL floor' },
+        cell: ({ getValue }) => <TierBadge tier={getValue()} />,
+      },
+      {
         accessorKey: 'tvl_usd',
         header: 'TVL',
         meta: { hint: 'Total value locked in the protocol' },
@@ -47,8 +54,8 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
       },
       {
         accessorKey: 'implied_value_usd',
-        header: 'Implied value · P25–P75',
-        meta: { hint: 'Model estimate and middle-half comparable range; not a token price' },
+        header: 'Estimated value',
+        meta: { hint: 'Model estimate with a range based on comparable tokens; not a token price' },
         cell: ({ row }) => (
           <span className="implied-cell">
             <strong>{money(row.original.implied_value_usd, 2)}</strong>

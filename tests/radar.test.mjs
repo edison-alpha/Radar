@@ -18,6 +18,9 @@ test('sealed snapshot produces a ranked board with full watchlist coverage', () 
   assert.ok(radar.rows.length >= 100);
   assert.equal(radar.watchlist_count, snapshot.watchlist.length);
   assert.ok(snapshot.watchlist.every((slug) => radar.rows.some((row) => row.slug === slug)));
+  for (const row of radar.rows) {
+    assert.equal(row.tier, row.watchlist ? 'Watchlist' : row.tvl_usd >= snapshot.floor_usd ? 'Above floor' : 'Below floor');
+  }
   assert.doesNotThrow(() => validateBoard(radar.rows, snapshot));
   assert.equal(
     radar.rows.length + radar.live_count + radar.excluded_count,

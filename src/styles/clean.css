@@ -118,7 +118,7 @@ body {
 }
 .filter-bar {
   margin: 16px 0;
-  gap: 8px;
+  gap: 12px;
 }
 .search-field,
 .select-field select {

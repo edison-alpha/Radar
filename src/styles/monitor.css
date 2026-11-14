@@ -526,7 +526,21 @@
   margin-top: 8px;
 }
 .monitor-board .monitor-toolbar {
+  display: block;
   margin-top: 20px;
+}
+.monitor-board .monitor-tabs {
+  justify-content: flex-start;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.monitor-board .monitor-filters {
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.monitor-board .monitor-export {
+  margin-left: auto;
 }
 .ins-timeline li:nth-child(n + 5) {
   display: none;

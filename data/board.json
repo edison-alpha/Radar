@@ -50,6 +50,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -163,6 +164,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -286,6 +288,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -396,6 +399,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -507,6 +511,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -636,6 +641,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -762,6 +768,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -913,6 +920,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -1023,6 +1031,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Bridge",
@@ -1142,6 +1151,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -1261,6 +1271,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -1379,6 +1390,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -1524,6 +1536,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -1671,6 +1684,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -1816,6 +1830,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -1936,6 +1951,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -2085,6 +2101,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -2187,6 +2204,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -2299,6 +2317,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -2406,6 +2425,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -2525,6 +2545,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -2656,6 +2677,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -2802,6 +2824,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -2912,6 +2935,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -3057,6 +3081,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -3169,6 +3194,7 @@
         ]
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Bridge",
@@ -3314,6 +3340,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -3433,6 +3460,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -3578,6 +3606,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -3680,6 +3709,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -3825,6 +3855,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -3962,6 +3993,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -4073,6 +4105,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -4177,6 +4210,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -4293,6 +4327,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -4438,6 +4473,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -4583,6 +4619,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -4700,6 +4737,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -4850,6 +4888,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -4967,6 +5006,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -5086,6 +5126,7 @@
         ]
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -5207,6 +5248,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -5310,6 +5352,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -5436,6 +5479,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -5582,6 +5626,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -5727,6 +5772,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -5848,6 +5894,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -5993,6 +6040,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -6113,6 +6161,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -6234,6 +6283,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -6379,6 +6429,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -6481,6 +6532,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -6592,6 +6644,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -6731,6 +6784,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -6848,6 +6902,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -6993,6 +7048,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -7140,6 +7196,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -7285,6 +7342,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -7395,6 +7453,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Bridge",
@@ -7507,6 +7566,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -7624,6 +7684,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -7741,6 +7802,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -7843,6 +7905,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -7988,6 +8051,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -8133,6 +8197,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -8280,6 +8345,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -8382,6 +8448,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -8499,6 +8566,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -8609,6 +8677,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -8712,6 +8781,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -8857,6 +8927,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -8959,6 +9030,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -9069,6 +9141,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -9179,6 +9252,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -9289,6 +9363,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -9400,6 +9475,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -9504,6 +9580,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -9614,6 +9691,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -9727,6 +9805,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -9872,6 +9951,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -9989,6 +10069,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -10134,6 +10215,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -10244,6 +10326,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -10389,6 +10472,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -10539,6 +10623,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -10686,6 +10771,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -10798,6 +10884,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -10901,6 +10988,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -11018,6 +11106,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -11146,6 +11235,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -11291,6 +11381,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -11394,6 +11485,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -11540,6 +11632,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -11688,6 +11781,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -11833,6 +11927,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -11980,6 +12075,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -12125,6 +12221,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -12240,6 +12337,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -12350,6 +12448,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -12497,6 +12596,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -12618,6 +12718,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Above floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -12763,6 +12864,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -12908,6 +13010,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -13053,6 +13156,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -13198,6 +13302,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -13343,6 +13448,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -13488,6 +13594,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -13600,6 +13707,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Bridge",
@@ -13713,6 +13821,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -13858,6 +13967,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -13975,6 +14085,7 @@
         "missing": []
       },
       "watchlist": true,
+      "tier": "Watchlist",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -14077,6 +14188,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -14194,6 +14306,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -14339,6 +14452,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -14441,6 +14555,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -14562,6 +14677,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -14709,6 +14825,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -14854,6 +14971,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -14999,6 +15117,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -15111,6 +15230,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -15224,6 +15344,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -15370,6 +15491,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -15475,6 +15597,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -15593,6 +15716,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -15710,6 +15834,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -15860,6 +15985,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -16005,6 +16131,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -16123,6 +16250,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -16278,6 +16406,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -16388,6 +16517,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -16557,6 +16687,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -16674,6 +16805,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -16819,6 +16951,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -16930,6 +17063,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -17078,6 +17212,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -17195,6 +17330,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -17346,6 +17482,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -17456,6 +17593,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -17573,6 +17711,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -17704,6 +17843,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -17814,6 +17954,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -17959,6 +18100,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -18073,6 +18215,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -18218,6 +18361,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -18341,6 +18485,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -18486,6 +18631,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -18596,6 +18742,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -18722,6 +18869,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Bridge",
@@ -18867,6 +19015,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -18991,6 +19140,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -19111,6 +19261,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -19256,6 +19407,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -19367,6 +19519,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -19513,6 +19666,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -19660,6 +19814,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -19805,6 +19960,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -19950,6 +20106,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -20074,6 +20231,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -20219,6 +20377,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -20373,6 +20532,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -20490,6 +20650,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -20635,6 +20796,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Subscribe",
@@ -20766,6 +20928,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -20876,6 +21039,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -21007,6 +21171,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -21109,6 +21274,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Trade",
@@ -21254,6 +21420,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -21399,6 +21566,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -21516,6 +21684,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -21633,6 +21802,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -21757,6 +21927,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -21860,6 +22031,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -21978,6 +22150,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -22123,6 +22296,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -22240,6 +22414,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Stake",
@@ -22385,6 +22560,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -22530,6 +22706,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -22661,6 +22838,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -22787,6 +22965,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -22904,6 +23083,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -23047,6 +23227,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -23178,6 +23359,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -23296,6 +23478,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -23441,6 +23624,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -23565,6 +23749,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -23710,6 +23895,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -23858,6 +24044,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -23970,6 +24157,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Swap",
@@ -24097,6 +24285,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -24242,6 +24431,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -24387,6 +24577,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Supply",
@@ -24533,6 +24724,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -24659,6 +24851,7 @@
         ]
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Mint",
@@ -24792,6 +24985,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",
@@ -24926,6 +25120,7 @@
         "missing": []
       },
       "watchlist": false,
+      "tier": "Below floor",
       "token_status": "No token recorded",
       "farm": {
         "action": "Vault",

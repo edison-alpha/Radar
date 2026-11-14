@@ -4,11 +4,12 @@ import { MonitorSkeleton, useReveal } from '../../components/ui/Skeleton';
 import { Dropdown } from '../../components/ui/Dropdown';
 import { SaveButton } from '../../components/ui/SaveButton';
 import { ChainMark } from '../../components/ui/ChainMark';
+import { TierBadge } from '../../components/ui/TierBadge';
 import { ExpandSearch } from '../../components/ui/ExpandSearch';
 import { Sparkline } from '../../components/charts/Sparkline';
 import { Icon } from '../../shared/Icon';
 import { Growth, ProtocolMark } from '../../shared/ui';
-import { ageLabel, money, snapshotDate } from '../../shared/format';
+import { ageLabel, downloadCsv, money, snapshotDate } from '../../shared/format';
 import { InsightsPanel } from './InsightsPanel';
 import { useMonitorData } from './useMonitorData';
 
@@ -70,6 +71,9 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
   const [category, setCategory] = useState('');
   const [chain, setChain] = useState('');
   const [query, setQuery] = useState('');
+  const [minTvl, setMinTvl] = useState('');
+  const [maxFee, setMaxFee] = useState('');
+  const [tier, setTier] = useState('');
   const [sort, setSort] = useState({ id: 'implied_value_usd', desc: true });
   const [limit, setLimit] = useState(PAGE);
 
@@ -79,6 +83,9 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
       (p) =>
         (!category || p.category === category) &&
         (!chain || p.chains.includes(chain)) &&
+        (!tier || p.tier === tier) &&
+        (!minTvl || p.tvl_usd >= Number(minTvl)) &&
+        (!maxFee || (Number.isFinite(p.farm?.fees_usd) && p.farm.fees_usd <= Number(maxFee))) &&
         (!needle ||
           `${p.name} ${p.slug} ${p.category ?? ''} ${p.chains.join(' ')}`
             .toLowerCase()
@@ -104,7 +111,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
       if (bv == null) return -1;
       return dir * (av - bv) || a.rank - b.rank;
     });
-  }, [m.rows, tab, category, chain, query, sort]);
+  }, [m.rows, tab, category, chain, query, sort, minTvl, maxFee, tier]);
 
   const counts = useMemo(
     () => ({
@@ -300,6 +307,24 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                 ...data.chains.map((c) => ({ value: c, label: c, chain: c })),
               ]}
             />
+            <Dropdown label="Filter by tier" value={tier} onChange={(value) => { setTier(value); setLimit(PAGE); }} options={[
+              { value: '', label: 'All tiers' }, { value: 'Watchlist', label: 'Watchlist' },
+              { value: 'Above floor', label: 'Above floor' }, { value: 'Below floor', label: 'Below floor' },
+            ]} />
+            <Dropdown label="Minimum TVL" value={minTvl} onChange={(value) => { setMinTvl(value); setLimit(PAGE); }} options={[
+              { value: '', label: 'Any TVL' }, { value: '10000000', label: 'TVL ≥ $10M' },
+              { value: '50000000', label: 'TVL ≥ $50M' }, { value: '100000000', label: 'TVL ≥ $100M' },
+              { value: '1000000000', label: 'TVL ≥ $1B' },
+            ]} />
+            <Dropdown label="Maximum estimated farming fees" value={maxFee} onChange={(value) => { setMaxFee(value); setLimit(PAGE); }} options={[
+              { value: '', label: 'Any estimated fees' }, { value: '1', label: 'Fees ≤ $1' },
+              { value: '5', label: 'Fees ≤ $5' }, { value: '10', label: 'Fees ≤ $10' },
+              { value: '50', label: 'Fees ≤ $50' },
+            ]} />
+            {(query || category || chain || minTvl || maxFee || tier) && (
+              <button className="button button-secondary" onClick={() => { setQuery(''); setCategory(''); setChain(''); setMinTvl(''); setMaxFee(''); setTier(''); setLimit(PAGE); }}>Clear filters</button>
+            )}
+            <button className="button button-secondary monitor-export" onClick={() => downloadCsv(rows, data.as_of)}>Export CSV</button>
           </div>
         </div>
 
@@ -319,6 +344,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                 <th scope="col" className="col-left">
                   Protocol
                 </th>
+                <th scope="col">Tier</th>
                 <SortHeader id="tvl_usd" sort={sort} onSort={changeSort}>
                   TVL
                 </SortHeader>
@@ -329,7 +355,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                   30d
                 </SortHeader>
                 <SortHeader id="implied_value_usd" sort={sort} onSort={changeSort}>
-                  Implied value
+                  Estimated value
                 </SortHeader>
                 <SortHeader id="slice_per_1k_usd" sort={sort} onSort={changeSort}>
                   {'Per $1k'}
@@ -380,6 +406,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                       </span>
                     </span>
                   </td>
+                  <td><TierBadge tier={p.tier} /></td>
                   <td>{money(p.tvl_usd, 2)}</td>
                   <td>
                     <Growth value={p.change_7d} />

@@ -34,6 +34,14 @@ async function exerciseDashboard(label, scripts) {
     );
     assert.match(document.querySelector('h1').textContent, /Price the launch/);
     assert.equal(document.querySelectorAll('[role="tab"]').length, 3);
+    const tvlFilter = document.querySelector('[aria-label="Minimum TVL"]');
+    assert.ok(tvlFilter, 'Minimum TVL filter missing');
+    tvlFilter.click();
+    await waitFor(() => document.querySelector('[role="option"]:nth-child(5)'), 'TVL options did not open');
+    document.querySelector('[role="option"]:nth-child(5)').click();
+    await waitFor(() => tvlFilter.textContent.includes('$1B'), 'Minimum TVL selection did not apply');
+    document.querySelector('.active-filters button').click();
+    await waitFor(() => !document.querySelector('.active-filters'), 'Clear filters did not reset selections');
     const tableLogos = [...document.querySelectorAll('.protocol-cell .protocol-mark img')];
     assert.equal(tableLogos.length, 10, `${label}: expected authentic logos in each visible row`);
     assert.ok(
@@ -94,6 +102,8 @@ async function exerciseDashboard(label, scripts) {
       'Valuation chart did not appear after its skeleton',
     );
     assert.match(document.querySelector('.detail-page-main').textContent, /Behind the valuation/);
+    assert.ok(document.querySelectorAll('.detail-chains li').length > 0, 'Chain list missing');
+    assert.ok(document.querySelector('.detail-chains .chain-mark'), 'Chain logo missing');
     assert.ok(
       document.querySelector('.detail-page-main .line-chart svg'),
       'Valuation chart missing',
