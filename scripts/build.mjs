@@ -146,10 +146,17 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   if (request.url === dataUrl || request.mode === 'navigate') {
-    event.respondWith(fetch(request).then(response => {
-      if (response.ok) { const copy = response.clone(); event.waitUntil(caches.open(cacheName).then(cache => cache.put(request, copy))); }
-      return response;
-    }).catch(() => caches.match(request).then(cached => cached || (request.mode === 'navigate' ? caches.match(new URL('./', scope).href) : undefined))));
+    event.respondWith((async () => {
+      try {
+        const response = await fetch(request);
+        if (response.ok) {
+          try { const cache = await caches.open(cacheName); await cache.put(request, response.clone()); } catch (_) { /* The network response is still usable. */ }
+        }
+        return response;
+      } catch (_) {
+        return (await caches.match(request)) || (request.mode === 'navigate' && await caches.match(new URL('./', scope).href)) || Response.error();
+      }
+    })());
     return;
   }
   event.respondWith(caches.match(request).then(cached => cached || fetch(request)));

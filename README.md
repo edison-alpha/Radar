@@ -58,6 +58,10 @@ pnpm preview
 
 The production build is written to `dist/`. The application uses locally prepared snapshot data and assets; it does not fetch protocol data at runtime.
 
+## Install and use offline
+
+Serve the production build over HTTPS or localhost. Open it in a supported browser and use the browser's install or “Add to Home Screen” action. After the first visit finishes loading, the installed app can reopen offline using its cached dashboard, logos, and snapshot. A newer snapshot is fetched when the server is reachable; the displayed snapshot date identifies the data in use. Service workers do not run when opening the page directly with `file://`.
+
 ## Commands
 
 | Command | Purpose |
