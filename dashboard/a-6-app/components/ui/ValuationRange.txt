@@ -8,7 +8,12 @@ export function ValuationRange({ value, low, high }) {
     <span className="implied-cell">
       <strong>{money(value, 2)}</strong>
       <small>{money(low)}–{money(high)}</small>
-      {valid && <span className="valuation-range" aria-hidden="true"><i style={{ left: `${position}%` }} /></span>}
+      {valid && (
+        <span className="valuation-range" aria-hidden="true">
+          <span className="valuation-range-fill" style={{ width: `${position}%` }} />
+          <span className="valuation-range-marker" style={{ left: `${position}%` }} />
+        </span>
+      )}
     </span>
   );
 }
