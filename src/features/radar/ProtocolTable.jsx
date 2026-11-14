@@ -3,6 +3,7 @@ import { Dropdown } from '../../components/ui/Dropdown';
 import { SaveButton } from '../../components/ui/SaveButton';
 import { ChainMark } from '../../components/ui/ChainMark';
 import { TierBadge } from '../../components/ui/TierBadge';
+import { ValuationRange } from '../../components/ui/ValuationRange';
 import { flexRender } from '@tanstack/react-table';
 import { useProtocolTable } from './useProtocolTable';
 import { Icon } from '../../shared/Icon';
@@ -57,12 +58,7 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
         header: 'Estimated value',
         meta: { hint: 'Model estimate with a range based on comparable tokens; not a token price' },
         cell: ({ row }) => (
-          <span className="implied-cell">
-            <strong>{money(row.original.implied_value_usd, 2)}</strong>
-            <small>
-              {money(row.original.implied_low_usd)}–{money(row.original.implied_high_usd)}
-            </small>
-          </span>
+          <ValuationRange value={row.original.implied_value_usd} low={row.original.implied_low_usd} high={row.original.implied_high_usd} />
         ),
       },
       {

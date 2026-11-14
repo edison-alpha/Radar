@@ -15,6 +15,10 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
       </SectionHeading>
       <div className="radar-layout">
         <div className="board-main">
+          <div className="model-summary">
+            <div><strong>How values are estimated</strong><span>{data.curve.comparables} token-recorded comparisons · TVL, category, 7-day change and time tracked</span></div>
+            <button onClick={onMethodology}>View methodology</button>
+          </div>
           <RadarFilters
             view={filters.view}
             onView={filters.changeView}
@@ -46,7 +50,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
             }}
           />
           <div className="board-footnote">
-            <span>Value ranges reflect the middle half of comparable tokens' differences from the model. Fees and per-$1k allocations are illustrative estimates.</span>
+            <span>Each bar shows the estimate within its own P25–P75 range on a log scale; bars do not share a dollar scale. Fees and per-$1k allocations are illustrative estimates.</span>
             <button onClick={onMethodology}>Methodology & assumptions</button>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { Dropdown } from '../../components/ui/Dropdown';
 import { SaveButton } from '../../components/ui/SaveButton';
 import { ChainMark } from '../../components/ui/ChainMark';
 import { TierBadge } from '../../components/ui/TierBadge';
+import { ValuationRange } from '../../components/ui/ValuationRange';
 import { ExpandSearch } from '../../components/ui/ExpandSearch';
 import { Sparkline } from '../../components/charts/Sparkline';
 import { Icon } from '../../shared/Icon';
@@ -415,12 +416,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                     <Growth value={p.change_30d} />
                   </td>
                   <td>
-                    <span className="implied-cell">
-                      <strong>{money(p.implied_value_usd, 2)}</strong>
-                      <small>
-                        {money(p.implied_low_usd)}–{money(p.implied_high_usd)}
-                      </small>
-                    </span>
+                    <ValuationRange value={p.implied_value_usd} low={p.implied_low_usd} high={p.implied_high_usd} />
                   </td>
                   <td>{'$' + p.slice_per_1k_usd.toFixed(2)}</td>
                   <td>
