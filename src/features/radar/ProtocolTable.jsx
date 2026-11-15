@@ -273,6 +273,7 @@ export function ProtocolTable({
             label="Rows per page"
             align="right"
             value={pagination.pageSize}
+            defaultValue={pagination.pageSize}
             onChange={(size) => table.setPageSize(Number(size))}
             options={[25, 50, 100].map((size) => ({ value: size, label: `${size} / page` }))}
           />

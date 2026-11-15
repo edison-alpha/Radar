@@ -51,6 +51,20 @@ export function ProtocolPage({
   const isSaved = saved.has(protocol.slug);
   const chains = protocol.chains.length ? protocol.chains : [];
   const econ = protocol.economics;
+  const aboutSection = (
+  <section className="detail-block facts-about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <p className="detail-about">
+      {protocol.name} is a {protocol.category ?? 'DeFi'} protocol. The snapshot
+      records no token for it, so the figures here are model estimates, not market prices.
+    </p>
+    <div className="link-pills">
+      <span className="pill-link">
+        <Icon name="globe" size={16} /> Source: DefiLlama · defillama.com/protocol/
+        {protocol.slug}
+      </span>
+    </div>
+  </section>  );
   const analysis = (
     <>
       <ViewToggle view={view} onChange={setView} className="analysis-toggle" />
@@ -59,7 +73,7 @@ export function ProtocolPage({
     </>
   );
   return (
-    <article className="page-shell" aria-label={`${protocol.name} protocol details`}>
+    <article className={`page-shell${compact ? ' is-compact' : ''}`} aria-label={`${protocol.name} protocol details`}>
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <a href="#" onClick={onBack}>
           Explore
@@ -109,7 +123,8 @@ export function ProtocolPage({
       <div className="detail-page-grid">
         <div className="detail-page-main">
           <ProtocolCharts key={protocol.slug} protocol={protocol} />
-          <section className="detail-block" aria-labelledby="stats-title">
+          <div className={`detail-facts${compact ? ' is-compact' : ''}`}>
+          <section className="detail-block facts-stats" aria-labelledby="stats-title">
             <h2 id="stats-title">Stats</h2>
             <dl className="stat-grid">
               <div>
@@ -146,7 +161,7 @@ export function ProtocolPage({
               </div>
             </dl>
           </section>
-          <section className="detail-block" aria-labelledby="chains-title">
+          <section className="detail-block facts-chains" aria-labelledby="chains-title">
             <h2 id="chains-title">Chains on record</h2>
             {chains.length ? (
               <ul className="detail-chains" aria-label="Chains recorded in the snapshot">
@@ -161,19 +176,8 @@ export function ProtocolPage({
               <p className="detail-about">No chains are recorded in this snapshot.</p>
             )}
           </section>
-          <section className="detail-block" aria-labelledby="about-title">
-            <h2 id="about-title">About</h2>
-            <p className="detail-about">
-              {protocol.name} is a {protocol.category ?? 'DeFi'} protocol. The snapshot
-              records no token for it, so the figures here are model estimates, not market prices.
-            </p>
-            <div className="link-pills">
-              <span className="pill-link">
-                <Icon name="globe" size={16} /> Source: DefiLlama · defillama.com/protocol/
-                {protocol.slug}
-              </span>
-            </div>
-          </section>
+          {!compact && aboutSection}
+          </div>
           {!compact && analysis}
         </div>
         <aside className="detail-page-side" aria-label="Research summary">
@@ -219,6 +223,7 @@ export function ProtocolPage({
             A snapshot is a starting point. Verify current token status and product terms before
             interacting.
           </p>
+          {compact && aboutSection}
         </aside>
       </div>
       {compact && <div className="detail-analysis">{analysis}</div>}

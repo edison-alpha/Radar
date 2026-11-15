@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Icon } from '../../shared/Icon';
 import { Button } from '../../shared/ui';
 import { Dropdown } from '../../components/ui/Dropdown';
+import { ECON } from '../../../lib/economics.mjs';
 import { ExpandSearch } from '../../components/ui/ExpandSearch';
 export function RadarFilters({
   view,
@@ -116,8 +117,8 @@ export function RadarFilters({
           { value: 'THIN', label: 'Verdict: thin' },
           { value: 'SKIP', label: 'Verdict: skip' },
         ]} />
-        <Dropdown label="Capital" value={capital} onChange={(v) => onCapital(Number(v))} options={[1000, 10000, 100000].map((n) => ({ value: n, label: `Capital ${capitalLabel(n)}` }))} />
-        <Dropdown label="Airdrop share of the launch" value={share} onChange={(v) => onShare(Number(v))} options={[0.05, 0.1, 0.2].map((n) => ({ value: n, label: `Airdrop ${n * 100}% of value` }))} />
+        <Dropdown label="Capital" value={capital} defaultValue={ECON.capital} onChange={(v) => onCapital(Number(v))} options={[1000, 10000, 100000].map((n) => ({ value: n, label: `Capital ${capitalLabel(n)}` }))} />
+        <Dropdown label="Airdrop share of the launch" value={share} defaultValue={ECON.share} onChange={(v) => onShare(Number(v))} options={[0.05, 0.1, 0.2].map((n) => ({ value: n, label: `Airdrop ${n * 100}% of value` }))} />
         <Button className="export-button" icon="download" onClick={onExport}>
           Export
         </Button>

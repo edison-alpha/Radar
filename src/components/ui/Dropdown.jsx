@@ -5,7 +5,7 @@ import { ChainMark } from './ChainMark';
 /**
  * Rounded custom dropdown (listbox). Options: [{ value, label }].
  */
-export function Dropdown({ label, value, options, onChange, className = '', align = 'left' }) {
+export function Dropdown({ label, value, options, onChange, className = '', align = 'left', defaultValue }) {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const root = useRef(null);
@@ -15,6 +15,8 @@ export function Dropdown({ label, value, options, onChange, className = '', alig
     options.findIndex((o) => String(o.value) === String(value)),
   );
   const selected = options[selectedIndex];
+  // A filter is active once it leaves its default (the empty "all" option unless told otherwise).
+  const filtered = String(value) !== String(defaultValue ?? '');
 
   useEffect(() => {
     if (!open) return;
@@ -50,7 +52,7 @@ export function Dropdown({ label, value, options, onChange, className = '', alig
     <div className={`dropdown ${className}`} ref={root} onKeyDown={onKeyDown}>
       <button
         type="button"
-        className="dropdown-trigger"
+        className={`dropdown-trigger${filtered ? ' is-filtered' : ''}`}
         aria-label={label}
         aria-haspopup="listbox"
         aria-expanded={open}

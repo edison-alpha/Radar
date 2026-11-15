@@ -1476,3 +1476,14 @@ a:focus-visible {
   gap: 8px;
   flex-wrap: wrap;
 }
+
+/* A dropdown that is filtering: thin green border over a translucent green fill */
+.dropdown-trigger.is-filtered {
+  border-color: #00b05066;
+  background: #00b05014;
+}
+.dropdown-trigger.is-filtered:hover,
+.dropdown-trigger.is-filtered[aria-expanded='true'] {
+  border-color: #00b050aa;
+  background: #00b0501f;
+}

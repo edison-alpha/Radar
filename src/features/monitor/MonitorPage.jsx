@@ -422,12 +422,14 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onSelectRefer
                 <Dropdown
                   label="Capital"
                   value={capital}
+                  defaultValue={ECON.capital}
                   onChange={(value) => setCapital(Number(value))}
                   options={ECON.capitals.map((n) => ({ value: n, label: 'Capital ' + capitalLabel(n) }))}
                 />
                 <Dropdown
                   label="Airdrop share of the launch"
                   value={share}
+                  defaultValue={ECON.share}
                   onChange={(value) => setShare(Number(value))}
                   options={ECON.shares.map((n) => ({ value: n, label: 'Airdrop ' + n * 100 + '% of value' }))}
                 />
