@@ -92,7 +92,8 @@ src/
   styles/               Styles and responsive layouts
   assets/images/        Project images
 lib/radar.mjs           Classification, valuation model, and research plans
-data/                   Input snapshot and generated board data
+data/                   Supplementary market caps (the sealed snapshot and the generated board are not tracked:
+                        copy the kit's input/snapshot.json to data/snapshot.json, then run `pnpm data`)
 public/                 Browser data and locally stored assets
 scripts/                Preparation, build, and verification scripts
 tests/                  Data, model, and asset tests

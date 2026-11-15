@@ -8,3 +8,5 @@ out-check/
 !.env.example
 bounty-work/
 docs/raw-screenshots/
+data/board.json
+data/snapshot.json
