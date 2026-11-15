@@ -5,6 +5,7 @@ import { Footer } from '../layout/Footer';
 import { StatusBar } from '../layout/StatusBar';
 import { MobileNav } from '../layout/MobileNav';
 import { Hero } from '../features/radar/Hero';
+import { ProofBand } from '../features/radar/ProofBand';
 import { RadarSection } from '../features/radar/RadarSection';
 import { useRadarFilters } from '../features/radar/useRadarFilters';
 import { ProtocolPage } from '../features/protocol/ProtocolPage';
@@ -187,6 +188,7 @@ export function App({ data }) {
                   Bookmarks are saved for this session only. Browser storage is unavailable.
                 </p>
               )}
+              <ProofBand data={data} onMethodology={openMethodology} />
               <RadarSection
                 data={data}
                 filters={filters}

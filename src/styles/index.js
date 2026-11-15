@@ -2,6 +2,7 @@ import './tokens.css';
 import './layout.css';
 import './radar.css';
 import './dialogs.css';
+import './proof.css';
 import './charts.css';
 import './protocol-detail.css';
 import './clean.css';

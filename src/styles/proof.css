@@ -1,0 +1,123 @@
+/* Proof band: the formula, the blind test and the out-of-sample chart on the first screen */
+.proof-band {
+  padding: 40px 0 8px;
+}
+.proof-head h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+  max-width: 760px;
+}
+.proof-head p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 720px;
+  margin-top: 10px;
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 16px;
+  margin-top: 22px;
+  align-items: stretch;
+}
+.proof-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  min-width: 0;
+}
+.proof-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.proof-formula {
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--accent);
+  background: #1d1d1d;
+  border: 1px solid #363636;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.proof-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+.proof-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 12px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+.proof-list li:last-child {
+  border-bottom: 0;
+}
+.proof-list b {
+  color: var(--text);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.proof-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.proof-table th,
+.proof-table td {
+  padding: 8px 0;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-weight: 400;
+}
+.proof-table thead th {
+  font-size: 11px;
+  padding-top: 0;
+}
+.proof-table tbody th {
+  text-align: left;
+  color: var(--text);
+}
+.proof-table td.win {
+  color: var(--positive, #21c95e);
+  font-weight: 600;
+}
+.proof-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.proof-note {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--quiet);
+}
+.proof-note button {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.proof-chart .backtest-chart {
+  margin: 0;
+}
+.proof-chart .backtest-chart figcaption {
+  font-size: 11px;
+}
+@media (max-width: 1000px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+  .proof-head h2 {
+    font-size: 24px;
+  }
+}
