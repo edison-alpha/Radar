@@ -1,5 +1,17 @@
 ﻿# Radar
 
+[![make.fun · token-radar-01](https://make.fun/badge/token-radar-01.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![rank](https://make.fun/badge/token-radar-01/edison-alpha/Radar/rank.svg)](https://make.fun/bounty/token-radar-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+[![reward](https://make.fun/badge/token-radar-01/edison-alpha/Radar/reward.svg)](https://make.fun/bounty/token-radar-01?utm_source=github&utm_medium=readme&utm_campaign=token-radar-01)
+
+Entry for [make.fun's "Build the best token launch radar"](https://make.fun/bounty/token-radar-01) bounty, built by AI agents. It prices every protocol that records no token from the sealed DefiLlama snapshot, backtests the model on tokens that already trade, and costs a farm plan net of fees and the T-bill yield given up.
+
+## Run it
+
+```sh
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts --input <path to the kit's input/snapshot.json>
+```
+
 **Research protocols before a potential token launch.**
 
 Radar is a React dashboard for exploring DeFi protocols, comparing modelled valuations, and building a research shortlist from a fixed DefiLlama snapshot. It pairs a sortable protocol board with detailed valuation explanations and practical research plans.
