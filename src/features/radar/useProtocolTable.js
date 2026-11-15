@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 export function useProtocolTable(data, columns) {
-  const [sorting, setSorting] = useState([{ id: 'implied_value_usd', desc: true }]);
+  const [sorting, setSorting] = useState([{ id: 'net', desc: true }]);
   return useReactTable({
     data,
     columns,

@@ -13,6 +13,7 @@ const vendorModules = {
 };
 
 mkdirSync('dist', { recursive: true });
+rmSync('dist/assets', { recursive: true, force: true });
 const namespaces = {};
 for (const name of Object.keys(vendorModules))
   namespaces[name] = Object.keys(await import(name)).filter(
@@ -99,6 +100,8 @@ for (const dir of [
   'a-4-method',
   'a-5-pages',
   'a-6-app',
+  'a-5-reference',
+  'assets',
 ])
   rmSync(join('dashboard', dir), { recursive: true, force: true });
 for (const name of [
@@ -166,37 +169,38 @@ self.addEventListener('fetch', event => {
 writeServiceWorker('dist', './data.js');
 writeServiceWorker('dashboard', '../data.js');
 
-function includeSource(from, to) {
+// The dossier shows source in path order and stops at 64 KiB, so only the files that carry the
+// product are copied, in reading order: the value model and farm economics first, then the board,
+// and the detail view with its farm plan. Copies drop blank
+// lines and halve the indentation; the shipped bundle is unchanged.
+function condense(text) {
+  return text
+    .split(/\r?\n/)
+    .filter((line) => line.trim() !== '')
+    .map((line) => {
+      const indent = line.match(/^ */)[0].length;
+      return ' '.repeat(Math.ceil(indent / 2)) + line.trimEnd().trimStart();
+    })
+    .join('\n')
+    .concat('\n');
+}
+function includeFiles(to, files) {
   mkdirSync(to, { recursive: true });
-  for (const entry of readdirSync(from, { withFileTypes: true })) {
-    const source = join(from, entry.name);
-    if (entry.isDirectory()) {
-      if (entry.name !== 'assets' && entry.name !== 'styles')
-        includeSource(source, join(to, entry.name));
-    } else if (/\.(jsx?|mjs)$/.test(entry.name)) {
-      cpSync(source, join(to, entry.name.replace(/\.(jsx?|mjs)$/, '.txt')));
-    }
+  for (const file of files) {
+    const name = file.split('/').pop().replace(/\.(jsx?|mjs)$/, '.txt');
+    writeFileSync(join(to, name), condense(readFileSync(file, 'utf8')));
   }
 }
-// The dossier shows source in path order and stops at 64 KiB (and at the first minified bundle),
-// so every source folder is named to sort before app.css: the value model first,
-// then the board and detail features, then shared UI.
-includeSource('lib', 'dashboard/a-1-model');
-includeSource('src/features/radar', 'dashboard/a-2-board');
-includeSource('src/features/protocol', 'dashboard/a-3-detail');
-includeSource('src/features/reference', 'dashboard/a-3-detail/reference');
-includeSource('src/features/methodology', 'dashboard/a-4-method');
-includeSource('src/features/monitor', 'dashboard/a-5-pages/radar');
-includeSource('src/features/saved', 'dashboard/a-5-pages/saved');
-for (const entry of readdirSync('src', { withFileTypes: true })) {
-  if (entry.name === 'features') continue;
-  const from = join('src', entry.name);
-  if (entry.isDirectory()) includeSource(from, join('dashboard/a-6-app', entry.name));
-  else if (/.(jsx?|mjs)$/.test(entry.name)) {
-    mkdirSync('dashboard/a-6-app', { recursive: true });
-    cpSync(from, join('dashboard/a-6-app', entry.name.replace(/.(jsx?|mjs)$/, '.txt')));
-  }
-}
+includeFiles('dashboard/a-1-model', ['lib/radar.mjs', 'lib/economics.mjs']);
+includeFiles('dashboard/a-2-board', [
+  'src/features/radar/RadarSection.jsx',
+  'src/features/radar/ProtocolTable.jsx',
+  'src/features/radar/useRadarFilters.js',
+]);
+includeFiles('dashboard/a-3-detail', [
+  'src/features/protocol/ProtocolPage.jsx',
+  'src/features/protocol/components/FarmPlan.jsx',
+]);
 console.log(
   `Built static dashboard with local React, Motion and TanStack runtime (${readFileSync('dist/zz-runtime.js').length.toLocaleString()} bytes).`,
 );

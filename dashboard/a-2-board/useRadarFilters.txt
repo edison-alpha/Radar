@@ -1,124 +1,122 @@
 import { useMemo, useState } from 'react';
 import { ECON, farmEconomics } from '../../../lib/economics.mjs';
-
 // A shareable filtered view: #/?category=RWA&chain=Ethereum&q=vault&verdict=FARM&capital=10000
 const VIEWS = ['all', 'watchlist', 'early', 'traded', 'setaside'];
 function initialFilters() {
-  const query = window.location.hash.split('?')[1] ?? '';
-  const params = new URLSearchParams(query);
-  const capital = Number(params.get('capital'));
-  const share = Number(params.get('share'));
-  const view = params.get('view');
-  return {
-    view: VIEWS.includes(view) ? view : 'all',
-    category: params.get('category') ?? '',
-    chain: params.get('chain') ?? '',
-    search: params.get('q') ?? '',
-    verdict: ['FARM', 'THIN', 'SKIP'].includes(params.get('verdict')) ? params.get('verdict') : '',
-    capital: ECON.capitals.includes(capital) ? capital : ECON.capital,
-    share: ECON.shares.includes(share) ? share : ECON.share,
-  };
+ const query = window.location.hash.split('?')[1] ?? '';
+ const params = new URLSearchParams(query);
+ const capital = Number(params.get('capital'));
+ const share = Number(params.get('share'));
+ const view = params.get('view');
+ return {
+  view: VIEWS.includes(view) ? view : 'all',
+  category: params.get('category') ?? '',
+  chain: params.get('chain') ?? '',
+  search: params.get('q') ?? '',
+  verdict: ['FARM', 'THIN', 'SKIP'].includes(params.get('verdict')) ? params.get('verdict') : '',
+  capital: ECON.capitals.includes(capital) ? capital : ECON.capital,
+  share: ECON.shares.includes(share) ? share : ECON.share,
+ };
 }
 export function useRadarFilters(data, saved) {
-  const [initial] = useState(initialFilters);
-  const [view, setView] = useState(initial.view);
-  const [search, setSearch] = useState(initial.search);
-  const [category, setCategory] = useState(initial.category);
-  const [chain, setChain] = useState(initial.chain);
-  const [minTvl, setMinTvl] = useState('');
-  const [maxFee, setMaxFee] = useState('');
-  const [tier, setTier] = useState('');
-  const [verdict, setVerdict] = useState(initial.verdict);
-  const [capital, setCapital] = useState(initial.capital);
-  const [share, setShare] = useState(initial.share);
-
-  // Every row priced for the chosen capital and airdrop share by the same function the board uses.
-  const priced = useMemo(
-    () => data.rows.map((p) => ({ ...p, econ: farmEconomics(p, { capital, share }) })),
-    [data.rows, capital, share],
-  );
-  const verdicts = useMemo(() => {
-    const total = { FARM: 0, THIN: 0, SKIP: 0 };
-    for (const p of priced) total[p.econ.verdict] += 1;
-    return total;
-  }, [priced]);
-  const needle = search.trim().toLowerCase();
-  const rows = useMemo(
-    () =>
-      priced.filter((p) => {
-        if (view === 'watchlist' && !p.watchlist) return false;
-        if (view === 'early' && p.watchlist) return false;
-        return (
-          (!category || p.category === category) &&
-          (!chain || p.chains.includes(chain)) &&
-          (!tier || p.tier === tier) &&
-          (!verdict || p.econ.verdict === verdict) &&
-          (!minTvl || p.tvl_usd >= Number(minTvl)) &&
-          (!maxFee || (Number.isFinite(p.farm?.fees_usd) && p.farm.fees_usd <= Number(maxFee))) &&
-          (!needle ||
-            `${p.name} ${p.slug} ${p.category ?? ''} ${p.chains.join(' ')}`
-              .toLowerCase()
-              .includes(needle))
-        );
-      }),
-    [priced, view, needle, category, chain, minTvl, maxFee, tier, verdict],
-  );
-  // The two reference tabs share the search box, category and TVL filters.
-  const reference = useMemo(() => {
-    const source = view === 'traded' ? data.traded : view === 'setaside' ? data.set_aside : [];
-    return source.filter(
-      (p) =>
-        (!category || p.category === category) &&
-        (!minTvl || p.tvl_usd >= Number(minTvl)) &&
-        (!needle || `${p.name} ${p.slug} ${p.category ?? ''}`.toLowerCase().includes(needle)),
+ const [initial] = useState(initialFilters);
+ const [view, setView] = useState(initial.view);
+ const [search, setSearch] = useState(initial.search);
+ const [category, setCategory] = useState(initial.category);
+ const [chain, setChain] = useState(initial.chain);
+ const [minTvl, setMinTvl] = useState('');
+ const [maxFee, setMaxFee] = useState('');
+ const [tier, setTier] = useState('');
+ const [verdict, setVerdict] = useState(initial.verdict);
+ const [capital, setCapital] = useState(initial.capital);
+ const [share, setShare] = useState(initial.share);
+ // Every row priced for the chosen capital and airdrop share by the same function the board uses.
+ const priced = useMemo(
+  () => data.rows.map((p) => ({ ...p, econ: farmEconomics(p, { capital, share }) })),
+  [data.rows, capital, share],
+ );
+ const verdicts = useMemo(() => {
+  const total = { FARM: 0, THIN: 0, SKIP: 0 };
+  for (const p of priced) total[p.econ.verdict] += 1;
+  return total;
+ }, [priced]);
+ const needle = search.trim().toLowerCase();
+ const rows = useMemo(
+  () =>
+   priced.filter((p) => {
+    if (view === 'watchlist' && !p.watchlist) return false;
+    if (view === 'early' && p.watchlist) return false;
+    return (
+     (!category || p.category === category) &&
+     (!chain || p.chains.includes(chain)) &&
+     (!tier || p.tier === tier) &&
+     (!verdict || p.econ.verdict === verdict) &&
+     (!minTvl || p.tvl_usd >= Number(minTvl)) &&
+     (!maxFee || (Number.isFinite(p.farm?.fees_usd) && p.farm.fees_usd <= Number(maxFee))) &&
+     (!needle ||
+      `${p.name} ${p.slug} ${p.category ?? ''} ${p.chains.join(' ')}`
+       .toLowerCase()
+       .includes(needle))
     );
-  }, [data, view, needle, category, minTvl]);
-  function reset() {
-    setSearch('');
-    setCategory('');
-    setChain('');
-    setMinTvl('');
-    setMaxFee('');
-    setTier('');
-    setVerdict('');
-  }
-  function changeView(value) {
-    setView(value);
-    reset();
-  }
-  return {
-    view,
-    search,
-    category,
-    chain,
-    minTvl,
-    maxFee,
-    tier,
-    verdict,
-    capital,
-    share,
-    rows,
-    verdicts,
-    reference,
-    reset,
-    changeView,
-    setSearch,
-    setCategory,
-    setChain,
-    setMinTvl,
-    setMaxFee,
-    setTier,
-    setVerdict,
-    setCapital,
-    setShare,
-    filtered: Boolean(search || category || chain || minTvl || maxFee || tier || verdict),
-    counts: {
-      all: data.rows.length,
-      watchlist: data.watchlist_count,
-      early: data.rows.length - data.watchlist_count,
-      traded: data.traded.length,
-      setaside: data.set_aside.length,
-      saved: data.rows.filter((p) => saved.has(p.slug)).length,
-    },
-  };
+   }),
+  [priced, view, needle, category, chain, minTvl, maxFee, tier, verdict],
+ );
+ // The two reference tabs share the search box, category and TVL filters.
+ const reference = useMemo(() => {
+  const source = view === 'traded' ? data.traded : view === 'setaside' ? data.set_aside : [];
+  return source.filter(
+   (p) =>
+    (!category || p.category === category) &&
+    (!minTvl || p.tvl_usd >= Number(minTvl)) &&
+    (!needle || `${p.name} ${p.slug} ${p.category ?? ''}`.toLowerCase().includes(needle)),
+  );
+ }, [data, view, needle, category, minTvl]);
+ function reset() {
+  setSearch('');
+  setCategory('');
+  setChain('');
+  setMinTvl('');
+  setMaxFee('');
+  setTier('');
+  setVerdict('');
+ }
+ function changeView(value) {
+  setView(value);
+  reset();
+ }
+ return {
+  view,
+  search,
+  category,
+  chain,
+  minTvl,
+  maxFee,
+  tier,
+  verdict,
+  capital,
+  share,
+  rows,
+  verdicts,
+  reference,
+  reset,
+  changeView,
+  setSearch,
+  setCategory,
+  setChain,
+  setMinTvl,
+  setMaxFee,
+  setTier,
+  setVerdict,
+  setCapital,
+  setShare,
+  filtered: Boolean(search || category || chain || minTvl || maxFee || tier || verdict),
+  counts: {
+   all: data.rows.length,
+   watchlist: data.watchlist_count,
+   early: data.rows.length - data.watchlist_count,
+   traded: data.traded.length,
+   setaside: data.set_aside.length,
+   saved: data.rows.filter((p) => saved.has(p.slug)).length,
+  },
+ };
 }

@@ -173,3 +173,11 @@ button.protocol-cell.static:disabled { cursor: default; }
 .board-proof b { font-weight: 600; }
 .board-proof b.ok { color: var(--positive); }
 .board-proof b.bad { color: var(--negative); }
+
+/* Laptop widths: give the table the whole row so the Net column is never cut off */
+@media (min-width: 1100px) and (max-width: 1599px) {
+  .radar-layout { grid-template-columns: minmax(0, 1fr); }
+  .research-sidebar { display: none; }
+  .protocol-table th, .protocol-table td { padding-left: 8px; padding-right: 8px; }
+  .protocol-table .col-tier { width: 1%; }
+}
