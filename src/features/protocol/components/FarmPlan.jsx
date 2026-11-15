@@ -1,30 +1,47 @@
 import React from 'react';
 import { Icon } from '../../../shared/Icon';
-export function FarmPlan({ farm }) {
+import { signed } from '../../../shared/format';
+
+/**
+ * The research plan on the detail page. The header and budget are one button: clicking anywhere on
+ * them opens the plan dialog, where capital, airdrop share and hold re-price it.
+ */
+export function FarmPlan({ farm, economics, onOpen }) {
+  const e = economics;
   return (
     <section className="detail-section">
-      <div className="detail-section-title">
-        <h3>A considered research plan</h3>
-        <span>
-          <Icon name="clock" size={14} /> {farm.summary}
+      <button type="button" className="farm-launch" onClick={onOpen} aria-haspopup="dialog">
+        <span className="detail-section-title">
+          <h3>A considered research plan</h3>
+          <span className="farm-open">
+            <Icon name="external" size={14} /> Open plan
+          </span>
         </span>
-      </div>
-      <div className="farm-budget">
-        <div>
-          <span>Test capital</span>
-          <strong>{farm.capital}</strong>
-        </div>
-        <div>
-          <span>Estimated fees</span>
-          <strong>{farm.gas_estimate}</strong>
-        </div>
-        <div>
-          <span>Total time</span>
-          <strong>{farm.setup_minutes} over 3 weeks</strong>
-        </div>
-      </div>
+        <span className="farm-budget">
+          <span>
+            <small>Test capital</small>
+            <strong>${e.capital_usd.toLocaleString('en-US')}</strong>
+          </span>
+          <span>
+            <small>Estimated fees</small>
+            <strong>{farm.gas_estimate}</strong>
+          </span>
+          <span>
+            <small>Hands-on time</small>
+            <strong>{farm.setup_minutes} over {e.hold_days} days</strong>
+          </span>
+          <span>
+            <small>Net of all costs</small>
+            <strong className={`net-${e.verdict.toLowerCase()}`}>
+              <em className="verdict-badge">{e.verdict}</em> {signed(e.net_usd)}
+            </strong>
+          </span>
+        </span>
+      </button>
       <p className="detail-explainer">
-        {farm.assumption} Capital remains exposed; it is separate from spent fees.
+        {farm.assumption} Net = slice at a {e.share * 100}% airdrop share, minus fees, minus the 4%
+        T-bill yield the capital gives up for {e.hold_days} days. Capital remains exposed; it is
+        separate from spent fees.
       </p>
       <ol className="farm-steps">
         {farm.steps.map((step, index) => (

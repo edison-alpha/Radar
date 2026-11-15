@@ -8,10 +8,25 @@ import { flexRender } from '@tanstack/react-table';
 import { useProtocolTable } from './useProtocolTable';
 import { Icon } from '../../shared/Icon';
 import { ProtocolMark, Growth, EmptyState, Button } from '../../shared/ui';
-import { ageLabel, money } from '../../shared/format';
+import { money, signed } from '../../shared/format';
 export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, savedView }) {
   const columns = useMemo(
     () => [
+      {
+        id: 'save',
+        header: '',
+        enableSorting: false,
+        cell: ({ row }) => (
+          <SaveButton
+            saved={saved.has(row.id)}
+            label={`${saved.has(row.id) ? 'Unsave' : 'Save'} ${row.original.name}`}
+            onClick={(event) => {
+              event.stopPropagation();
+              onToggleSave(row.id);
+            }}
+          />
+        ),
+      },
       {
         accessorKey: 'rank',
         header: '#',
@@ -62,10 +77,28 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
         ),
       },
       {
-        accessorKey: 'slice_per_1k_usd',
-        header: 'Per $1k',
-        meta: { hint: 'Illustrative allocation if depositors shared 10% of the launch pro rata; not an expected airdrop' },
+        id: 'slice',
+        accessorFn: (row) => (row.econ ?? row.economics).slice_usd,
+        header: 'Slice',
+        meta: { hint: 'What the capital would hold if depositors shared the airdrop share of the launch pro rata; a scenario, not an expected airdrop' },
         cell: ({ getValue }) => '$' + getValue().toFixed(2),
+      },
+      {
+        id: 'net',
+        accessorFn: (row) => (row.econ ?? row.economics).net_usd,
+        header: 'Net of all costs',
+        meta: { hint: 'Slice minus fees minus the T-bill yield the capital gives up. FARM beats every cost, THIN beats the fees only, SKIP does not.' },
+        cell: ({ row }) => {
+          const e = row.original.econ ?? row.original.economics;
+          return (
+            <span className={'net-cell net-' + e.verdict.toLowerCase()}>
+              <strong>
+                <em className="verdict-badge">{e.verdict}</em> {signed(e.net_usd)}
+              </strong>
+              <small>{signed(e.per_hour_usd)}/h hands-on</small>
+            </span>
+          );
+        },
       },
       {
         id: 'farm',
@@ -87,25 +120,11 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
         ),
       },
       {
-        accessorKey: 'age_days',
-        header: 'Tracked',
-        meta: { hint: 'How long the protocol has been tracked' },
-        cell: ({ getValue }) => <span className="muted">{ageLabel(getValue())}</span>,
-      },
-      {
         id: 'actions',
         header: '',
         enableSorting: false,
         cell: ({ row }) => (
           <div className="row-actions">
-            <SaveButton
-              saved={saved.has(row.id)}
-              label={`${saved.has(row.id) ? 'Unsave' : 'Save'} ${row.original.name}`}
-              onClick={(event) => {
-                event.stopPropagation();
-                onToggleSave(row.id);
-              }}
-            />
             <button
               className="icon-button detail-button"
               onClick={(event) => {
@@ -212,7 +231,7 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
             align="right"
             value={pagination.pageSize}
             onChange={(size) => table.setPageSize(Number(size))}
-            options={[10, 20, 50].map((size) => ({ value: size, label: `${size} / page` }))}
+            options={[25, 50, 100].map((size) => ({ value: size, label: `${size} / page` }))}
           />
           <button
             className="icon-button"

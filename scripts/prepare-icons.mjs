@@ -30,6 +30,8 @@ export const iconMap = {
   globe: 'globe-hemisphere-west-fill',
   more: 'dots-three-circle-fill',
   stack: 'stack-fill',
+  coins: 'coins-fill',
+  archive: 'archive-fill',
   category: 'streamline-flex:search-category-solid',
   shield: 'shield-check-fill',
   help: 'question-fill',

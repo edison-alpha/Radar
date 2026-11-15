@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logos from '../../data/protocol-logos.json';
+import atlas from '../../data/reference-logos.json';
 
 export function ProtocolMark({ name, slug, size = 'normal' }) {
   const [failedSource, setFailedSource] = useState(null);
@@ -17,6 +18,23 @@ export function ProtocolMark({ name, slug, size = 'normal' }) {
           onError={() => setFailedSource(source)}
         />
       </span>
+    );
+  }
+  // Protocols the board does not rank (tokens on record, set-aside products) share one sprite atlas.
+  const tile = atlas.slugs[slug];
+  if (tile !== undefined) {
+    const col = tile % atlas.cols;
+    const row = Math.floor(tile / atlas.cols);
+    return (
+      <span
+        className={`protocol-mark protocol-mark-image protocol-mark-atlas mark-${size}`}
+        aria-hidden="true"
+        style={{
+          backgroundImage: `url(./protocol-logos/${atlas.file})`,
+          backgroundSize: `${atlas.cols * 100}% ${atlas.rows * 100}%`,
+          backgroundPosition: `${(col / (atlas.cols - 1)) * 100}% ${(row / (atlas.rows - 1)) * 100}%`,
+        }}
+      />
     );
   }
   const initials = name

@@ -29,11 +29,11 @@ async function exerciseDashboard(label, scripts) {
     for (const script of scripts) window.eval(script);
     const document = window.document;
     await waitFor(
-      () => document.querySelectorAll('tbody tr').length === 10,
+      () => document.querySelectorAll('tbody tr').length === 25,
       'React did not render the table',
     );
     assert.match(document.querySelector('h1').textContent, /Price the launch/);
-    assert.equal(document.querySelectorAll('[role="tab"]').length, 3);
+    assert.equal(document.querySelectorAll('[role="tab"]').length, 6);
     const tvlFilter = document.querySelector('[aria-label="Minimum TVL"]');
     assert.ok(tvlFilter, 'Minimum TVL filter missing');
     tvlFilter.click();
@@ -43,7 +43,7 @@ async function exerciseDashboard(label, scripts) {
     document.querySelector('.active-filters button').click();
     await waitFor(() => !document.querySelector('.active-filters'), 'Clear filters did not reset selections');
     const tableLogos = [...document.querySelectorAll('.protocol-cell .protocol-mark img')];
-    assert.equal(tableLogos.length, 10, `${label}: expected authentic logos in each visible row`);
+    assert.equal(tableLogos.length, 25, `${label}: expected authentic logos in each visible row`);
     assert.ok(
       tableLogos.every((image) => image.getAttribute('src').startsWith('./protocol-logos/')),
     );
@@ -98,6 +98,26 @@ async function exerciseDashboard(label, scripts) {
         document.querySelector('.saved-page') && document.querySelectorAll('tbody tr').length === 1,
       'Saved page did not list the bookmarked protocol',
     );
+
+    // Reference details: a token that trades and a product set aside, then the plan dialog.
+    const radarData = window.__RADAR_DATA__;
+    for (const [route, label] of [
+      ['#/token/' + radarData.traded[0].slug, 'Against the launch curve'],
+      ['#/aside/' + radarData.set_aside[0].slug, 'Why it is set aside'],
+    ]) {
+      window.location.hash = route;
+      await waitFor(
+        () => document.querySelector('.detail-page-main')?.textContent.includes(label),
+        'Reference detail did not open for ' + route,
+      );
+    }
+    window.location.hash = '#/protocol/' + radarData.rows[0].slug + '?plan=1';
+    await waitFor(() => document.querySelector('.plan-dialog'), 'Plan dialog did not open');
+    assert.ok(document.querySelectorAll('.plan-steps li').length === 7, 'Plan steps missing');
+    document.querySelector('.plan-side .plan-round').click();
+    await waitFor(() => !document.querySelector('.plan-dialog'), 'Plan dialog did not close');
+    window.location.hash = '#/saved';
+    await waitFor(() => document.querySelector('.saved-page'), 'Saved page did not return');
 
     document.querySelector('.protocol-cell').click();
     await waitFor(

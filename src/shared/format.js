@@ -7,6 +7,8 @@ export const money = (value, digits = 1) =>
         notation: 'compact',
         maximumFractionDigits: digits,
       }).format(value);
+export const signed = (value) =>
+  value == null ? 'n/a' : `${value < 0 ? '-' : '+'}$${Math.abs(value).toFixed(2)}`;
 export const number = (value) => new Intl.NumberFormat('en-US').format(value);
 export const percent = (value) =>
   value == null ? 'Not reported' : `${value >= 0 ? '+' : ''}${value.toFixed(2)}%`;
@@ -32,6 +34,8 @@ export function buildCsv(rows, asOf) {
     ['Farm action', r => r.farm?.action], ['Farm chain', r => r.farm?.chain],
     ['Estimated fees (USD)', r => r.farm?.fees_usd], ['Estimated time (minutes)', r => r.farm?.minutes],
     ['Test capital (USD)', r => r.farm?.capital_usd], ['Transactions', r => r.farm?.txs],
+    ['Verdict', r => r.economics?.verdict], ['Net of all costs at $1,000 (USD)', r => r.economics?.net_usd],
+    ['Net per hands-on hour (USD)', r => r.economics?.per_hour_usd], ['T-bill forgone (USD)', r => r.economics?.tbill_usd],
     ['Farm risks', r => r.farm?.risk], ['Farm assumptions', r => r.farm?.assumption],
     ...Array.from({ length: Math.max(0, ...rows.map(r => r.farm_steps?.length ?? 0)) }, (_, i) =>
       [`Farm step ${i + 1}`, r => r.farm_steps?.[i]]),

@@ -20,6 +20,13 @@ export function RadarFilters({
   onMaxFee,
   tier,
   onTier,
+  verdict,
+  onVerdict,
+  capital,
+  onCapital,
+  share,
+  onShare,
+  onMethodology,
   data,
   onExport,
   reset,
@@ -29,7 +36,11 @@ export function RadarFilters({
     { id: 'all', label: 'All protocols', icon: 'list', count: counts.all },
     { id: 'watchlist', label: 'Watchlist', icon: 'eye', count: counts.watchlist },
     { id: 'early', label: 'Early discoveries', icon: 'sparkle', count: counts.early },
+    { id: 'traded', label: 'Token trades', icon: 'coins', count: counts.traded },
+    { id: 'setaside', label: 'Set aside', icon: 'archive', count: counts.setaside },
   ];
+  const reference = view === 'traded' || view === 'setaside';
+  const capitalLabel = (n) => '$' + (n >= 1000 ? `${n / 1000}K` : `${n}`);
   return (
     <>
       <div className="board-tabs" role="tablist" aria-label="Protocol groups">
@@ -52,6 +63,10 @@ export function RadarFilters({
             )}
           </button>
         ))}
+        <button role="tab" aria-selected="false" onClick={onMethodology}>
+          <Icon name="book" size={16} />
+          Method and backtest
+        </button>
       </div>
       <div className="filter-bar">
         <div className="filter-group filter-group-primary">
@@ -65,6 +80,14 @@ export function RadarFilters({
             ...data.categories.map((c) => ({ value: c, label: c })),
           ]}
         />
+        <Dropdown label="Minimum TVL" value={minTvl} onChange={onMinTvl} options={[
+          { value: '', label: 'Any TVL' },
+          { value: '10000000', label: 'TVL ≥ $10M' },
+          { value: '50000000', label: 'TVL ≥ $50M' },
+          { value: '100000000', label: 'TVL ≥ $100M' },
+          { value: '1000000000', label: 'TVL ≥ $1B' },
+        ]} />
+        {!reference && (<>
         <Dropdown
           label="Filter by chain"
           value={chain}
@@ -80,13 +103,6 @@ export function RadarFilters({
           { value: 'Above floor', label: 'Above floor' },
           { value: 'Below floor', label: 'Below floor' },
         ]} />
-        <Dropdown label="Minimum TVL" value={minTvl} onChange={onMinTvl} options={[
-          { value: '', label: 'Any TVL' },
-          { value: '10000000', label: 'TVL ≥ $10M' },
-          { value: '50000000', label: 'TVL ≥ $50M' },
-          { value: '100000000', label: 'TVL ≥ $100M' },
-          { value: '1000000000', label: 'TVL ≥ $1B' },
-        ]} />
         <Dropdown label="Maximum estimated farming fees" value={maxFee} onChange={onMaxFee} options={[
           { value: '', label: 'Any estimated fees' },
           { value: '1', label: 'Fees ≤ $1' },
@@ -94,9 +110,18 @@ export function RadarFilters({
           { value: '10', label: 'Fees ≤ $10' },
           { value: '50', label: 'Fees ≤ $50' },
         ]} />
+        <Dropdown label="Verdict" value={verdict} onChange={onVerdict} options={[
+          { value: '', label: 'Any verdict' },
+          { value: 'FARM', label: 'Verdict: farm' },
+          { value: 'THIN', label: 'Verdict: thin' },
+          { value: 'SKIP', label: 'Verdict: skip' },
+        ]} />
+        <Dropdown label="Capital" value={capital} onChange={(v) => onCapital(Number(v))} options={[1000, 10000, 100000].map((n) => ({ value: n, label: `Capital ${capitalLabel(n)}` }))} />
+        <Dropdown label="Airdrop share of the launch" value={share} onChange={(v) => onShare(Number(v))} options={[0.05, 0.1, 0.2].map((n) => ({ value: n, label: `Airdrop ${n * 100}% of value` }))} />
         <Button className="export-button" icon="download" onClick={onExport}>
           Export
         </Button>
+        </>)}
         </div>
       </div>
       {filtered && (

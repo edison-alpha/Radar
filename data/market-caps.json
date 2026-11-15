@@ -1,0 +1,1509 @@
+{
+  "source": "CoinGecko /coins/markets (public API)",
+  "fetched_at": "2026-11-15",
+  "note": "Supplementary: shown on reference pages, never read by the value model.",
+  "requested": 288,
+  "resolved": 250,
+  "items": {
+    "aave-horizon-rwa": {
+      "mcap_usd": 1631351787,
+      "coingecko_id": "aave",
+      "token": "Aave",
+      "matched_by": "symbol"
+    },
+    "aave-v1": {
+      "mcap_usd": 1631351787,
+      "coingecko_id": "aave",
+      "token": "Aave",
+      "matched_by": "symbol"
+    },
+    "aave-v3": {
+      "mcap_usd": 1631351787,
+      "coingecko_id": "aave",
+      "token": "Aave",
+      "matched_by": "symbol"
+    },
+    "aave-v4": {
+      "mcap_usd": 1631351787,
+      "coingecko_id": "aave",
+      "token": "Aave",
+      "matched_by": "symbol"
+    },
+    "adi-bridge": {
+      "mcap_usd": 66534043,
+      "coingecko_id": "adi-token",
+      "token": "ADI",
+      "matched_by": "symbol"
+    },
+    "aero-basic": {
+      "mcap_usd": 314334508,
+      "coingecko_id": "aero",
+      "token": "Aero",
+      "matched_by": "symbol"
+    },
+    "aero-slipstream": {
+      "mcap_usd": 314334508,
+      "coingecko_id": "aero",
+      "token": "Aero",
+      "matched_by": "symbol"
+    },
+    "aerodrome-ignition": {
+      "mcap_usd": 314334508,
+      "coingecko_id": "aero",
+      "token": "Aero",
+      "matched_by": "symbol"
+    },
+    "aerodrome-slipstream": {
+      "mcap_usd": 314334508,
+      "coingecko_id": "aero",
+      "token": "Aero",
+      "matched_by": "symbol"
+    },
+    "aerodrome-v1": {
+      "mcap_usd": 314334508,
+      "coingecko_id": "aero",
+      "token": "Aero",
+      "matched_by": "symbol"
+    },
+    "aevo-perps": {
+      "mcap_usd": 15437719,
+      "coingecko_id": "aevo-exchange",
+      "token": "Aevo",
+      "matched_by": "symbol"
+    },
+    "alchemix-v3": {
+      "mcap_usd": 4808014,
+      "coingecko_id": "alchemix",
+      "token": "Alchemix",
+      "matched_by": "symbol"
+    },
+    "alpaca-finance-2.0": {
+      "mcap_usd": 87883,
+      "coingecko_id": "alpaca-finance",
+      "token": "Alpaca Finance",
+      "matched_by": "symbol"
+    },
+    "alpaca-leveraged-yield-farming": {
+      "mcap_usd": 87883,
+      "coingecko_id": "alpaca-finance",
+      "token": "Alpaca Finance",
+      "matched_by": "symbol"
+    },
+    "ao-bridge": {
+      "mcap_usd": 16791964,
+      "coingecko_id": "ao-computer",
+      "token": "ao Computer",
+      "matched_by": "symbol"
+    },
+    "apeswap-amm": {
+      "mcap_usd": 157202,
+      "coingecko_id": "abond",
+      "token": "ApeBond",
+      "matched_by": "symbol"
+    },
+    "arbitrum-bridge": {
+      "mcap_usd": 920195058,
+      "coingecko_id": "arbitrum",
+      "token": "Arbitrum",
+      "matched_by": "symbol"
+    },
+    "arbitrum-nova-bridge": {
+      "mcap_usd": 920195058,
+      "coingecko_id": "arbitrum",
+      "token": "Arbitrum",
+      "matched_by": "symbol"
+    },
+    "arcadia-v2": {
+      "mcap_usd": 682434,
+      "coingecko_id": "arcadia",
+      "token": "Arcadia",
+      "matched_by": "symbol"
+    },
+    "aster-asbnb": {
+      "mcap_usd": 1365127453,
+      "coingecko_id": "aster-2",
+      "token": "Aster",
+      "matched_by": "symbol"
+    },
+    "aster-usdf": {
+      "mcap_usd": 1365127453,
+      "coingecko_id": "aster-2",
+      "token": "Aster",
+      "matched_by": "symbol"
+    },
+    "avalanche-core-bridge": {
+      "mcap_usd": 3213572680,
+      "coingecko_id": "avalanche-2",
+      "token": "Avalanche",
+      "matched_by": "symbol"
+    },
+    "avalon-cedefi": {
+      "mcap_usd": 6979503,
+      "coingecko_id": "avalon-2",
+      "token": "Avalon",
+      "matched_by": "symbol"
+    },
+    "avalon-superearn": {
+      "mcap_usd": 6979503,
+      "coingecko_id": "avalon-2",
+      "token": "Avalon",
+      "matched_by": "symbol"
+    },
+    "axelar": {
+      "mcap_usd": 40120565,
+      "coingecko_id": "axelar",
+      "token": "Axelar",
+      "matched_by": "symbol"
+    },
+    "balancer-v2": {
+      "mcap_usd": 8035914,
+      "coingecko_id": "balancer",
+      "token": "Balancer",
+      "matched_by": "symbol"
+    },
+    "balancer-v3": {
+      "mcap_usd": 8035914,
+      "coingecko_id": "balancer",
+      "token": "Balancer",
+      "matched_by": "symbol"
+    },
+    "bancor-v2.1": {
+      "mcap_usd": 22403733,
+      "coingecko_id": "bancor",
+      "token": "Bancor Network",
+      "matched_by": "symbol"
+    },
+    "bancor-v3": {
+      "mcap_usd": 22403733,
+      "coingecko_id": "bancor",
+      "token": "Bancor Network",
+      "matched_by": "symbol"
+    },
+    "bedrock-unibtc": {
+      "mcap_usd": 126753770,
+      "coingecko_id": "bedrock-token",
+      "token": "Bedrock",
+      "matched_by": "symbol"
+    },
+    "bedrock-unieth": {
+      "mcap_usd": 126753770,
+      "coingecko_id": "bedrock-token",
+      "token": "Bedrock",
+      "matched_by": "symbol"
+    },
+    "benqi-staked-avax": {
+      "mcap_usd": 11361403,
+      "coingecko_id": "benqi",
+      "token": "BENQI",
+      "matched_by": "symbol"
+    },
+    "bifrost-liquid-staking": {
+      "mcap_usd": 355325,
+      "coingecko_id": "bifrost-native-coin",
+      "token": "Bifrost",
+      "matched_by": "symbol"
+    },
+    "binance-cex": {
+      "mcap_usd": 77575188570,
+      "coingecko_id": "binancecoin",
+      "token": "BNB",
+      "matched_by": "symbol"
+    },
+    "blend-pools-v2": {
+      "mcap_usd": 505774,
+      "coingecko_id": "blend",
+      "token": "Blend",
+      "matched_by": "symbol"
+    },
+    "bluefin-spot": {
+      "mcap_usd": 3992936,
+      "coingecko_id": "bluefin",
+      "token": "Bluefin",
+      "matched_by": "symbol"
+    },
+    "bonk-staked-sol": {
+      "mcap_usd": 207180198,
+      "coingecko_id": "bonk",
+      "token": "Bonk",
+      "matched_by": "symbol"
+    },
+    "buzz-farming": {
+      "mcap_usd": 16815816,
+      "coingecko_id": "bsquared-network",
+      "token": "BSquared Network",
+      "matched_by": "symbol"
+    },
+    "cetus-clmm": {
+      "mcap_usd": 15877242,
+      "coingecko_id": "cetus-protocol",
+      "token": "Cetus Protocol",
+      "matched_by": "symbol"
+    },
+    "chainflip-amm": {
+      "mcap_usd": 36252247,
+      "coingecko_id": "chainflip",
+      "token": "Chainflip",
+      "matched_by": "symbol"
+    },
+    "chamber-vaults": {
+      "mcap_usd": 1207637,
+      "coingecko_id": "dhedge-dao",
+      "token": "dHEDGE DAO",
+      "matched_by": "symbol"
+    },
+    "clearpool-tpool": {
+      "mcap_usd": 22751136,
+      "coingecko_id": "clearpool",
+      "token": "Clearpool",
+      "matched_by": "symbol"
+    },
+    "compound-v2": {
+      "mcap_usd": 179797875,
+      "coingecko_id": "compound-governance-token",
+      "token": "Compound",
+      "matched_by": "symbol"
+    },
+    "compound-v3": {
+      "mcap_usd": 179797875,
+      "coingecko_id": "compound-governance-token",
+      "token": "Compound",
+      "matched_by": "symbol"
+    },
+    "contango-v2": {
+      "mcap_usd": 1557697,
+      "coingecko_id": "contango",
+      "token": "Contango",
+      "matched_by": "symbol"
+    },
+    "cooler-loans": {
+      "mcap_usd": 230024838,
+      "coingecko_id": "olympus",
+      "token": "Olympus",
+      "matched_by": "symbol"
+    },
+    "crvusd": {
+      "mcap_usd": 331645388,
+      "coingecko_id": "curve-dao-token",
+      "token": "Curve DAO",
+      "matched_by": "symbol"
+    },
+    "curve-dex": {
+      "mcap_usd": 331645388,
+      "coingecko_id": "curve-dao-token",
+      "token": "Curve DAO",
+      "matched_by": "symbol"
+    },
+    "curve-llamalend": {
+      "mcap_usd": 331645388,
+      "coingecko_id": "curve-dao-token",
+      "token": "Curve DAO",
+      "matched_by": "symbol"
+    },
+    "curve-llamalend-v2": {
+      "mcap_usd": 331645388,
+      "coingecko_id": "curve-dao-token",
+      "token": "Curve DAO",
+      "matched_by": "symbol"
+    },
+    "deepbook-v3": {
+      "mcap_usd": 31280358,
+      "coingecko_id": "deep",
+      "token": "DeepBook",
+      "matched_by": "symbol"
+    },
+    "deri-v4": {
+      "mcap_usd": 241722,
+      "coingecko_id": "deri-protocol",
+      "token": "Deri Protocol",
+      "matched_by": "symbol"
+    },
+    "derive-v3-options": {
+      "mcap_usd": 277222930,
+      "coingecko_id": "derive",
+      "token": "Derive",
+      "matched_by": "symbol"
+    },
+    "dexalot-portfolio": {
+      "mcap_usd": 1742875,
+      "coingecko_id": "dexalot",
+      "token": "Dexalot",
+      "matched_by": "symbol"
+    },
+    "dodo-amm": {
+      "mcap_usd": 31038943,
+      "coingecko_id": "dodo",
+      "token": "DODO",
+      "matched_by": "symbol"
+    },
+    "drift-staked-sol": {
+      "mcap_usd": 7166765,
+      "coingecko_id": "drift-protocol",
+      "token": "Drift Protocol",
+      "matched_by": "symbol"
+    },
+    "dydx-v3": {
+      "mcap_usd": 66166950,
+      "coingecko_id": "dydx-chain",
+      "token": "dYdX",
+      "matched_by": "symbol"
+    },
+    "dydx-v4": {
+      "mcap_usd": 66166950,
+      "coingecko_id": "dydx-chain",
+      "token": "dYdX",
+      "matched_by": "symbol"
+    },
+    "edgex-bridge": {
+      "mcap_usd": 99238120,
+      "coingecko_id": "edgex",
+      "token": "edgeX",
+      "matched_by": "symbol"
+    },
+    "ethena-usde": {
+      "mcap_usd": 1599618240,
+      "coingecko_id": "ethena",
+      "token": "Ethena",
+      "matched_by": "symbol"
+    },
+    "ethena-usdtb": {
+      "mcap_usd": 1599618240,
+      "coingecko_id": "ethena",
+      "token": "Ethena",
+      "matched_by": "symbol"
+    },
+    "ether.fi-liquid": {
+      "mcap_usd": 506940264,
+      "coingecko_id": "ether-fi",
+      "token": "Ether.fi",
+      "matched_by": "symbol"
+    },
+    "ether.fi-stake": {
+      "mcap_usd": 506940264,
+      "coingecko_id": "ether-fi",
+      "token": "Ether.fi",
+      "matched_by": "symbol"
+    },
+    "etherfi-borrowing-market": {
+      "mcap_usd": 506940264,
+      "coingecko_id": "ether-fi",
+      "token": "Ether.fi",
+      "matched_by": "symbol"
+    },
+    "etherfi-cash-liquid": {
+      "mcap_usd": 506940264,
+      "coingecko_id": "ether-fi",
+      "token": "Ether.fi",
+      "matched_by": "symbol"
+    },
+    "euler-v2": {
+      "mcap_usd": 19056856,
+      "coingecko_id": "euler",
+      "token": "Euler",
+      "matched_by": "symbol"
+    },
+    "extra-finance-leverage-farming": {
+      "mcap_usd": 1838414,
+      "coingecko_id": "extra-finance",
+      "token": "Extra Finance",
+      "matched_by": "symbol"
+    },
+    "fluid-dex": {
+      "mcap_usd": 148603542,
+      "coingecko_id": "instadapp",
+      "token": "Fluid",
+      "matched_by": "symbol"
+    },
+    "fluid-lending": {
+      "mcap_usd": 148603542,
+      "coingecko_id": "instadapp",
+      "token": "Fluid",
+      "matched_by": "symbol"
+    },
+    "fluid-lite": {
+      "mcap_usd": 148603542,
+      "coingecko_id": "instadapp",
+      "token": "Fluid",
+      "matched_by": "symbol"
+    },
+    "folks-finance-lending": {
+      "mcap_usd": 39400048,
+      "coingecko_id": "folks",
+      "token": "FOLKS",
+      "matched_by": "symbol"
+    },
+    "frax": {
+      "mcap_usd": 217044274,
+      "coingecko_id": "frax",
+      "token": "Legacy Frax Dollar",
+      "matched_by": "symbol"
+    },
+    "frax-ether": {
+      "mcap_usd": 217044274,
+      "coingecko_id": "frax",
+      "token": "Legacy Frax Dollar",
+      "matched_by": "symbol"
+    },
+    "frax-swap": {
+      "mcap_usd": 217044274,
+      "coingecko_id": "frax",
+      "token": "Legacy Frax Dollar",
+      "matched_by": "symbol"
+    },
+    "frax-usd": {
+      "mcap_usd": 217044274,
+      "coingecko_id": "frax",
+      "token": "Legacy Frax Dollar",
+      "matched_by": "symbol"
+    },
+    "fraxlend": {
+      "mcap_usd": 217044274,
+      "coingecko_id": "frax",
+      "token": "Legacy Frax Dollar",
+      "matched_by": "symbol"
+    },
+    "futarchy-amm": {
+      "mcap_usd": 70281850,
+      "coingecko_id": "meta-2-2",
+      "token": "MetaDAO",
+      "matched_by": "symbol"
+    },
+    "gain": {
+      "mcap_usd": 11079925,
+      "coingecko_id": "kernel-2",
+      "token": "KernelDAO",
+      "matched_by": "symbol"
+    },
+    "gate-us": {
+      "mcap_usd": 794017246,
+      "coingecko_id": "gatechain-token",
+      "token": "Gate",
+      "matched_by": "symbol"
+    },
+    "gmx-evm": {
+      "mcap_usd": 75869535,
+      "coingecko_id": "gmx",
+      "token": "GMX",
+      "matched_by": "symbol"
+    },
+    "goldfinger": {
+      "mcap_usd": 112250,
+      "coingecko_id": "liveart",
+      "token": "LiveArt",
+      "matched_by": "symbol"
+    },
+    "goplus-locker-v3": {
+      "mcap_usd": 49313308,
+      "coingecko_id": "goplus-security",
+      "token": "GoPlus Security",
+      "matched_by": "symbol"
+    },
+    "grvt-bridge": {
+      "mcap_usd": 19916982,
+      "coingecko_id": "grvt",
+      "token": "GRVT Token",
+      "matched_by": "symbol"
+    },
+    "haedal-lending-vault": {
+      "mcap_usd": 4107813,
+      "coingecko_id": "haedal",
+      "token": "Haedal Protocol",
+      "matched_by": "symbol"
+    },
+    "haedal-protocol": {
+      "mcap_usd": 4107813,
+      "coingecko_id": "haedal",
+      "token": "Haedal Protocol",
+      "matched_by": "symbol"
+    },
+    "hatom-lending": {
+      "mcap_usd": 4863996,
+      "coingecko_id": "hatom",
+      "token": "Hatom",
+      "matched_by": "symbol"
+    },
+    "hydration-lending": {
+      "mcap_usd": 35536447,
+      "coingecko_id": "hydradx",
+      "token": "Hydration",
+      "matched_by": "symbol"
+    },
+    "hydro-lending": {
+      "mcap_usd": 495460,
+      "coingecko_id": "hydro-protocol-2",
+      "token": "Hydro Protocol",
+      "matched_by": "symbol"
+    },
+    "hydro-lst": {
+      "mcap_usd": 495460,
+      "coingecko_id": "hydro-protocol-2",
+      "token": "Hydro Protocol",
+      "matched_by": "symbol"
+    },
+    "hyperlend-pooled": {
+      "mcap_usd": 2675504,
+      "coingecko_id": "hyperlend",
+      "token": "HyperLend",
+      "matched_by": "symbol"
+    },
+    "hyperliquid-bridge": {
+      "mcap_usd": 15526775212,
+      "coingecko_id": "hyperliquid",
+      "token": "Hyperliquid",
+      "matched_by": "symbol"
+    },
+    "hyperliquid-earn": {
+      "mcap_usd": 15526775212,
+      "coingecko_id": "hyperliquid",
+      "token": "Hyperliquid",
+      "matched_by": "symbol"
+    },
+    "hyperliquid-hlp": {
+      "mcap_usd": 15526775212,
+      "coingecko_id": "hyperliquid",
+      "token": "Hyperliquid",
+      "matched_by": "symbol"
+    },
+    "hyperliquid-spot-orderbook": {
+      "mcap_usd": 15526775212,
+      "coingecko_id": "hyperliquid",
+      "token": "Hyperliquid",
+      "matched_by": "symbol"
+    },
+    "hyperswap-v2": {
+      "mcap_usd": 3123744,
+      "coingecko_id": "trustswap",
+      "token": "TrustSwap",
+      "matched_by": "symbol"
+    },
+    "hyperswap-v3": {
+      "mcap_usd": 3123744,
+      "coingecko_id": "trustswap",
+      "token": "TrustSwap",
+      "matched_by": "symbol"
+    },
+    "idex-v1": {
+      "mcap_usd": 176309,
+      "coingecko_id": "aurora-dao",
+      "token": "IDEX",
+      "matched_by": "symbol"
+    },
+    "immutable-zkevm": {
+      "mcap_usd": 89066712,
+      "coingecko_id": "immutable-x",
+      "token": "Immutable",
+      "matched_by": "symbol"
+    },
+    "jito-liquid-staking": {
+      "mcap_usd": 146651036,
+      "coingecko_id": "jito-governance-token",
+      "token": "Jito",
+      "matched_by": "symbol"
+    },
+    "jito-restaking": {
+      "mcap_usd": 146651036,
+      "coingecko_id": "jito-governance-token",
+      "token": "Jito",
+      "matched_by": "symbol"
+    },
+    "joe-dex": {
+      "mcap_usd": 9992570,
+      "coingecko_id": "joe",
+      "token": "JOE",
+      "matched_by": "symbol"
+    },
+    "juicebox-v1": {
+      "mcap_usd": 109234,
+      "coingecko_id": "juicebox",
+      "token": "Juicebox",
+      "matched_by": "symbol"
+    },
+    "jupiter-lend": {
+      "mcap_usd": 863320214,
+      "coingecko_id": "jupiter-exchange-solana",
+      "token": "Jupiter",
+      "matched_by": "symbol"
+    },
+    "jupiter-lend-dex": {
+      "mcap_usd": 863320214,
+      "coingecko_id": "jupiter-exchange-solana",
+      "token": "Jupiter",
+      "matched_by": "symbol"
+    },
+    "jupiter-perpetual-exchange": {
+      "mcap_usd": 863320214,
+      "coingecko_id": "jupiter-exchange-solana",
+      "token": "Jupiter",
+      "matched_by": "symbol"
+    },
+    "jupiter-staked-sol": {
+      "mcap_usd": 863320214,
+      "coingecko_id": "jupiter-exchange-solana",
+      "token": "Jupiter",
+      "matched_by": "symbol"
+    },
+    "jupusd": {
+      "mcap_usd": 863320214,
+      "coingecko_id": "jupiter-exchange-solana",
+      "token": "Jupiter",
+      "matched_by": "symbol"
+    },
+    "justcryptos": {
+      "mcap_usd": 1142507355,
+      "coingecko_id": "just",
+      "token": "JUST",
+      "matched_by": "symbol"
+    },
+    "justlend-strx": {
+      "mcap_usd": 1142507355,
+      "coingecko_id": "just",
+      "token": "JUST",
+      "matched_by": "symbol"
+    },
+    "justlend-v1": {
+      "mcap_usd": 1142507355,
+      "coingecko_id": "just",
+      "token": "JUST",
+      "matched_by": "symbol"
+    },
+    "kamino-lend": {
+      "mcap_usd": 168399657,
+      "coingecko_id": "kamino",
+      "token": "Kamino",
+      "matched_by": "symbol"
+    },
+    "kamino-liquidity": {
+      "mcap_usd": 168399657,
+      "coingecko_id": "kamino",
+      "token": "Kamino",
+      "matched_by": "symbol"
+    },
+    "kelp": {
+      "mcap_usd": 11079925,
+      "coingecko_id": "kernel-2",
+      "token": "KernelDAO",
+      "matched_by": "symbol"
+    },
+    "kinetiq-earn": {
+      "mcap_usd": 77562175,
+      "coingecko_id": "kinetiq",
+      "token": "Kinetiq",
+      "matched_by": "symbol"
+    },
+    "kinetiq-elysium-bridge": {
+      "mcap_usd": 77562175,
+      "coingecko_id": "kinetiq",
+      "token": "Kinetiq",
+      "matched_by": "symbol"
+    },
+    "kinetiq-khype": {
+      "mcap_usd": 77562175,
+      "coingecko_id": "kinetiq",
+      "token": "Kinetiq",
+      "matched_by": "symbol"
+    },
+    "kinetiq-kmhype": {
+      "mcap_usd": 77562175,
+      "coingecko_id": "kinetiq",
+      "token": "Kinetiq",
+      "matched_by": "symbol"
+    },
+    "kodiak-islands": {
+      "mcap_usd": 1009997,
+      "coingecko_id": "kodiak-finance",
+      "token": "Kodiak Finance",
+      "matched_by": "symbol"
+    },
+    "kodiak-v3": {
+      "mcap_usd": 1009997,
+      "coingecko_id": "kodiak-finance",
+      "token": "Kodiak Finance",
+      "matched_by": "symbol"
+    },
+    "layerzero-v2": {
+      "mcap_usd": 588777898,
+      "coingecko_id": "layerzero",
+      "token": "LayerZero",
+      "matched_by": "symbol"
+    },
+    "lighter-bridge": {
+      "mcap_usd": 742929657,
+      "coingecko_id": "lighter",
+      "token": "Lighter",
+      "matched_by": "symbol"
+    },
+    "lighter-llp": {
+      "mcap_usd": 742929657,
+      "coingecko_id": "lighter",
+      "token": "Lighter",
+      "matched_by": "symbol"
+    },
+    "lighter-robinhood-perps": {
+      "mcap_usd": 742929657,
+      "coingecko_id": "lighter",
+      "token": "Lighter",
+      "matched_by": "symbol"
+    },
+    "liquity-v1": {
+      "mcap_usd": 14328075,
+      "coingecko_id": "liquity",
+      "token": "Liquity",
+      "matched_by": "symbol"
+    },
+    "liquity-v2": {
+      "mcap_usd": 14328075,
+      "coingecko_id": "liquity",
+      "token": "Liquity",
+      "matched_by": "symbol"
+    },
+    "lista-cdp": {
+      "mcap_usd": 28611972,
+      "coingecko_id": "lista",
+      "token": "Lista DAO",
+      "matched_by": "symbol"
+    },
+    "lista-dex": {
+      "mcap_usd": 28611972,
+      "coingecko_id": "lista",
+      "token": "Lista DAO",
+      "matched_by": "symbol"
+    },
+    "lista-lending": {
+      "mcap_usd": 28611972,
+      "coingecko_id": "lista",
+      "token": "Lista DAO",
+      "matched_by": "symbol"
+    },
+    "lista-liquid-staking": {
+      "mcap_usd": 28611972,
+      "coingecko_id": "lista",
+      "token": "Lista DAO",
+      "matched_by": "symbol"
+    },
+    "lombard-btc.b": {
+      "mcap_usd": 44473590,
+      "coingecko_id": "lombard-protocol",
+      "token": "Lombard",
+      "matched_by": "symbol"
+    },
+    "lombard-lbtc": {
+      "mcap_usd": 44473590,
+      "coingecko_id": "lombard-protocol",
+      "token": "Lombard",
+      "matched_by": "symbol"
+    },
+    "lombard-vaults": {
+      "mcap_usd": 44473590,
+      "coingecko_id": "lombard-protocol",
+      "token": "Lombard",
+      "matched_by": "symbol"
+    },
+    "lorenzo-enzobtc": {
+      "mcap_usd": 14779779,
+      "coingecko_id": "lorenzo-protocol",
+      "token": "Lorenzo Protocol",
+      "matched_by": "symbol"
+    },
+    "lorenzo-susd1+": {
+      "mcap_usd": 14779779,
+      "coingecko_id": "lorenzo-protocol",
+      "token": "Lorenzo Protocol",
+      "matched_by": "symbol"
+    },
+    "m0": {
+      "mcap_usd": 10795644,
+      "coingecko_id": "power-protocol",
+      "token": "Power Protocol",
+      "matched_by": "symbol"
+    },
+    "maple": {
+      "mcap_usd": 114981392,
+      "coingecko_id": "syrup",
+      "token": "Maple Finance",
+      "matched_by": "symbol"
+    },
+    "marinade-liquid-staking": {
+      "mcap_usd": 10673028,
+      "coingecko_id": "marinade",
+      "token": "Marinade",
+      "matched_by": "symbol"
+    },
+    "marinade-native": {
+      "mcap_usd": 10673028,
+      "coingecko_id": "marinade",
+      "token": "Marinade",
+      "matched_by": "symbol"
+    },
+    "marinade-select": {
+      "mcap_usd": 10673028,
+      "coingecko_id": "marinade",
+      "token": "Marinade",
+      "matched_by": "symbol"
+    },
+    "merchant-moe-liquidity-book": {
+      "mcap_usd": 1662392,
+      "coingecko_id": "moe-3",
+      "token": "MOE",
+      "matched_by": "symbol"
+    },
+    "meteora-damm-v1": {
+      "mcap_usd": 149017711,
+      "coingecko_id": "meteora",
+      "token": "Meteora",
+      "matched_by": "symbol"
+    },
+    "meteora-damm-v2": {
+      "mcap_usd": 149017711,
+      "coingecko_id": "meteora",
+      "token": "Meteora",
+      "matched_by": "symbol"
+    },
+    "meteora-dlmm": {
+      "mcap_usd": 149017711,
+      "coingecko_id": "meteora",
+      "token": "Meteora",
+      "matched_by": "symbol"
+    },
+    "meteora-vaults": {
+      "mcap_usd": 149017711,
+      "coingecko_id": "meteora",
+      "token": "Meteora",
+      "matched_by": "symbol"
+    },
+    "metis-bridge": {
+      "mcap_usd": 18679965,
+      "coingecko_id": "metis-token",
+      "token": "Metis",
+      "matched_by": "symbol"
+    },
+    "metronome-synth": {
+      "mcap_usd": 149017711,
+      "coingecko_id": "meteora",
+      "token": "Meteora",
+      "matched_by": "symbol"
+    },
+    "mezo-bridge": {
+      "mcap_usd": 1495667,
+      "coingecko_id": "mezo",
+      "token": "MEZO",
+      "matched_by": "symbol"
+    },
+    "minswap-dex": {
+      "mcap_usd": 4182017,
+      "coingecko_id": "minswap",
+      "token": "Minswap",
+      "matched_by": "symbol"
+    },
+    "moonwell-lending": {
+      "mcap_usd": 6241006,
+      "coingecko_id": "moonwell-artemis",
+      "token": "Moonwell",
+      "matched_by": "symbol"
+    },
+    "moonwell-vaults": {
+      "mcap_usd": 6241006,
+      "coingecko_id": "moonwell-artemis",
+      "token": "Moonwell",
+      "matched_by": "symbol"
+    },
+    "morpho-blue": {
+      "mcap_usd": 1240492486,
+      "coingecko_id": "morpho",
+      "token": "Morpho",
+      "matched_by": "symbol"
+    },
+    "morpho-midnight": {
+      "mcap_usd": 1240492486,
+      "coingecko_id": "morpho",
+      "token": "Morpho",
+      "matched_by": "symbol"
+    },
+    "mstable-v2": {
+      "mcap_usd": 1207637,
+      "coingecko_id": "dhedge-dao",
+      "token": "dHEDGE DAO",
+      "matched_by": "symbol"
+    },
+    "mux-perps": {
+      "mcap_usd": 8286615,
+      "coingecko_id": "mcdex",
+      "token": "MUX Protocol",
+      "matched_by": "symbol"
+    },
+    "navi-curator": {
+      "mcap_usd": 6550502,
+      "coingecko_id": "navi",
+      "token": "NAVI Protocol",
+      "matched_by": "symbol"
+    },
+    "navi-lending": {
+      "mcap_usd": 6550502,
+      "coingecko_id": "navi",
+      "token": "NAVI Protocol",
+      "matched_by": "symbol"
+    },
+    "near-bridge": {
+      "mcap_usd": 4108972776,
+      "coingecko_id": "near",
+      "token": "NEAR Protocol",
+      "matched_by": "symbol"
+    },
+    "near-intents": {
+      "mcap_usd": 4108972776,
+      "coingecko_id": "near",
+      "token": "NEAR Protocol",
+      "matched_by": "symbol"
+    },
+    "neopin-staking": {
+      "mcap_usd": 843244,
+      "coingecko_id": "neptune-cash",
+      "token": "Neptune Cash",
+      "matched_by": "symbol"
+    },
+    "nest-cl": {
+      "mcap_usd": 3623115,
+      "coingecko_id": "nest-2",
+      "token": "NEST",
+      "matched_by": "symbol"
+    },
+    "nexus-mutual-insurance": {
+      "mcap_usd": 75848860,
+      "coingecko_id": "nxm",
+      "token": "Nexus Mutual",
+      "matched_by": "symbol"
+    },
+    "optimism-bridge": {
+      "mcap_usd": 186646592,
+      "coingecko_id": "optimism",
+      "token": "Optimism",
+      "matched_by": "symbol"
+    },
+    "orca-dex": {
+      "mcap_usd": 71330207,
+      "coingecko_id": "orca",
+      "token": "Orca",
+      "matched_by": "symbol"
+    },
+    "orderly-bridge": {
+      "mcap_usd": 11828206,
+      "coingecko_id": "orderly-network",
+      "token": "Orderly",
+      "matched_by": "symbol"
+    },
+    "origin-arm": {
+      "mcap_usd": 14627879,
+      "coingecko_id": "origin-protocol",
+      "token": "Origin Token",
+      "matched_by": "symbol"
+    },
+    "origin-dollar": {
+      "mcap_usd": 14627879,
+      "coingecko_id": "origin-protocol",
+      "token": "Origin Token",
+      "matched_by": "symbol"
+    },
+    "origin-ether": {
+      "mcap_usd": 14627879,
+      "coingecko_id": "origin-protocol",
+      "token": "Origin Token",
+      "matched_by": "symbol"
+    },
+    "pancakeswap-amm": {
+      "mcap_usd": 555875805,
+      "coingecko_id": "pancakeswap-token",
+      "token": "PancakeSwap",
+      "matched_by": "symbol"
+    },
+    "pancakeswap-amm-v3": {
+      "mcap_usd": 555875805,
+      "coingecko_id": "pancakeswap-token",
+      "token": "PancakeSwap",
+      "matched_by": "symbol"
+    },
+    "pancakeswap-infinity": {
+      "mcap_usd": 555875805,
+      "coingecko_id": "pancakeswap-token",
+      "token": "PancakeSwap",
+      "matched_by": "symbol"
+    },
+    "papertrade": {
+      "mcap_usd": 4570,
+      "coingecko_id": "paper-bag",
+      "token": "Paper Bag",
+      "matched_by": "symbol"
+    },
+    "paradex-bridge": {
+      "mcap_usd": 4536600,
+      "coingecko_id": "paradex",
+      "token": "Paradex",
+      "matched_by": "symbol"
+    },
+    "pendle-loop": {
+      "mcap_usd": 245670651,
+      "coingecko_id": "pendle",
+      "token": "Pendle",
+      "matched_by": "symbol"
+    },
+    "pendle-v2": {
+      "mcap_usd": 245670651,
+      "coingecko_id": "pendle",
+      "token": "Pendle",
+      "matched_by": "symbol"
+    },
+    "pharaoh-dlmm": {
+      "mcap_usd": 2005546,
+      "coingecko_id": "pharaoh-2",
+      "token": "Pharaoh",
+      "matched_by": "symbol"
+    },
+    "pharaoh-v3": {
+      "mcap_usd": 2005546,
+      "coingecko_id": "pharaoh-2",
+      "token": "Pharaoh",
+      "matched_by": "symbol"
+    },
+    "puffer-stake": {
+      "mcap_usd": 11989806,
+      "coingecko_id": "puffer-finance",
+      "token": "Puffer",
+      "matched_by": "symbol"
+    },
+    "pumpswap": {
+      "mcap_usd": 1335580370,
+      "coingecko_id": "pump-fun",
+      "token": "Pump.fun",
+      "matched_by": "symbol"
+    },
+    "quickswap-v3": {
+      "mcap_usd": 1949792,
+      "coingecko_id": "quickswap",
+      "token": "Quickswap",
+      "matched_by": "symbol"
+    },
+    "ramses-cl-v2": {
+      "mcap_usd": 1850386,
+      "coingecko_id": "ramses",
+      "token": "Ramses",
+      "matched_by": "symbol"
+    },
+    "raydium-amm": {
+      "mcap_usd": 372467641,
+      "coingecko_id": "raydium",
+      "token": "Raydium",
+      "matched_by": "symbol"
+    },
+    "realt-rmm-marketplace-v2": {
+      "mcap_usd": 431282,
+      "coingecko_id": "realtoken-ecosystem-governance",
+      "token": "RealToken Ecosystem Governance",
+      "matched_by": "symbol"
+    },
+    "realt-tokens": {
+      "mcap_usd": 431282,
+      "coingecko_id": "realtoken-ecosystem-governance",
+      "token": "RealToken Ecosystem Governance",
+      "matched_by": "symbol"
+    },
+    "rhea-dex": {
+      "mcap_usd": 13529930,
+      "coingecko_id": "rhea-2",
+      "token": "RHEA",
+      "matched_by": "symbol"
+    },
+    "rhea-lend": {
+      "mcap_usd": 13529930,
+      "coingecko_id": "rhea-2",
+      "token": "RHEA",
+      "matched_by": "symbol"
+    },
+    "river-omni-cdp": {
+      "mcap_usd": 25961763,
+      "coingecko_id": "river",
+      "token": "River",
+      "matched_by": "symbol"
+    },
+    "rnt-lend": {
+      "mcap_usd": 50779918,
+      "coingecko_id": "reental",
+      "token": "Rnt",
+      "matched_by": "symbol"
+    },
+    "sanctum-infinity": {
+      "mcap_usd": 35242723,
+      "coingecko_id": "sanctum-2",
+      "token": "Sanctum",
+      "matched_by": "symbol"
+    },
+    "sanctum-reserve": {
+      "mcap_usd": 35242723,
+      "coingecko_id": "sanctum-2",
+      "token": "Sanctum",
+      "matched_by": "symbol"
+    },
+    "sanctum-validator-lsts": {
+      "mcap_usd": 35242723,
+      "coingecko_id": "sanctum-2",
+      "token": "Sanctum",
+      "matched_by": "symbol"
+    },
+    "saphyre-v3": {
+      "mcap_usd": 2898109,
+      "coingecko_id": "dragonswap",
+      "token": "DragonSwap",
+      "matched_by": "symbol"
+    },
+    "saucerswap-v1": {
+      "mcap_usd": 7944268,
+      "coingecko_id": "saucerswap",
+      "token": "SaucerSwap",
+      "matched_by": "symbol"
+    },
+    "saucerswap-v2": {
+      "mcap_usd": 7944268,
+      "coingecko_id": "saucerswap",
+      "token": "SaucerSwap",
+      "matched_by": "symbol"
+    },
+    "save": {
+      "mcap_usd": 7833952,
+      "coingecko_id": "save",
+      "token": "Save",
+      "matched_by": "symbol"
+    },
+    "save-sol": {
+      "mcap_usd": 7833952,
+      "coingecko_id": "save",
+      "token": "Save",
+      "matched_by": "symbol"
+    },
+    "scallop-lend": {
+      "mcap_usd": 733567,
+      "coingecko_id": "scallop-2",
+      "token": "Scallop",
+      "matched_by": "symbol"
+    },
+    "seamless-v2": {
+      "mcap_usd": 433595,
+      "coingecko_id": "seamless-protocol",
+      "token": "Seamless Protocol",
+      "matched_by": "symbol"
+    },
+    "sky-lending": {
+      "mcap_usd": 1302759440,
+      "coingecko_id": "sky",
+      "token": "Sky",
+      "matched_by": "symbol"
+    },
+    "sky-money": {
+      "mcap_usd": 1302759440,
+      "coingecko_id": "sky",
+      "token": "Sky",
+      "matched_by": "symbol"
+    },
+    "sky-rwa": {
+      "mcap_usd": 1302759440,
+      "coingecko_id": "sky",
+      "token": "Sky",
+      "matched_by": "symbol"
+    },
+    "sodex-bridge": {
+      "mcap_usd": 101772130,
+      "coingecko_id": "sosovalue",
+      "token": "SoSoValue",
+      "matched_by": "symbol"
+    },
+    "solayer-restaking": {
+      "mcap_usd": 9127689,
+      "coingecko_id": "solayer",
+      "token": "Solayer",
+      "matched_by": "symbol"
+    },
+    "solv-basis-trading": {
+      "mcap_usd": 25000981,
+      "coingecko_id": "solv-protocol",
+      "token": "Solv Protocol",
+      "matched_by": "symbol"
+    },
+    "solv-rwa": {
+      "mcap_usd": 25000981,
+      "coingecko_id": "solv-protocol",
+      "token": "Solv Protocol",
+      "matched_by": "symbol"
+    },
+    "solvbtc": {
+      "mcap_usd": 25000981,
+      "coingecko_id": "solv-protocol",
+      "token": "Solv Protocol",
+      "matched_by": "symbol"
+    },
+    "sosovalue-indexes": {
+      "mcap_usd": 101772130,
+      "coingecko_id": "sosovalue",
+      "token": "SoSoValue",
+      "matched_by": "symbol"
+    },
+    "sovryn-dex": {
+      "mcap_usd": 1012080,
+      "coingecko_id": "sovryn",
+      "token": "Sovryn",
+      "matched_by": "symbol"
+    },
+    "sovryn-zero": {
+      "mcap_usd": 1012080,
+      "coingecko_id": "sovryn",
+      "token": "Sovryn",
+      "matched_by": "symbol"
+    },
+    "spark-liquidity-layer": {
+      "mcap_usd": 47720832,
+      "coingecko_id": "spark-2",
+      "token": "Spark",
+      "matched_by": "symbol"
+    },
+    "spark-savings": {
+      "mcap_usd": 47720832,
+      "coingecko_id": "spark-2",
+      "token": "Spark",
+      "matched_by": "symbol"
+    },
+    "sparkdex-v3.1": {
+      "mcap_usd": 340583,
+      "coingecko_id": "sparkdex",
+      "token": "SparkDEX",
+      "matched_by": "symbol"
+    },
+    "sparkdex-v4": {
+      "mcap_usd": 340583,
+      "coingecko_id": "sparkdex",
+      "token": "SparkDEX",
+      "matched_by": "symbol"
+    },
+    "sparklend": {
+      "mcap_usd": 47720832,
+      "coingecko_id": "spark-2",
+      "token": "Spark",
+      "matched_by": "symbol"
+    },
+    "spectra-metavaults": {
+      "mcap_usd": 2011664,
+      "coingecko_id": "spectra-finance",
+      "token": "Spectra",
+      "matched_by": "symbol"
+    },
+    "spectra-v2": {
+      "mcap_usd": 2011664,
+      "coingecko_id": "spectra-finance",
+      "token": "Spectra",
+      "matched_by": "symbol"
+    },
+    "stake-dao-yield": {
+      "mcap_usd": 5314002,
+      "coingecko_id": "stake-dao",
+      "token": "Stake DAO",
+      "matched_by": "symbol"
+    },
+    "stake.link-liquid": {
+      "mcap_usd": 7724066,
+      "coingecko_id": "stake-link",
+      "token": "stake.link",
+      "matched_by": "symbol"
+    },
+    "stakestone-stone": {
+      "mcap_usd": 5380079,
+      "coingecko_id": "stakestone",
+      "token": "StakeStone",
+      "matched_by": "symbol"
+    },
+    "stakewise-v3": {
+      "mcap_usd": 1987356,
+      "coingecko_id": "stakewise",
+      "token": "StakeWise",
+      "matched_by": "symbol"
+    },
+    "stargate-v1": {
+      "mcap_usd": 11368978,
+      "coingecko_id": "stargate-finance",
+      "token": "Stargate Finance",
+      "matched_by": "symbol"
+    },
+    "stargate-v2": {
+      "mcap_usd": 11368978,
+      "coingecko_id": "stargate-finance",
+      "token": "Stargate Finance",
+      "matched_by": "symbol"
+    },
+    "suilend": {
+      "mcap_usd": 4151339,
+      "coingecko_id": "send-token-2",
+      "token": "Send",
+      "matched_by": "symbol"
+    },
+    "sunswap-v1": {
+      "mcap_usd": 283315903,
+      "coingecko_id": "sun-token",
+      "token": "Sun Token",
+      "matched_by": "symbol"
+    },
+    "sunswap-v2": {
+      "mcap_usd": 283315903,
+      "coingecko_id": "sun-token",
+      "token": "Sun Token",
+      "matched_by": "symbol"
+    },
+    "sunswap-v3": {
+      "mcap_usd": 283315903,
+      "coingecko_id": "sun-token",
+      "token": "Sun Token",
+      "matched_by": "symbol"
+    },
+    "sunswap-v4": {
+      "mcap_usd": 283315903,
+      "coingecko_id": "sun-token",
+      "token": "Sun Token",
+      "matched_by": "symbol"
+    },
+    "sunx-bridge": {
+      "mcap_usd": 283315903,
+      "coingecko_id": "sun-token",
+      "token": "Sun Token",
+      "matched_by": "symbol"
+    },
+    "superform": {
+      "mcap_usd": 38252771,
+      "coingecko_id": "unitas",
+      "token": "Unitas",
+      "matched_by": "symbol"
+    },
+    "sushi-stellar": {
+      "mcap_usd": 44098623,
+      "coingecko_id": "sushi",
+      "token": "Sushi",
+      "matched_by": "symbol"
+    },
+    "sushiswap-v3": {
+      "mcap_usd": 44098623,
+      "coingecko_id": "sushi",
+      "token": "Sushi",
+      "matched_by": "symbol"
+    },
+    "swell-liquid-restaking": {
+      "mcap_usd": 2820320,
+      "coingecko_id": "swell-network",
+      "token": "Swell",
+      "matched_by": "symbol"
+    },
+    "swell-liquid-staking": {
+      "mcap_usd": 2820320,
+      "coingecko_id": "swell-network",
+      "token": "Swell",
+      "matched_by": "symbol"
+    },
+    "tbtc": {
+      "mcap_usd": 43642625,
+      "coingecko_id": "threshold-network-token",
+      "token": "Threshold Network",
+      "matched_by": "symbol"
+    },
+    "the-vault-liquid-staking": {
+      "mcap_usd": 1693675,
+      "coingecko_id": "vault-2",
+      "token": "Vault",
+      "matched_by": "symbol"
+    },
+    "uncx-network-v2": {
+      "mcap_usd": 554957,
+      "coingecko_id": "unicrypt-2",
+      "token": "UNCX Network",
+      "matched_by": "symbol"
+    },
+    "uncx-network-v3": {
+      "mcap_usd": 554957,
+      "coingecko_id": "unicrypt-2",
+      "token": "UNCX Network",
+      "matched_by": "symbol"
+    },
+    "uniswap-v2": {
+      "mcap_usd": 3030975390,
+      "coingecko_id": "uniswap",
+      "token": "Uniswap",
+      "matched_by": "symbol"
+    },
+    "uniswap-v3": {
+      "mcap_usd": 3030975390,
+      "coingecko_id": "uniswap",
+      "token": "Uniswap",
+      "matched_by": "symbol"
+    },
+    "uniswap-v4": {
+      "mcap_usd": 3030975390,
+      "coingecko_id": "uniswap",
+      "token": "Uniswap",
+      "matched_by": "symbol"
+    },
+    "unitas-usdu": {
+      "mcap_usd": 38252771,
+      "coingecko_id": "unitas",
+      "token": "Unitas",
+      "matched_by": "symbol"
+    },
+    "vaulta-rex": {
+      "mcap_usd": 1166141,
+      "coingecko_id": "binance-peg-eos",
+      "token": "Binance-Peg EOS",
+      "matched_by": "symbol"
+    },
+    "venus-core-pool": {
+      "mcap_usd": 39055146,
+      "coingecko_id": "venus",
+      "token": "Venus",
+      "matched_by": "symbol"
+    },
+    "vesper-v1": {
+      "mcap_usd": 1460707,
+      "coingecko_id": "vesper-finance",
+      "token": "Vesper Finance",
+      "matched_by": "symbol"
+    },
+    "vesper-v2": {
+      "mcap_usd": 1460707,
+      "coingecko_id": "vesper-finance",
+      "token": "Vesper Finance",
+      "matched_by": "symbol"
+    },
+    "volo-lst": {
+      "mcap_usd": 6550502,
+      "coingecko_id": "navi",
+      "token": "NAVI Protocol",
+      "matched_by": "symbol"
+    },
+    "vvs-standard": {
+      "mcap_usd": 30086651,
+      "coingecko_id": "vvs-finance",
+      "token": "VVS Finance",
+      "matched_by": "symbol"
+    },
+    "xalgo-liquid-staking": {
+      "mcap_usd": 39400048,
+      "coingecko_id": "folks",
+      "token": "FOLKS",
+      "matched_by": "symbol"
+    },
+    "yearn-curating": {
+      "mcap_usd": 59636650,
+      "coingecko_id": "yearn-finance",
+      "token": "yearn.finance",
+      "matched_by": "symbol"
+    },
+    "yearn-finance": {
+      "mcap_usd": 59636650,
+      "coingecko_id": "yearn-finance",
+      "token": "yearn.finance",
+      "matched_by": "symbol"
+    },
+    "zest-v2": {
+      "mcap_usd": 16145168,
+      "coingecko_id": "zest-protocol",
+      "token": "Zest Protocol",
+      "matched_by": "symbol"
+    }
+  }
+}

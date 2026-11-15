@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildRadar, dataScript } from './lib/radar.mjs';
@@ -17,9 +17,14 @@ const snapshot = JSON.parse(
     '',
   ),
 );
-const radar = buildRadar(snapshot);
+const capsPath = join(root, 'data', 'market-caps.json');
+const marketCaps = existsSync(capsPath) ? JSON.parse(readFileSync(capsPath, 'utf8')) : undefined;
+const radar = buildRadar(snapshot, { marketCaps });
 mkdirSync(output, { recursive: true });
-writeFileSync(join(output, 'board.json'), JSON.stringify({ rows: radar.rows }) + '\n');
+writeFileSync(
+  join(output, 'board.json'),
+  JSON.stringify({ digest: radar.board_digest, rows: radar.rows }) + '\n',
+);
 writeFileSync(join(output, 'data.js'), dataScript(radar));
 cpSync(join(root, 'dashboard'), join(output, 'dashboard'), { recursive: true });
 cpSync(join(root, 'screenshots'), join(output, 'screenshots'), { recursive: true });

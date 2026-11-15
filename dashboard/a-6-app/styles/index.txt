@@ -8,3 +8,5 @@ import './clean.css';
 import './monitor.css';
 import './motion.css';
 import './responsive.css';
+import './evidence.css';
+import './plan-modal.css';

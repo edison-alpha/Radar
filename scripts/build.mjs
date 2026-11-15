@@ -184,6 +184,7 @@ function includeSource(from, to) {
 includeSource('lib', 'dashboard/a-1-model');
 includeSource('src/features/radar', 'dashboard/a-2-board');
 includeSource('src/features/protocol', 'dashboard/a-3-detail');
+includeSource('src/features/reference', 'dashboard/a-3-detail/reference');
 includeSource('src/features/methodology', 'dashboard/a-4-method');
 includeSource('src/features/monitor', 'dashboard/a-5-pages/radar');
 includeSource('src/features/saved', 'dashboard/a-5-pages/saved');

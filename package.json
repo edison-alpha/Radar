@@ -7,6 +7,8 @@
     "dev": "node scripts/prepare.mjs && vite --host 127.0.0.1",
     "data": "node scripts/prepare-data.mjs",
     "logos:fetch": "node scripts/fetch-protocol-logos.mjs",
+    "logos:reference": "node scripts/fetch-reference-logos.mjs",
+    "mcaps:fetch": "node scripts/fetch-market-caps.mjs",
     "history:fetch": "node scripts/fetch-tvl-history.mjs",
     "chains:fetch": "node scripts/fetch-chain-logos.mjs",
     "build": "node scripts/prepare.mjs && node scripts/build.mjs",

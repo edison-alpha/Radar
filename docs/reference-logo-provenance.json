@@ -1,0 +1,9 @@
+{
+  "catalog": "DefiLlama protocol icons for protocols the board does not rank, packed in one atlas",
+  "source": "https://icons.llamao.fi/icons/protocols/<slug>",
+  "requested": 563,
+  "packed": 562,
+  "without_icon": [
+    "sunswap-v4"
+  ]
+}

@@ -10,7 +10,9 @@ import { ExpandSearch } from '../../components/ui/ExpandSearch';
 import { Sparkline } from '../../components/charts/Sparkline';
 import { Icon } from '../../shared/Icon';
 import { Growth, ProtocolMark } from '../../shared/ui';
-import { ageLabel, downloadCsv, money, snapshotDate } from '../../shared/format';
+import { ageLabel, downloadCsv, money, signed, snapshotDate } from '../../shared/format';
+import { ECON, farmEconomics } from '../../../lib/economics.mjs';
+import { ReferenceTable } from '../radar/ReferenceTable';
 import { InsightsPanel } from './InsightsPanel';
 import { useMonitorData } from './useMonitorData';
 
@@ -20,7 +22,10 @@ const TABS = [
   { id: 'early', label: 'Early', icon: 'sparkle' },
   { id: 'gainers', label: 'Gainers', icon: 'trending' },
   { id: 'decliners', label: 'Decliners', icon: 'trendDown' },
+  { id: 'traded', label: 'Token trades', icon: 'coins' },
+  { id: 'setaside', label: 'Set aside', icon: 'archive' },
 ];
+const capitalLabel = (n) => (n >= 1000 ? '$' + n / 1000 + 'K' : '$' + n);
 const PAGE = 25;
 
 function MoverCard({ title, icon, rows, onSelect }) {
@@ -65,7 +70,7 @@ function SortHeader({ id, sort, onSort, children, className }) {
   );
 }
 
-export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMethodology }) {
+export function MonitorPage({ data, saved, onToggleSave, onSelect, onSelectReference, onBack, onMethodology }) {
   const m = useMonitorData(data);
   const ready = useReveal(380);
   const [tab, setTab] = useState('all');
@@ -75,16 +80,53 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
   const [minTvl, setMinTvl] = useState('');
   const [maxFee, setMaxFee] = useState('');
   const [tier, setTier] = useState('');
+  const [verdict, setVerdict] = useState('');
+  const [capital, setCapital] = useState(ECON.capital);
+  const [share, setShare] = useState(ECON.share);
   const [sort, setSort] = useState({ id: 'implied_value_usd', desc: true });
   const [limit, setLimit] = useState(PAGE);
 
+  const priced = useMemo(
+    () =>
+      m.rows.map((p) => {
+        const econ = farmEconomics(p, { capital, share });
+        return { ...p, econ, net_usd: econ.net_usd, slice_usd: econ.slice_usd };
+      }),
+    [m.rows, capital, share],
+  );
+  const verdicts = useMemo(() => {
+    const total = { FARM: 0, THIN: 0, SKIP: 0 };
+    for (const p of priced) total[p.econ.verdict] += 1;
+    return total;
+  }, [priced]);
+  const bestPerHour = useMemo(
+    () =>
+      [...priced]
+        .sort((a, b) => b.econ.per_hour_usd - a.econ.per_hour_usd || a.rank - b.rank)
+        .slice(0, 5),
+    [priced],
+  );
+  const reference = tab === 'traded' || tab === 'setaside';
+  const referenceRows = useMemo(() => {
+    if (!reference) return [];
+    const needle = query.trim().toLowerCase();
+    return (tab === 'traded' ? data.traded : data.set_aside).filter(
+      (p) =>
+        (!category || p.category === category) &&
+        (!minTvl || p.tvl_usd >= Number(minTvl)) &&
+        (!needle ||
+          (p.name + ' ' + p.slug + ' ' + (p.category ?? '')).toLowerCase().includes(needle)),
+    );
+  }, [reference, tab, data, query, category, minTvl]);
+
   const rows = useMemo(() => {
     const needle = query.trim().toLowerCase();
-    let list = m.rows.filter(
+    let list = priced.filter(
       (p) =>
         (!category || p.category === category) &&
         (!chain || p.chains.includes(chain)) &&
         (!tier || p.tier === tier) &&
+        (!verdict || p.econ.verdict === verdict) &&
         (!minTvl || p.tvl_usd >= Number(minTvl)) &&
         (!maxFee || (Number.isFinite(p.farm?.fees_usd) && p.farm.fees_usd <= Number(maxFee))) &&
         (!needle ||
@@ -112,7 +154,7 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
       if (bv == null) return -1;
       return dir * (av - bv) || a.rank - b.rank;
     });
-  }, [m.rows, tab, category, chain, query, sort, minTvl, maxFee, tier]);
+  }, [priced, tab, category, chain, query, sort, minTvl, maxFee, tier, verdict]);
 
   const counts = useMemo(
     () => ({
@@ -121,8 +163,10 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
       early: m.rows.filter((p) => !p.watchlist).length,
       gainers: m.gainers.filter((p) => p.change_7d > 0).length,
       decliners: m.decliners.filter((p) => p.change_7d < 0).length,
+      traded: data.traded.length,
+      setaside: data.set_aside.length,
     }),
-    [m],
+    [m, data],
   );
 
   function changeSort(id) {
@@ -155,6 +199,39 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
               from the sealed {snapshotDate(data.as_of)} snapshot.
             </p>
           </header>
+
+          <div className="model-summary monitor-summary">
+            <div>
+              <strong>Backtested value model</strong>
+              <span>
+                {data.curve.comparables} tokens on record fit the curve
+                {data.backtest &&
+                  ' · leave-one-out median miss ×' +
+                    data.backtest.leave_one_out.model.median_miss +
+                    ' vs ×' +
+                    data.backtest.leave_one_out.flat.median_miss +
+                    ' for one flat multiple · time split ×' +
+                    data.backtest.time_split.model.median_miss +
+                    ' vs ×' +
+                    data.backtest.time_split.flat.median_miss}
+              </span>
+            </div>
+            <div className="verdict-counts" aria-label="Verdicts at the chosen capital">
+              <span className="verdict-count net-farm">
+                <b>{verdicts.FARM}</b> farm
+              </span>
+              <span className="verdict-count net-thin">
+                <b>{verdicts.THIN}</b> thin
+              </span>
+              <span className="verdict-count net-skip">
+                <b>{verdicts.SKIP}</b> skip
+              </span>
+              <small>
+                at {'$' + capital.toLocaleString('en-US')} · {share * 100}% drop
+              </small>
+            </div>
+            <button onClick={onMethodology}>Method and backtest</button>
+          </div>
 
           <div className="monitor-cards">
             <section className="monitor-card monitor-total" aria-label="Combined TVL">
@@ -214,18 +291,22 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                 ))}
               </ul>
             </section>
-            <section className="monitor-card" aria-label="Largest slice per $1,000">
+            <section className="monitor-card" aria-label="Best net per hands-on hour">
               <h2>
-                <Icon name="sparkle" size={18} /> {'Largest slice per $1k'}
+                <Icon name="sparkle" size={18} /> Best net per hands-on hour
               </h2>
               <ul>
-                {m.bestSlices.map((p) => (
+                {bestPerHour.map((p) => (
                   <li key={p.slug}>
                     <button onClick={() => onSelect(p)}>
                       <ProtocolMark name={p.name} slug={p.slug} size="small" />
                       <span className="mover-name">{p.name}</span>
-                      <span className="mover-tvl">{p.farm.action}</span>
-                      <span className="positive">{'$' + p.slice_per_1k_usd.toFixed(2)}</span>
+                      <span className={'mover-tvl net-' + p.econ.verdict.toLowerCase()}>
+                        <em className="verdict-badge">{p.econ.verdict}</em> {signed(p.econ.net_usd)}
+                      </span>
+                      <span className={p.econ.per_hour_usd >= 0 ? 'positive' : 'negative'}>
+                        {signed(p.econ.per_hour_usd)}/h
+                      </span>
                     </button>
                   </li>
                 ))}
@@ -322,13 +403,58 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
               { value: '5', label: 'Fees ≤ $5' }, { value: '10', label: 'Fees ≤ $10' },
               { value: '50', label: 'Fees ≤ $50' },
             ]} />
-            {(query || category || chain || minTvl || maxFee || tier) && (
-              <button className="button button-secondary" onClick={() => { setQuery(''); setCategory(''); setChain(''); setMinTvl(''); setMaxFee(''); setTier(''); setLimit(PAGE); }}>Clear filters</button>
+            {!reference && (
+              <>
+                <Dropdown
+                  label="Verdict"
+                  value={verdict}
+                  onChange={(value) => {
+                    setVerdict(value);
+                    setLimit(PAGE);
+                  }}
+                  options={[
+                    { value: '', label: 'Any verdict' },
+                    { value: 'FARM', label: 'Verdict: farm' },
+                    { value: 'THIN', label: 'Verdict: thin' },
+                    { value: 'SKIP', label: 'Verdict: skip' },
+                  ]}
+                />
+                <Dropdown
+                  label="Capital"
+                  value={capital}
+                  onChange={(value) => setCapital(Number(value))}
+                  options={ECON.capitals.map((n) => ({ value: n, label: 'Capital ' + capitalLabel(n) }))}
+                />
+                <Dropdown
+                  label="Airdrop share of the launch"
+                  value={share}
+                  onChange={(value) => setShare(Number(value))}
+                  options={ECON.shares.map((n) => ({ value: n, label: 'Airdrop ' + n * 100 + '% of value' }))}
+                />
+              </>
             )}
-            <button className="button button-secondary monitor-export" onClick={() => downloadCsv(rows, data.as_of)}>Export CSV</button>
+            {(query || category || chain || minTvl || maxFee || tier || verdict) && (
+              <button className="button button-secondary" onClick={() => { setQuery(''); setCategory(''); setChain(''); setMinTvl(''); setMaxFee(''); setTier(''); setVerdict(''); setLimit(PAGE); }}>Clear filters</button>
+            )}
+            {!reference && (
+              <button className="button button-secondary monitor-export" onClick={() => downloadCsv(rows, data.as_of)}>Export CSV</button>
+            )}
           </div>
         </div>
 
+        {reference ? (
+          <ReferenceTable
+            kind={tab}
+            rows={referenceRows}
+            onSelect={onSelectReference}
+            onReset={() => {
+              setQuery('');
+              setCategory('');
+              setMinTvl('');
+            }}
+          />
+        ) : (
+        <>
         <div className="table-scroll">
           <table className="monitor-table">
             <caption className="sr-only">
@@ -358,8 +484,11 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                 <SortHeader id="implied_value_usd" sort={sort} onSort={changeSort}>
                   Estimated value
                 </SortHeader>
-                <SortHeader id="slice_per_1k_usd" sort={sort} onSort={changeSort}>
-                  {'Per $1k'}
+                <SortHeader id="slice_usd" sort={sort} onSort={changeSort}>
+                  Slice
+                </SortHeader>
+                <SortHeader id="net_usd" sort={sort} onSort={changeSort}>
+                  Net of all costs
                 </SortHeader>
                 <th scope="col">Farm · fees · time</th>
                 <SortHeader id="age_days" sort={sort} onSort={changeSort}>
@@ -418,7 +547,15 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
                   <td>
                     <ValuationRange value={p.implied_value_usd} low={p.implied_low_usd} high={p.implied_high_usd} />
                   </td>
-                  <td>{'$' + p.slice_per_1k_usd.toFixed(2)}</td>
+                  <td>{'$' + p.econ.slice_usd.toFixed(2)}</td>
+                  <td>
+                    <span className={'net-cell net-' + p.econ.verdict.toLowerCase()}>
+                      <strong>
+                        <em className="verdict-badge">{p.econ.verdict}</em> {signed(p.econ.net_usd)}
+                      </strong>
+                      <small>{signed(p.econ.per_hour_usd)}/h hands-on</small>
+                    </span>
+                  </td>
                   <td>
                     <span className="farm-cell">
                       <strong>
@@ -454,6 +591,8 @@ export function MonitorPage({ data, saved, onToggleSave, onSelect, onBack, onMet
             </button>
           )}
         </div>
+        </>
+        )}
       </div>
     </section>
   );

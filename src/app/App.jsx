@@ -13,8 +13,10 @@ import { MonitorPage } from '../features/monitor/MonitorPage';
 import { SavedPage } from '../features/saved/SavedPage';
 import { Toast } from '../components/ui/Toast';
 import { useSavedProtocols } from '../shared/useSavedProtocols';
-import { protocolHref, useRoute } from '../shared/useRoute';
+import { protocolHref, referenceHref, useRoute } from '../shared/useRoute';
+import { ReferencePage } from '../features/reference/ReferencePage';
 import { useRecent } from '../shared/useRecent';
+import { boardDigest } from '../../lib/economics.mjs';
 
 export function App({ data }) {
   const { saved, toggle, storageError } = useSavedProtocols();
@@ -27,6 +29,19 @@ export function App({ data }) {
   const protocol = useMemo(
     () => (route.name === 'protocol' ? data.rows.find((p) => p.slug === route.slug) : null),
     [route, data.rows],
+  );
+
+  // The page ranks the same rows main.ts wrote to board.json: the digest proves it at runtime.
+  const evidence = useMemo(
+    () => ({
+      watchlistCovered: data.rows.filter((row) => row.watchlist).length,
+      watchlist: data.watchlist_count,
+      rows: data.rows.length,
+      boardRows: data.board_rows,
+      digest: data.board_digest,
+      match: boardDigest(data.rows) === data.board_digest,
+    }),
+    [data],
   );
 
   const toggleWithToast = useCallback(
@@ -57,6 +72,10 @@ export function App({ data }) {
     },
     [pushRecent],
   );
+
+  const openReference = useCallback((kind, item) => {
+    window.location.hash = referenceHref(kind, item.slug);
+  }, []);
 
   useEffect(() => {
     function onKey(event) {
@@ -174,6 +193,7 @@ export function App({ data }) {
                 saved={saved}
                 onToggleSave={toggleWithToast}
                 onSelect={openProtocol}
+                onSelectReference={openReference}
                 onMethodology={openMethodology}
               />
             </>
@@ -197,7 +217,19 @@ export function App({ data }) {
               saved={saved}
               onToggleSave={toggleWithToast}
               onSelect={openProtocol}
+              onSelectReference={openReference}
               onBack={goHome}
+            />
+          )}
+          {(route.name === 'token' || route.name === 'aside') && (
+            <ReferencePage
+              key={`${route.name}-${route.slug}`}
+              kind={route.name}
+              slug={route.slug}
+              data={data}
+              onBack={goHome}
+              onSelect={openProtocol}
+              onSelectReference={openReference}
             />
           )}
           {route.name === 'saved' && (
@@ -220,7 +252,7 @@ export function App({ data }) {
           onMethodology={openMethodology}
         />
       </main>
-      <StatusBar data={data} />
+      <StatusBar data={data} evidence={evidence} />
       {!searchOpen && (
         <MobileNav
           route={route.name}

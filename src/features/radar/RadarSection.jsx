@@ -2,21 +2,58 @@ import React from 'react';
 import { SectionHeading } from '../../components/ui/SectionHeading';
 import { RadarFilters } from './RadarFilters';
 import { ProtocolTable } from './ProtocolTable';
+import { ReferenceTable } from './ReferenceTable';
 import { ResearchSidebar } from './ResearchSidebar';
 import { downloadCsv } from '../../shared/format';
-export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onMethodology }) {
+import { boardDigest } from '../../../lib/economics.mjs';
+export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onSelectReference, onMethodology }) {
+  const reference = filters.view === 'traded' || filters.view === 'setaside';
+  const { verdicts } = filters;
+  const { backtest } = data;
+  const covered = data.rows.filter((row) => row.watchlist).length;
+  const sameBoard = boardDigest(data.rows) === data.board_digest;
+  const loo = backtest?.leave_one_out;
   return (
     <section id="protocols" className="radar-section">
       <SectionHeading
         title={'The launch radar'}
-        description="Compare estimated launch values, uncertainty, and farming costs."
+        description="Compare estimated launch values, uncertainty, and what farming each one costs."
       >
-        <span className="section-meta">{data.rows.length} protocols. One clearer picture.</span>
+        <span className="section-meta board-proof">
+          {data.rows.length} protocols ranked by implied value ·{' '}
+          <b className={covered === data.watchlist_count ? 'ok' : 'bad'}>
+            watchlist {covered}/{data.watchlist_count} on board
+          </b>{' '}
+          ·{' '}
+          <b className={sameBoard ? 'ok' : 'bad'} title={'Digest ' + data.board_digest + ', the same as board.json'}>
+            page = board.json {data.rows.length}/{data.board_rows} rows
+          </b>
+        </span>
       </SectionHeading>
       <div className="radar-layout">
         <div className="board-main">
           <div className="model-summary">
-            <div><strong>How values are estimated</strong><span>{data.curve.comparables} token-recorded comparisons · TVL, category, 7-day change and time tracked</span></div>
+            <div>
+              <strong>How values are estimated</strong>
+              <span>
+                {data.curve.comparables} tokens on record fit the curve · TVL, category, 7-day change
+                and time with no token
+                {loo &&
+                  ` · backtest: median miss ×${loo.model.median_miss} vs ×${loo.flat.median_miss} for one flat multiple`}
+              </span>
+            </div>
+            <div className="verdict-counts" aria-label="Verdicts at the chosen capital">
+              <span className="verdict-count net-farm">
+                <b>{verdicts.FARM}</b> farm
+              </span>
+              <span className="verdict-count net-thin">
+                <b>{verdicts.THIN}</b> thin
+              </span>
+              <span className="verdict-count net-skip">
+                <b>{verdicts.SKIP}</b> skip
+              </span>
+              <small>at ${filters.capital.toLocaleString('en-US')} · {filters.share * 100}% drop</small>
+            </div>
             <button onClick={onMethodology}>View methodology</button>
           </div>
           <RadarFilters
@@ -35,23 +72,44 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onM
             onMaxFee={filters.setMaxFee}
             tier={filters.tier}
             onTier={filters.setTier}
+            verdict={filters.verdict}
+            onVerdict={filters.setVerdict}
+            capital={filters.capital}
+            onCapital={filters.setCapital}
+            share={filters.share}
+            onShare={filters.setShare}
+            onMethodology={onMethodology}
             data={data}
             onExport={() => downloadCsv(filters.rows, data.as_of)}
             reset={filters.reset}
             filtered={filters.filtered}
           />
-          <ProtocolTable
-            rows={filters.rows}
-            saved={saved}
-            onToggleSave={onToggleSave}
-            onSelect={onSelect}
-            onReset={() => {
-              filters.reset();
-            }}
-          />
+          {reference ? (
+            <ReferenceTable
+              kind={filters.view}
+              rows={filters.reference}
+              onReset={filters.reset}
+              onSelect={onSelectReference}
+            />
+          ) : (
+            <ProtocolTable
+              rows={filters.rows}
+              saved={saved}
+              onToggleSave={onToggleSave}
+              onSelect={onSelect}
+              onReset={() => {
+                filters.reset();
+              }}
+            />
+          )}
           <div className="board-footnote">
-            <span>Each bar shows the estimate within its own P25–P75 range on a log scale; bars do not share a dollar scale. Fees and per-$1k allocations are illustrative estimates.</span>
-            <button onClick={onMethodology}>Methodology & assumptions</button>
+            <span>
+              Bar: the implied value within its P25–P75 range, on a log scale. Slice: what the
+              capital would hold if {filters.share * 100}% of the launch went to depositors pro rata.
+              Net: that slice minus the plan’s fees and the 4% T-bill yield given up over{' '}
+              {data.economics.hold_days} days. Scenarios, not forecasts.
+            </span>
+            <button onClick={onMethodology}>Methodology & backtest</button>
           </div>
         </div>
         <ResearchSidebar data={data} onSelect={onSelect} onMethodology={onMethodology} />

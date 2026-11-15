@@ -4,9 +4,10 @@ import { Icon } from '../../shared/Icon';
 import { AnimatedBookmark, SaveButton } from '../../components/ui/SaveButton';
 import { OffRadar } from '../../components/ui/OffRadar';
 import { ChainMark } from '../../components/ui/ChainMark';
-import { ageLabel, money, snapshotDate } from '../../shared/format';
+import { ageLabel, money, signed, snapshotDate } from '../../shared/format';
 import { ValuationBreakdown } from './components/ValuationBreakdown';
 import { FarmPlan } from './components/FarmPlan';
+import { PlanModal } from './components/PlanModal';
 import { ProtocolCharts } from './components/ProtocolCharts';
 
 export function ProtocolPage({
@@ -20,6 +21,9 @@ export function ProtocolPage({
   onSearch,
 }) {
   const [shareOpen, setShareOpen] = useState(false);
+  // #/protocol/<slug>?plan=1 opens the plan dialog directly.
+  const [planOpen, setPlanOpen] = useState(() => /[?&]plan=1/.test(window.location.hash));
+  const closePlan = React.useCallback(() => setPlanOpen(false), []);
 
   if (!protocol) {
     return (
@@ -42,6 +46,7 @@ export function ProtocolPage({
   }
   const isSaved = saved.has(protocol.slug);
   const chains = protocol.chains.length ? protocol.chains : [];
+  const econ = protocol.economics;
   return (
     <article className="page-shell" aria-label={`${protocol.name} protocol details`}>
       <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -83,6 +88,13 @@ export function ProtocolPage({
         title={`Share ${protocol.name}`}
         text={`${protocol.name} on Token Radar`}
       />
+      <PlanModal
+        open={planOpen}
+        onClose={closePlan}
+        protocol={protocol}
+        saved={isSaved}
+        onToggleSave={onToggleSave}
+      />
       <div className="detail-page-grid">
         <div className="detail-page-main">
           <ProtocolCharts key={protocol.slug} protocol={protocol} />
@@ -115,6 +127,12 @@ export function ProtocolPage({
                 <dt>Slice per $1k</dt>
                 <dd>${protocol.slice_per_1k_usd.toFixed(2)}</dd>
               </div>
+              <div>
+                <dt>Net of all costs</dt>
+                <dd className={`net-${econ.verdict.toLowerCase()}`}>
+                  <em className="verdict-badge">{econ.verdict}</em> {signed(econ.net_usd)}
+                </dd>
+              </div>
             </dl>
           </section>
           <section className="detail-block" aria-labelledby="chains-title">
@@ -146,7 +164,7 @@ export function ProtocolPage({
             </div>
           </section>
           <ValuationBreakdown protocol={protocol} />
-          <FarmPlan farm={protocol.farm} />
+          <FarmPlan farm={protocol.farm} economics={econ} onOpen={() => setPlanOpen(true)} />
         </div>
         <aside className="detail-page-side" aria-label="Research summary">
           <div className="side-card">
@@ -166,10 +184,18 @@ export function ProtocolPage({
               <span>Token status</span>
               <strong className="side-status">No token recorded</strong>
               <small className="side-farm">{protocol.farm.summary}</small>
+              <small className={`side-net net-${econ.verdict.toLowerCase()}`}>
+                <em className="verdict-badge">{econ.verdict}</em> {signed(econ.net_usd)} net at $
+                {econ.capital_usd.toLocaleString('en-US')} · {signed(econ.per_hour_usd)}/h
+              </small>
               <small>
                 TVL {money(protocol.tvl_usd, 2)} · 7d <Growth value={protocol.change_7d} />
               </small>
             </div>
+            <button type="button" className="side-plan" onClick={() => setPlanOpen(true)} aria-haspopup="dialog">
+              <Icon name="external" size={16} />
+              Open research plan
+            </button>
             <button
               className={`side-cta ${isSaved ? 'is-saved' : ''}`}
               onClick={() => onToggleSave(protocol.slug)}

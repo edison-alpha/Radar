@@ -17,7 +17,7 @@ function measureDataLoad() {
 }
 
 /** Thin fixed status strip. Every figure is read from the page itself; nothing is simulated. */
-export function StatusBar({ data }) {
+export function StatusBar({ data, evidence }) {
   const [load] = useState(measureDataLoad);
   const [hidden, setHidden] = useState(() => {
     try {
@@ -59,6 +59,24 @@ export function StatusBar({ data }) {
         <Icon name="gauge" size={13} />
         {load.label} in {load.ms} ms
       </span>
+      {evidence && (
+        <>
+          <span
+            className={`status-item ${evidence.watchlistCovered === evidence.watchlist ? 'status-ok' : 'status-bad'}`}
+            title="Every protocol on the snapshot watchlist is ranked on the board"
+          >
+            <Icon name="eye" size={13} />
+            Watchlist {evidence.watchlistCovered}/{evidence.watchlist} on board
+          </span>
+          <span
+            className={`status-item ${evidence.match ? 'status-ok' : 'status-bad'}`}
+            title={`The rows on this page hash to ${evidence.digest}, the digest written into board.json`}
+          >
+            <Icon name="check" size={13} />
+            Page = board.json {evidence.rows}/{evidence.boardRows} rows
+          </span>
+        </>
+      )}
       <span className="status-item">
         <Icon name="database" size={13} />
         Snapshot {snapshotDate(data.as_of)} · {number(data.rows.length)} protocols

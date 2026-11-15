@@ -7,3 +7,4 @@ out-check/
 .env*
 !.env.example
 bounty-work/
+docs/raw-screenshots/

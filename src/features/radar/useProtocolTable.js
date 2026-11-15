@@ -16,7 +16,7 @@ export function useProtocolTable(data, columns) {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    initialState: { pagination: { pageSize: 10 } },
+    initialState: { pagination: { pageSize: 25 } },
     autoResetPageIndex: true,
     enableSortingRemoval: false,
   });

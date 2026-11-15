@@ -1,0 +1,151 @@
+/* Research plan dialog: a preview stage on the left, scenario settings on the right */
+.plan-overlay {
+  position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center;
+  padding: 20px; background: #050505e6; backdrop-filter: blur(10px);
+}
+.plan-dialog {
+  --seg-a: #21b6d1; --seg-b: #3b7bf6; --seg-c: #9b5cf6; --seg-d: #f0488b; --seg-e: #25c76f;
+  width: min(1320px, 100%); height: min(900px, calc(100vh - 40px));
+  display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; color: var(--text);
+}
+.plan-dialog.is-mono { --seg-a: #f2f2f2; --seg-b: #bdbdbd; --seg-c: #8b8b8b; --seg-d: #5f5f5f; --seg-e: #dcdcdc; }
+.plan-stage, .plan-side {
+  background: #181818; border-radius: 28px; min-height: 0; display: flex; flex-direction: column;
+}
+.plan-stage { padding: 16px 20px 20px; }
+.plan-stage-bar { display: flex; justify-content: space-between; align-items: center; }
+.plan-tabs {
+  display: inline-flex; padding: 4px; gap: 2px; background: #202020; border-radius: 999px;
+}
+.plan-tabs button {
+  padding: 9px 18px; border-radius: 999px; font-size: 14px; color: #9a9a9a; background: none; border: 0;
+}
+.plan-tabs button.is-on { background: #0b0b0b; color: #fff; font-weight: 600; }
+.plan-round {
+  width: 40px; height: 40px; border-radius: 50%; display: inline-grid; place-items: center;
+  background: #262626; border: 0; color: #e6e6e6;
+}
+.plan-round:hover { background: #313131; }
+.plan-stage-body { flex: 1; min-height: 0; display: flex; align-items: flex-start; justify-content: center; padding-top: 18px; overflow: auto; }
+.plan-card {
+  width: min(560px, 100%); background: #222; border-radius: 24px; padding: 22px 22px 26px;
+  display: flex; flex-direction: column; gap: 16px; margin: auto 0;
+}
+.plan-card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.plan-card-head h3 { margin: 0; font-size: 18px; font-weight: 600; }
+.verdict-pill {
+  padding: 8px 16px; border-radius: 999px; background: #fff; color: #111; font-size: 13px; font-weight: 700; letter-spacing: 0.03em;
+}
+.plan-figure { margin: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.plan-figure strong { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; }
+.plan-figure strong.pos { color: #fff; }
+.plan-figure strong.neg { color: #ff8a80; }
+.plan-figure span { font-size: 13px; color: #9a9a9a; }
+.plan-bar { position: relative; display: flex; gap: 3px; height: 50px; border-radius: 8px; }
+.plan-bar .seg { display: block; min-width: 4px; border-radius: 3px; }
+.plan-bar .seg-fees { background: var(--seg-b); }
+.plan-bar .seg-tbill { background: var(--seg-c); }
+.plan-bar .seg-net { background: var(--seg-e); }
+.plan-bar .seg-short { background: repeating-linear-gradient(135deg, var(--seg-d) 0 4px, #8a2a52 4px 8px); }
+.plan-marker { position: absolute; top: -6px; bottom: -6px; width: 2px; background: var(--seg-a); border-radius: 2px; }
+.plan-marker span {
+  position: absolute; top: -20px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+  font-size: 11px; font-weight: 500; color: var(--seg-a);
+}
+.plan-meter { padding-top: 14px; display: grid; gap: 14px; }
+.plan-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: #2c2c2c; font-size: 14px; font-weight: 500; }
+.chip i { width: 9px; height: 9px; border-radius: 3px; background: currentColor; }
+.chip-fees i { background: var(--seg-b); }
+.chip-tbill i { background: var(--seg-c); }
+.chip-slice i { background: var(--seg-a); }
+.chip-net i { background: var(--seg-e); }
+.chip-short i { background: var(--seg-d); }
+.plan-steps { list-style: none; margin: 4px 0 0; padding: 18px 0 0; border-top: 1px solid #333; display: grid; gap: 16px; }
+.plan-steps li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; }
+.plan-step-n {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; color: #9fe7bc; background: #183428;
+}
+.plan-steps h4 { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
+.plan-steps p { margin: 0; font-size: 12.5px; line-height: 1.6; color: #b4b4b4; }
+.plan-step-meta { display: flex; gap: 14px; margin-top: 7px; font-size: 11.5px; color: #8fd1a8; }
+.plan-step-meta span { display: inline-flex; gap: 5px; align-items: center; }
+.plan-math { border-top: 1px solid #333; padding-top: 18px; display: grid; gap: 20px; }
+.plan-grid { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.plan-grid caption { text-align: left; font-size: 12px; color: #9a9a9a; padding-bottom: 8px; }
+.plan-grid th, .plan-grid td { padding: 10px 8px; text-align: right; border-bottom: 1px solid #303030; font-weight: 500; }
+.plan-grid thead th { color: #8a8a8a; font-size: 11px; font-weight: 400; }
+.plan-grid th:first-child { text-align: left; }
+.plan-grid td.pos { color: #7ff0ab; }
+.plan-grid td.neg { color: #ff8a80; }
+.plan-grid td.is-current { outline: 1.5px solid var(--seg-a); outline-offset: -2px; border-radius: 6px; }
+.plan-sum { margin: 0; display: grid; gap: 10px; }
+.plan-sum div { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; }
+.plan-sum dt { color: #a8a8a8; }
+.plan-sum dd { margin: 0; font-variant-numeric: tabular-nums; }
+.plan-sum .total { padding-top: 10px; border-top: 1px solid #333; font-weight: 600; }
+.plan-sum .total dt { color: #fff; }
+.plan-sum .pos { color: #7ff0ab; }
+.plan-sum .neg { color: #ff8a80; }
+
+.plan-side { padding: 22px 22px 22px; gap: 18px; overflow: auto; }
+.plan-side-head { display: flex; justify-content: space-between; align-items: center; }
+.plan-side-head h2 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.plan-side-copy { margin: 0; font-size: 14px; line-height: 1.55; color: #a2a2a2; }
+.plan-setting { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 15px; color: #d8d8d8; }
+.plan-segmented { display: inline-flex; padding: 4px; gap: 2px; background: #202020; border-radius: 999px; }
+.plan-segmented button { padding: 8px 17px; border-radius: 999px; background: none; border: 0; font-size: 14px; color: #8c8c8c; }
+.plan-segmented button.is-on { background: #333; color: #fff; font-weight: 600; }
+.plan-facts { margin: 6px 0 0; display: grid; gap: 12px; padding-top: 16px; border-top: 1px solid #2c2c2c; }
+.plan-facts div { display: grid; grid-template-columns: 84px 1fr; gap: 10px; font-size: 13px; }
+.plan-facts dt { color: #8a8a8a; }
+.plan-facts dd { margin: 0; color: #d0d0d0; line-height: 1.5; }
+.plan-actions { margin-top: auto; display: grid; gap: 10px; padding-top: 10px; }
+.plan-share, .plan-save {
+  height: 50px; border-radius: 999px; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.plan-share { background: none; border: 1px solid #3a3a3a; color: #eee; }
+.plan-share:hover { background: #202020; }
+.plan-save { background: #fff; color: #111; border: 0; }
+.plan-save:hover { background: #e9e9e9; }
+.plan-dialog button:focus-visible { outline: 2px solid #3ddc84; outline-offset: 2px; }
+
+@media (max-width: 960px) {
+  .plan-overlay { padding: 0; align-items: stretch; }
+  .plan-dialog { grid-template-columns: 1fr; height: 100dvh; gap: 8px; overflow: auto; padding: 8px; }
+  .plan-stage { min-height: 640px; border-radius: 22px; }
+  .plan-side { border-radius: 22px; overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) { .plan-dialog, .plan-overlay { transition: none; } }
+
+/* Flat flow instead of a card: the summary stays put while the steps scroll */
+.plan-stage-body { display: block; padding: 0; margin-top: 14px; overflow-y: auto; overflow-x: hidden; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #3a3a3a transparent; }
+.plan-flow { width: min(720px, 100%); margin: 0 auto; padding: 0 28px 40px; display: block; background: none; border-radius: 0; }
+.plan-summary {
+  position: sticky; top: 0; z-index: 2; display: grid; gap: 14px; padding: 18px 0 18px;
+  background: linear-gradient(#181818 82%, #18181800); 
+}
+.plan-summary .plan-meter { padding-top: 18px; }
+.plan-summary .plan-figure strong { font-size: 44px; }
+.plan-steps { border-top: 0; padding-top: 10px; margin: 0; gap: 0; position: relative; }
+.plan-steps li { position: relative; padding: 18px 0 20px; border-bottom: 1px solid #262626; }
+.plan-steps li:last-child { border-bottom: 0; }
+.plan-steps li:not(:last-child)::before {
+  content: ''; position: absolute; left: 12px; top: 46px; bottom: -2px; width: 1px; background: #2c3a32;
+}
+.plan-steps h4 { font-size: 15px; }
+.plan-steps p { font-size: 13.5px; line-height: 1.65; max-width: 60ch; }
+.plan-math { border-top: 0; padding-top: 10px; }
+
+/* Settings panel scrolls by hand; Share and Save stay reachable at the bottom */
+.plan-side { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #3a3a3a transparent; -webkit-overflow-scrolling: touch; }
+.plan-actions { position: sticky; bottom: -22px; margin: auto -22px -22px; padding: 16px 22px 22px; background: linear-gradient(#18181800, #181818 22%); z-index: 2; }
+.plan-stage-body { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+@media (max-width: 960px) {
+  .plan-overlay { overflow-y: auto; align-items: flex-start; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .plan-dialog { height: auto; min-height: 100dvh; overflow: visible; grid-template-rows: auto auto; }
+  .plan-stage { height: min(78dvh, 760px); min-height: 0; }
+  .plan-side { overflow: visible; min-height: 0; }
+  .plan-actions { position: static; margin: 10px 0 0; padding: 10px 0 0; background: none; }
+  .plan-flow { padding: 0 6px 28px; }
+}
