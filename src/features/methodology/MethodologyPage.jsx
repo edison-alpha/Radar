@@ -1,6 +1,8 @@
 import React from 'react';
 import { CompsChart } from '../../components/charts/CompsChart';
 import { BacktestChart } from '../../components/charts/BacktestChart';
+import { useViewMode } from '../../shared/useViewMode';
+import { ViewToggle } from '../../shared/ViewToggle';
 import { snapshotDate } from '../../shared/format';
 
 const pct = (n) => Math.round(n * 100) + '%';
@@ -22,6 +24,50 @@ function BacktestRow({ label, result }) {
 
 export function MethodologyPage({ data, onBack, onSelect }) {
   const { curve, model, backtest, economics } = data;
+  const [view, setView] = useViewMode('methodology-view');
+  const compact = view === 'compact';
+  const backtestSection = backtest && (
+      <section id="backtest" className="meth-wide">
+        <h3>Backtest: does the curve work on tokens it did not see?</h3>
+        <p>
+          The {backtest.leave_one_out.n} tokens on record are priced as if they had none. In
+          the leave-one-out test each token is removed, the curve and category factors are
+          refitted on the rest, and the token is priced from its TVL, category peers and
+          seven-day change. In the time split, the curve is fitted on the older listings and
+          priced against the newer half, listed from {backtest.time_split.cutoff}. The rival is
+          one flat market cap / TVL multiple, the median of the training tokens. Seasoning is
+          left out because a token that trades has no days with no token.
+        </p>
+        <div className="backtest-table-wrap">
+          <table className="backtest-table">
+            <thead>
+              <tr>
+                <th scope="col">Test</th>
+                <th scope="col">Tokens</th>
+                <th scope="col">Median miss, model</th>
+                <th scope="col">flat</th>
+                <th scope="col">Within 3×, model</th>
+                <th scope="col">flat</th>
+                <th scope="col">Within 10×, model</th>
+                <th scope="col">flat</th>
+                <th scope="col">Inside the P25–P75 band</th>
+              </tr>
+            </thead>
+            <tbody>
+              <BacktestRow label="Leave one out" result={backtest.leave_one_out} />
+              <BacktestRow label="Time split" result={backtest.time_split} />
+            </tbody>
+          </table>
+        </div>
+        <BacktestChart points={backtest.points} />
+        <p>
+          Read it as a ranking tool, not a price: the median token is still off by a factor of
+          about {backtest.leave_one_out.model.median_miss}, but the curve misses by less than one
+          flat multiple does, and the band holds about half of the tokens, as a middle-half band
+          should. Misses are shown as a factor in either direction.
+        </p>
+      </section>
+  );
   return (
     <div className="page-shell">
       <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -31,7 +77,8 @@ export function MethodologyPage({ data, onBack, onSelect }) {
         <span aria-hidden="true">›</span>
         <strong>Methodology</strong>
       </nav>
-      <div className="methodology-content">
+      <div className={'methodology-content' + (compact ? ' is-compact' : '')}>
+        <ViewToggle view={view} onChange={setView} />
         <span className="detail-eyebrow">How a launch is priced</span>
         <h2>Every value is read off the snapshot’s own priced tokens.</h2>
         <p className="methodology-intro">
@@ -43,6 +90,8 @@ export function MethodologyPage({ data, onBack, onSelect }) {
           momentum × seasoning
         </div>
         <CompsChart curve={curve} rows={data.rows} onSelect={onSelect} />
+        {compact && backtestSection}
+        <div className="meth-sections">
         <section>
           <h3>1. Split the universe</h3>
           <p>
@@ -89,48 +138,7 @@ export function MethodologyPage({ data, onBack, onSelect }) {
             carries that low–high band next to its implied value. The rank uses the central value.
           </p>
         </section>
-        {backtest && (
-          <section id="backtest">
-            <h3>Backtest: does the curve work on tokens it did not see?</h3>
-            <p>
-              The {backtest.leave_one_out.n} tokens on record are priced as if they had none. In
-              the leave-one-out test each token is removed, the curve and category factors are
-              refitted on the rest, and the token is priced from its TVL, category peers and
-              seven-day change. In the time split, the curve is fitted on the older listings and
-              priced against the newer half, listed from {backtest.time_split.cutoff}. The rival is
-              one flat market cap / TVL multiple, the median of the training tokens. Seasoning is
-              left out because a token that trades has no days with no token.
-            </p>
-            <div className="backtest-table-wrap">
-              <table className="backtest-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Test</th>
-                    <th scope="col">Tokens</th>
-                    <th scope="col">Median miss, model</th>
-                    <th scope="col">flat</th>
-                    <th scope="col">Within 3×, model</th>
-                    <th scope="col">flat</th>
-                    <th scope="col">Within 10×, model</th>
-                    <th scope="col">flat</th>
-                    <th scope="col">Inside the P25–P75 band</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <BacktestRow label="Leave one out" result={backtest.leave_one_out} />
-                  <BacktestRow label="Time split" result={backtest.time_split} />
-                </tbody>
-              </table>
-            </div>
-            <BacktestChart points={backtest.points} />
-            <p>
-              Read it as a ranking tool, not a price: the median token is still off by a factor of
-              about {backtest.leave_one_out.model.median_miss}, but the curve misses by less than one
-              flat multiple does, and the band holds about half of the tokens, as a middle-half band
-              should. Misses are shown as a factor in either direction.
-            </p>
-          </section>
-        )}
+        {!compact && backtestSection}
         <section>
           <h3>Farm economics: net of all costs</h3>
           <p>
@@ -167,6 +175,7 @@ export function MethodologyPage({ data, onBack, onSelect }) {
           </p>
           <p className="source-text">Source: {data.source}</p>
         </section>
+        </div>
         <div className="methodology-footer">
           Model {model.version} · Sealed snapshot · All processing runs locally
         </div>

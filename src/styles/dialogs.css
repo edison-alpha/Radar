@@ -296,8 +296,434 @@
   font-size: 10px;
   color: var(--quiet);
 }
+.view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  float: right;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 11px;
+}
+.view-toggle-label {
+  padding: 0 8px;
+  color: var(--quiet);
+}
+.view-toggle button {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+}
+.view-toggle button.active {
+  background: #2a2a2a;
+  color: var(--text);
+}
+
+/* Compact view: everything on one screen, sections in columns */
+.methodology-content.is-compact h2 {
+  font-size: 30px;
+  max-width: none;
+}
+.methodology-content.is-compact .methodology-intro {
+  max-width: none;
+  margin-top: 8px;
+}
+.methodology-content.is-compact .methodology-formula {
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.methodology-content.is-compact .meth-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0 24px;
+  align-items: start;
+}
+.methodology-content.is-compact section {
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.methodology-content.is-compact section.meth-wide {
+  grid-column: 1 / -1;
+}
+.methodology-content.is-compact h3 {
+  font-size: 13px;
+}
+.methodology-content.is-compact section p {
+  font-size: 11px;
+  line-height: 1.55;
+  margin-top: 6px;
+}
+.methodology-content.is-compact .backtest-table-wrap {
+  margin: 10px 0;
+}
+.methodology-content.is-compact .backtest-table th,
+.methodology-content.is-compact .backtest-table td {
+  padding: 6px 8px;
+}
+.methodology-content.is-compact .backtest-chart {
+  max-width: 520px;
+  margin: 10px 0;
+}
 .methodology-footer {
   font-size: 10px;
   color: var(--muted);
   margin-top: 25px;
+}
+
+.methodology-content.is-compact .comps-chart {
+  max-width: 560px;
+  margin: 10px 0;
+}
+.methodology-content.is-compact .comps-chart figcaption,
+.methodology-content.is-compact .chart-legend {
+  font-size: 10px;
+}
+
+/* Compact view, one-screen dashboard: header row, then comps chart + backtest side by side, then the text sections */
+.methodology-content.is-compact {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 20px;
+  align-items: start;
+  padding: 0;
+}
+.methodology-content.is-compact > .detail-eyebrow,
+.methodology-content.is-compact > h2,
+.methodology-content.is-compact > .methodology-intro,
+.methodology-content.is-compact > .methodology-formula,
+.methodology-content.is-compact > .methodology-footer {
+  grid-column: 1 / -1;
+}
+.methodology-content.is-compact .view-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: none;
+}
+.methodology-content.is-compact > h2 {
+  font-size: 24px;
+  margin-top: 2px;
+}
+.methodology-content.is-compact > .methodology-intro {
+  margin-top: 4px;
+  font-size: 11px;
+}
+.methodology-content.is-compact > .methodology-formula {
+  padding: 7px 12px;
+  font-size: 13px;
+  margin: 8px 0 10px;
+}
+.methodology-content.is-compact > .comps-chart {
+  grid-column: 1 / 3;
+  max-width: none;
+  margin: 0;
+}
+.methodology-content.is-compact .comps-chart svg {
+  max-height: 330px;
+}
+.methodology-content.is-compact .meth-sections {
+  display: contents;
+}
+.methodology-content.is-compact section {
+  grid-column: span 1;
+  order: 1;
+  margin-top: 10px;
+  padding-top: 8px;
+}
+.methodology-content.is-compact section.meth-wide {
+  grid-column: 3 / 5;
+  order: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.methodology-content.is-compact .backtest-chart {
+  max-width: 340px;
+  margin: 6px auto;
+}
+.methodology-content.is-compact .backtest-table {
+  font-size: 10px;
+}
+.methodology-content.is-compact .backtest-table thead th {
+  font-size: 9px;
+}
+.methodology-content.is-compact h3 {
+  font-size: 12px;
+}
+.methodology-content.is-compact section p {
+  font-size: 10.5px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.methodology-content.is-compact > .methodology-footer {
+  order: 2;
+  margin-top: 10px;
+}
+@media (max-width: 1100px) {
+  .methodology-content.is-compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .methodology-content.is-compact > .comps-chart,
+  .methodology-content.is-compact section.meth-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Compact v2: tidy rows, text sections packed in 4 columns */
+.methodology-content.is-compact > .comps-chart {
+  grid-column: 1 / 3;
+}
+.methodology-content.is-compact > section.meth-wide {
+  grid-column: 3 / 5;
+  order: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+}
+.methodology-content.is-compact .meth-sections {
+  display: block;
+  grid-column: 1 / -1;
+  order: 1;
+  column-count: 4;
+  column-gap: 24px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.methodology-content.is-compact .meth-sections section {
+  break-inside: avoid;
+  margin: 0 0 14px;
+  padding: 0;
+  border-top: 0;
+}
+.methodology-content.is-compact .backtest-chart {
+  max-width: 260px;
+}
+@media (max-width: 1100px) {
+  .methodology-content.is-compact .meth-sections {
+    column-count: 2;
+  }
+  .methodology-content.is-compact > section.meth-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Compact backtest: table on top, chart left, explanation right */
+.methodology-content.is-compact > section.meth-wide {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  grid-template-rows: auto auto auto 1fr;
+  gap: 0 16px;
+  align-content: start;
+}
+.methodology-content.is-compact > section.meth-wide > h3 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+.methodology-content.is-compact > section.meth-wide > .backtest-table-wrap {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 8px 0 10px;
+}
+.methodology-content.is-compact > section.meth-wide > .backtest-chart {
+  grid-column: 1;
+  grid-row: 3 / 5;
+  max-width: none;
+  margin: 0;
+}
+.methodology-content.is-compact > section.meth-wide > p:first-of-type {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+}
+.methodology-content.is-compact > section.meth-wide > p:last-of-type {
+  grid-column: 2;
+  grid-row: 4;
+  margin: 8px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.methodology-content.is-compact .backtest-chart figcaption {
+  font-size: 10px;
+  line-height: 1.4;
+  text-align: left;
+}
+.methodology-content.is-compact .backtest-table th,
+.methodology-content.is-compact .backtest-table td {
+  padding: 5px 7px;
+  white-space: nowrap;
+}
+@media (max-width: 1100px) {
+  .methodology-content.is-compact > section.meth-wide {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .methodology-content.is-compact > section.meth-wide > * {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Detail page: valuation and research plan side by side, compact, one screen */
+.detail-analysis {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 0 32px;
+  align-items: start;
+  margin-top: 28px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.detail-analysis .detail-section {
+  padding-top: 18px;
+  min-width: 0;
+}
+.detail-analysis .detail-section-title {
+  margin-bottom: 12px;
+}
+.detail-analysis .detail-section-title h3 {
+  font-size: 15px;
+}
+.detail-analysis .detail-section-title > span {
+  font-size: 11px;
+}
+.detail-analysis .valuation-formula {
+  padding: 12px 14px;
+  gap: 6px;
+}
+.detail-analysis .valuation-formula > div {
+  gap: 4px;
+}
+.detail-analysis .valuation-formula > div > span {
+  font-size: 11px;
+}
+.detail-analysis .valuation-formula strong {
+  font-size: 15px;
+}
+.detail-analysis .value-range {
+  margin: 8px 0 0;
+  gap: 6px;
+}
+.detail-analysis .value-range > div {
+  padding: 9px 12px;
+  border-radius: 10px;
+}
+.detail-analysis .value-range span {
+  font-size: 11px;
+}
+.detail-analysis .value-range strong {
+  font-size: 16px;
+  margin-top: 2px;
+}
+.detail-analysis .detail-explainer {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.detail-analysis .data-warning {
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.detail-analysis .peer-list {
+  margin-top: 10px;
+  padding: 9px 12px;
+}
+.detail-analysis .peer-list > span {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+.detail-analysis .peer-list > div {
+  font-size: 12px;
+  padding: 4px 0;
+}
+.detail-analysis .farm-launch .farm-budget {
+  padding: 10px 14px;
+  gap: 10px;
+}
+.detail-analysis .farm-launch .farm-budget > span {
+  gap: 3px;
+}
+.detail-analysis .farm-launch .farm-budget small {
+  font-size: 11px;
+}
+.detail-analysis .farm-launch .farm-budget strong {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.detail-analysis .farm-steps {
+  margin: 12px 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  counter-reset: none;
+}
+.detail-analysis .farm-steps li {
+  gap: 9px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+.detail-analysis .step-number {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+}
+.detail-analysis .farm-steps h4 {
+  font-size: 13px;
+  margin-top: 1px;
+}
+.detail-analysis .farm-steps p {
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+.detail-analysis .step-meta {
+  gap: 10px;
+  margin-top: 5px;
+}
+.detail-analysis .step-meta > span {
+  font-size: 10.5px;
+}
+.detail-analysis .risk-note {
+  margin-top: 10px;
+  font-size: 11px;
+}
+@media (max-width: 1000px) {
+  .detail-analysis {
+    grid-template-columns: 1fr;
+  }
+  .detail-analysis .farm-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.analysis-toggle {
+  float: none;
+  display: flex;
+  width: fit-content;
+  margin: 28px 0 0 auto;
+}
+.detail-analysis {
+  margin-top: 16px;
+}
+.detail-analysis > .analysis-toggle {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.methodology-content.is-compact .backtest-table thead th {
+  white-space: normal;
+  line-height: 1.25;
+  vertical-align: bottom;
+}
+.methodology-content.is-compact .backtest-table th,
+.methodology-content.is-compact .backtest-table td {
+  padding: 5px 6px;
 }

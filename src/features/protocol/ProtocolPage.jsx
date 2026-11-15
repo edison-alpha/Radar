@@ -9,6 +9,8 @@ import { ValuationBreakdown } from './components/ValuationBreakdown';
 import { FarmPlan } from './components/FarmPlan';
 import { PlanModal } from './components/PlanModal';
 import { ProtocolCharts } from './components/ProtocolCharts';
+import { useViewMode } from '../../shared/useViewMode';
+import { ViewToggle } from '../../shared/ViewToggle';
 
 export function ProtocolPage({
   protocol,
@@ -23,6 +25,8 @@ export function ProtocolPage({
   const [shareOpen, setShareOpen] = useState(false);
   // #/protocol/<slug>?plan=1 opens the plan dialog directly.
   const [planOpen, setPlanOpen] = useState(() => /[?&]plan=1/.test(window.location.hash));
+  const [view, setView] = useViewMode('protocol-view');
+  const compact = view === 'compact';
   const closePlan = React.useCallback(() => setPlanOpen(false), []);
 
   if (!protocol) {
@@ -47,6 +51,13 @@ export function ProtocolPage({
   const isSaved = saved.has(protocol.slug);
   const chains = protocol.chains.length ? protocol.chains : [];
   const econ = protocol.economics;
+  const analysis = (
+    <>
+      <ViewToggle view={view} onChange={setView} className="analysis-toggle" />
+      <ValuationBreakdown protocol={protocol} />
+      <FarmPlan farm={protocol.farm} economics={econ} onOpen={() => setPlanOpen(true)} />
+    </>
+  );
   return (
     <article className="page-shell" aria-label={`${protocol.name} protocol details`}>
       <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -163,8 +174,7 @@ export function ProtocolPage({
               </span>
             </div>
           </section>
-          <ValuationBreakdown protocol={protocol} />
-          <FarmPlan farm={protocol.farm} economics={econ} onOpen={() => setPlanOpen(true)} />
+          {!compact && analysis}
         </div>
         <aside className="detail-page-side" aria-label="Research summary">
           <div className="side-card">
@@ -211,6 +221,7 @@ export function ProtocolPage({
           </p>
         </aside>
       </div>
+      {compact && <div className="detail-analysis">{analysis}</div>}
     </article>
   );
 }
