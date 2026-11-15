@@ -17,8 +17,8 @@ export function Hero({ data, onMethodology }) {
           before it happens.
         </h1>
         <p>
-          Radar tracks {data.rows.length} protocols with no token on record, estimates what each
-          launch could be worth, and shows you how to farm it.
+          Launch curve fitted on the snapshot’s own comps, tested blind — net-of-cost farm verdict
+          on every row.
         </p>
         <p className="landing-formula">
           value = 10^{data.curve.intercept.toFixed(2)} × TVL^{data.curve.elasticity.toFixed(3)} ×

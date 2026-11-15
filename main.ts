@@ -2,6 +2,7 @@ import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildRadar, dataScript } from './lib/radar.mjs';
+import { resultsText } from './lib/results.mjs';
 import { buildDossier } from './vendor/makefun-board.ts';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -28,5 +29,7 @@ writeFileSync(
 writeFileSync(join(output, 'data.js'), dataScript(radar));
 cpSync(join(root, 'dashboard'), join(output, 'dashboard'), { recursive: true });
 cpSync(join(root, 'screenshots'), join(output, 'screenshots'), { recursive: true });
+mkdirSync(join(output, 'dashboard', 'a-0-results'), { recursive: true });
+writeFileSync(join(output, 'dashboard', 'a-0-results', 'results.txt'), resultsText(radar));
 writeFileSync(join(output, 'dossier.json'), buildDossier(output, { text_max_bytes: 65_536 }));
 console.log(`Wrote ${radar.rows.length} protocols and dossier to ${output}`);

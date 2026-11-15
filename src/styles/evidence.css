@@ -181,3 +181,11 @@ button.protocol-cell.static:disabled { cursor: default; }
   .protocol-table th, .protocol-table td { padding-left: 8px; padding-right: 8px; }
   .protocol-table .col-tier { width: 1%; }
 }
+
+/* board: range, verdict and net columns, validation strip */
+.range-cell { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); font-size: 12px; }
+.protocol-table .col-range, .protocol-table .col-verdict { white-space: nowrap; }
+.verdict-cell .verdict-badge { margin-right: 0; font-size: 10.5px; padding: 3px 8px; }
+.net-head { display: inline-grid; gap: 2px; text-align: right; }
+.net-head small { font-size: 9.5px; font-weight: 400; color: var(--quiet); letter-spacing: 0; text-transform: none; }
+.validation-strip { margin: 0 0 14px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }

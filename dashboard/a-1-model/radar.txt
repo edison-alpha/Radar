@@ -541,6 +541,9 @@ export function buildRadar(snapshot, extras = {}) {
     farm,
     economics,
     verdict: economics.verdict,
+    net_usd: economics.net_usd,
+    per_hour_usd: economics.per_hour_usd,
+    slice_usd: economics.slice_usd,
     farm_steps: farm.steps.map(
      (s) => `${s.title}: ${s.text} Cost: ${s.cost}. Time: ${s.time}.`,
     ),

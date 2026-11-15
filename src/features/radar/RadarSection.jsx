@@ -6,6 +6,7 @@ import { ReferenceTable } from './ReferenceTable';
 import { ResearchSidebar } from './ResearchSidebar';
 import { downloadCsv } from '../../shared/format';
 import { boardDigest } from '../../../lib/economics.mjs';
+import { validationFacts, validationStrip } from '../../../lib/results.mjs';
 export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onSelectReference, onMethodology }) {
   const reference = filters.view === 'traded' || filters.view === 'setaside';
   const { verdicts } = filters;
@@ -13,6 +14,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onS
   const covered = data.rows.filter((row) => row.watchlist).length;
   const sameBoard = boardDigest(data.rows) === data.board_digest;
   const loo = backtest?.leave_one_out;
+  const facts = validationFacts(data);
   return (
     <section id="protocols" className="radar-section">
       <SectionHeading
@@ -30,6 +32,7 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onS
           </b>
         </span>
       </SectionHeading>
+      {facts && <p className="validation-strip">{validationStrip(facts)}</p>}
       <div className="radar-layout">
         <div className="board-main">
           <div className="model-summary">
@@ -97,6 +100,9 @@ export function RadarSection({ data, filters, saved, onToggleSave, onSelect, onS
               saved={saved}
               onToggleSave={onToggleSave}
               onSelect={onSelect}
+              capital={filters.capital}
+              share={filters.share}
+              holdDays={data.economics.hold_days}
               onReset={() => {
                 filters.reset();
               }}

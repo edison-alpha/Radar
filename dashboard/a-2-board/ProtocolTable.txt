@@ -9,7 +9,19 @@ import { useProtocolTable } from './useProtocolTable';
 import { Icon } from '../../shared/Icon';
 import { ProtocolMark, Growth, EmptyState, Button } from '../../shared/ui';
 import { money, signed } from '../../shared/format';
-export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, savedView }) {
+import { ECON, VERDICT_TEXT } from '../../../lib/economics.mjs';
+export function ProtocolTable({
+ rows,
+ saved,
+ onToggleSave,
+ onSelect,
+ onReset,
+ savedView,
+ capital = ECON.capital,
+ share = ECON.share,
+ holdDays = ECON.holdDays,
+}) {
+ const assumptions = `${Math.round(share * 100)}% share · ${holdDays}d hold · ${ECON.tbillYield * 100}% T-bill`;
  const columns = useMemo(
   () => [
    {
@@ -73,7 +85,23 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
     header: 'Estimated value',
     meta: { hint: 'Model estimate with a range based on comparable tokens; not a token price' },
     cell: ({ row }) => (
-     <ValuationRange value={row.original.implied_value_usd} low={row.original.implied_low_usd} high={row.original.implied_high_usd} />
+     <ValuationRange
+      value={row.original.implied_value_usd}
+      low={row.original.implied_low_usd}
+      high={row.original.implied_high_usd}
+      showRange={false}
+     />
+    ),
+   },
+   {
+    id: 'range',
+    accessorFn: (row) => row.implied_high_usd - row.implied_low_usd,
+    header: 'Range',
+    meta: { hint: 'P25–P75 band of the model: half of the tokens on record landed inside it' },
+    cell: ({ row }) => (
+     <span className="range-cell">
+      {money(row.original.implied_low_usd)}–{money(row.original.implied_high_usd)}
+     </span>
     ),
    },
    {
@@ -82,23 +110,6 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
     header: 'Slice',
     meta: { hint: 'What the capital would hold if depositors shared the airdrop share of the launch pro rata; a scenario, not an expected airdrop' },
     cell: ({ getValue }) => '$' + getValue().toFixed(2),
-   },
-   {
-    id: 'net',
-    accessorFn: (row) => (row.econ ?? row.economics).net_usd,
-    header: 'Net of all costs',
-    meta: { hint: 'Slice minus fees minus the T-bill yield the capital gives up. FARM beats every cost, THIN beats the fees only, SKIP does not.' },
-    cell: ({ row }) => {
-     const e = row.original.econ ?? row.original.economics;
-     return (
-      <span className={'net-cell net-' + e.verdict.toLowerCase()}>
-       <strong>
-        <em className="verdict-badge">{e.verdict}</em> {signed(e.net_usd)}
-       </strong>
-       <small>{signed(e.per_hour_usd)}/h hands-on</small>
-      </span>
-     );
-    },
    },
    {
     id: 'farm',
@@ -116,6 +127,38 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
       <small>
        ${row.original.farm.fees_usd.toFixed(2)} · {row.original.farm.minutes} min
       </small>
+     </span>
+    ),
+   },
+   {
+    id: 'net',
+    accessorFn: (row) => (row.econ ?? row.economics).net_usd,
+    header: () => (
+     <span className="net-head">
+      Net per ${capital.toLocaleString('en-US')}
+      <small>{assumptions}</small>
+     </span>
+    ),
+    meta: { hint: 'Slice minus fees minus the T-bill yield the capital gives up, with the net per hands-on hour underneath.' },
+    cell: ({ row }) => {
+     const e = row.original.econ ?? row.original.economics;
+     return (
+      <span className={'net-cell net-' + e.verdict.toLowerCase()}>
+       <strong>{signed(e.net_usd)}</strong>
+       <small>{signed(e.per_hour_usd)}/h hands-on</small>
+      </span>
+     );
+    },
+   },
+   {
+    id: 'verdict',
+    accessorFn: (row) => (row.econ ?? row.economics).verdict,
+    header: 'Verdict',
+    meta: { hint: 'FARM: ' + VERDICT_TEXT.FARM + '. THIN: ' + VERDICT_TEXT.THIN + '. SKIP: ' + VERDICT_TEXT.SKIP + '.' },
+    sortingFn: (a, b) => ['FARM', 'THIN', 'SKIP'].indexOf(a.getValue('verdict')) - ['FARM', 'THIN', 'SKIP'].indexOf(b.getValue('verdict')),
+    cell: ({ getValue }) => (
+     <span className={'verdict-cell net-' + getValue().toLowerCase()} title={VERDICT_TEXT[getValue()]}>
+      <em className="verdict-badge">{getValue()}</em>
      </span>
     ),
    },
@@ -139,7 +182,7 @@ export function ProtocolTable({ rows, saved, onToggleSave, onSelect, onReset, sa
     ),
    },
   ],
-  [onSelect, onToggleSave, saved],
+  [onSelect, onToggleSave, saved, capital, assumptions],
  );
  const table = useProtocolTable(rows, columns);
  const pagination = table.getState().pagination;
